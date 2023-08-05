@@ -27,6 +27,7 @@
 #define _SDF_MAP_H
 
 #include <Eigen/Eigen>
+#include <unordered_set>
 #include <Eigen/StdVector>
 #include <cv_bridge/cv_bridge.h>
 #include <geometry_msgs/PoseStamped.h>
@@ -176,6 +177,9 @@ public:
   ~SDFMap() {}
 
   enum { POSE_STAMPED = 1, ODOMETRY = 2, INVALID_IDX = -10000 };
+ 
+  // Add the declaration for the OCNetQuery function
+  void OCNetQuery(int x, int y, int z);
 
   // occupancy map management
   void resetBuffer();
@@ -195,6 +199,7 @@ public:
   inline int getOccupancy(Eigen::Vector3i id);
   inline int getInflateOccupancy(Eigen::Vector3d pos);
   inline int getGroundOccupancy();
+
 
   inline void boundIndex(Eigen::Vector3i& id);
   inline bool isUnknown(const Eigen::Vector3i& id);
@@ -244,7 +249,8 @@ private:
   ros::Time latest_odom_time_;
   template <typename F_get_val, typename F_set_val>
   void fillESDF(F_get_val f_get_val, F_set_val f_set_val, int start, int end, int dim);
-
+  // Add this member variable to your class to store occupied center addresses
+  std::unordered_set<int> occupied_centers;
   // get depth image and camera pose
   void depthPoseCallback(const sensor_msgs::ImageConstPtr& img,
                          const geometry_msgs::PoseStampedConstPtr& pose);

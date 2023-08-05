@@ -1,0 +1,33 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/melodic/Aerial-Walker/devel/include/**",
+        "/home/melodic/catkin_ws/devel/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/melodic/Aerial-Walker/src/OC_Navigation/bspline/include/**",
+        "/home/melodic/Aerial-Walker/src/OC_Navigation/bspline_opt/include/**",
+        "/home/melodic/Aerial-Walker/src/uav_simulator/Utils/multi_map_server/include/**",
+        "/home/melodic/Aerial-Walker/src/OC_Navigation/path_searching/include/**",
+        "/home/melodic/catkin_ws/src/ros-bridge/pcl_recorder/include/**",
+        "/home/melodic/Aerial-Walker/src/OC_Navigation/plan_env/include/**",
+        "/home/melodic/Aerial-Walker/src/OC_Navigation/plan_manage/include/**",
+        "/home/melodic/Aerial-Walker/src/uav_simulator/Utils/pose_utils/include/**",
+        "/home/melodic/Aerial-Walker/src/uav_simulator/Utils/quadrotor_msgs/include/**",
+        "/home/melodic/Aerial-Walker/src/OC_Navigation/traj_utils/include/**",
+        "/home/melodic/Aerial-Walker/src/uav_simulator/Utils/uav_utils/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

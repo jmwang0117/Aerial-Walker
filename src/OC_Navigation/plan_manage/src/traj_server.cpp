@@ -341,11 +341,11 @@ void cmdCallback(const ros::TimerEvent& e) {
   last_yaw_ = cmd.yaw;
 
   pos_cmd_pub.publish(cmd);
-  ROS_INFO("Position: (%f, %f, %f)", cmd.position.x, cmd.position.y, cmd.position.z);
-  ROS_INFO("Velocity: (%f, %f, %f)", cmd.velocity.x, cmd.velocity.y, cmd.velocity.z);
-  ROS_INFO("Acceleration: (%f, %f, %f)", cmd.acceleration.x, cmd.acceleration.y, cmd.acceleration.z);
-  ROS_INFO("Yaw: %f", cmd.yaw);
-  ROS_INFO("Yaw Dot: %f", cmd.yaw_dot);
+  // ROS_INFO("Position: (%f, %f, %f)", cmd.position.x, cmd.position.y, cmd.position.z);
+  // ROS_INFO("Velocity: (%f, %f, %f)", cmd.velocity.x, cmd.velocity.y, cmd.velocity.z);
+  // ROS_INFO("Acceleration: (%f, %f, %f)", cmd.acceleration.x, cmd.acceleration.y, cmd.acceleration.z);
+  // ROS_INFO("Yaw: %f", cmd.yaw);
+  // ROS_INFO("Yaw Dot: %f", cmd.yaw_dot);
 
 
   // draw cmd

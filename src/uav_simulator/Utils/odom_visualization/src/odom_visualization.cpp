@@ -14,7 +14,6 @@
 
 using namespace arma;
 using namespace std;
-
 static  string mesh_resource;
 static double color_r, color_g, color_b, color_a, cov_scale, scale;
 
@@ -144,20 +143,6 @@ void odom_callback(const nav_msgs::Odometry::ConstPtr& msg)
         pathROS.poses.push_back(poseROS);
         pathPub.publish(pathROS);
     }
-
-
-    // if(poseROS.pose.position.z < 0.15){
-    // prevt = msg->header.stamp;
-    // pathROS.header = poseROS.header;
-    // pathROS.poses.push_back(poseROS);
-    // pathPub.publish(pathROS);
-    // }
-    // else{
-    // prevt = msg->header.stamp;
-    // ApathROS.header = poseROS.header;
-    // ApathROS.poses.push_back(poseROS);
-    // ApathPub.publish(pathROS);
-    // }
   }
 
   // Covariance color
@@ -333,11 +318,8 @@ void odom_callback(const nav_msgs::Odometry::ConstPtr& msg)
       ppose = pose;
       pt = t;
       trajPub.publish(trajROS);       
-    }
-
-    
+    } 
   }
-
   // Sensor availability
   sensorROS.header.frame_id = string("world");
   sensorROS.header.stamp    = msg->header.stamp;
@@ -405,10 +387,6 @@ void odom_callback(const nav_msgs::Odometry::ConstPtr& msg)
   meshROS.color.r = color_r;
   meshROS.color.g = color_g;
   meshROS.color.b = color_b;
-  // meshROS.color.a = 0;
-  // meshROS.color.r = 0;
-  // meshROS.color.g = 0;
-  // meshROS.color.b = 0;
   meshROS.mesh_resource = mesh_resource;
   meshPub.publish(meshROS);                                                  
 
@@ -438,7 +416,6 @@ void odom_callback(const nav_msgs::Odometry::ConstPtr& msg)
     string vision_s = _drone_id == -1 ? string("vision") : string("vision")+std::to_string(_drone_id);
     string height_s = _drone_id == -1 ? string("height") : string("height")+std::to_string(_drone_id);
 
-
     broadcaster->sendTransform(tf::StampedTransform(transform,   msg->header.stamp, string("world"), base_s));      
     broadcaster->sendTransform(tf::StampedTransform(transform45, msg->header.stamp, base_s, laser_s));          
     broadcaster->sendTransform(tf::StampedTransform(transform45, msg->header.stamp, base_s, vision_s));          
@@ -457,9 +434,9 @@ void cmd_callback(const quadrotor_msgs::PositionCommand cmd)
   pose(2) = cmd.position.z;
   colvec q(4);
   q(0)    = 1.0;
-  q(1)    = 0.0;
-  q(2)    = 0.0;
-  q(3)    = 0.0;
+  q(1)    = 0;
+  q(2)    = 0;
+  q(3)    = 0;
   pose.rows(3,5) = R_to_ypr(quaternion_to_R(q));
   
   // Mesh model                                                  
@@ -509,7 +486,6 @@ int main(int argc, char** argv)
   n.param("origin", origin, false);  
   n.param("robot_scale", scale, 2.0);    
   n.param("frame_id",   _frame_id, string("world") ); 
- 
   n.param("cross_config", cross_config, false);    
   n.param("tf45", tf45, false);    
   n.param("covariance_scale",    cov_scale,  100.0);
@@ -523,7 +499,7 @@ int main(int argc, char** argv)
   ros::Subscriber sub_cmd  = n.subscribe("cmd",  100,  cmd_callback);
   posePub   = n.advertise<geometry_msgs::PoseStamped>("pose",                100, true);
   pathPub   = n.advertise<nav_msgs::Path>(            "path",                100, true);
-  ApathPub   = n.advertise<nav_msgs::Path>(            "aerialpath",                100, true);
+  ApathPub   = n.advertise<nav_msgs::Path>(            "aerialpath",         100, true);
   velPub    = n.advertise<visualization_msgs::Marker>("velocity",            100, true);
   covPub    = n.advertise<visualization_msgs::Marker>("covariance",          100, true);
   covVelPub = n.advertise<visualization_msgs::Marker>("covariance_velocity", 100, true);
@@ -533,8 +509,6 @@ int main(int argc, char** argv)
   heightPub = n.advertise<sensor_msgs::Range>(        "height",              100, true);  
   tf::TransformBroadcaster b;
   broadcaster = &b;
-
   ros::spin();
-
   return 0;
 }

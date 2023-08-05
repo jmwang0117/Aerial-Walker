@@ -88,13 +88,13 @@ void publish_waypoints() {
     waypoints.header.stamp = ros::Time::now();
     // 打印路径点
     // 打印路径点
-    for (size_t i = 0; i < waypoints.poses.size(); ++i) {
-        const geometry_msgs::PoseStamped& pose_stamped = waypoints.poses[i];
-        const geometry_msgs::Point& position = pose_stamped.pose.position;
-        const geometry_msgs::Quaternion& orientation = pose_stamped.pose.orientation;
-        ROS_INFO_STREAM("Waypoint " << i << ": position(" << position.x << ", " << position.y << ", " << position.z
-                    << "), orientation(" << orientation.x << ", " << orientation.y << ", " << orientation.z << ", " << orientation.w << ")");
-    }
+    // for (size_t i = 0; i < waypoints.poses.size(); ++i) {
+    //     const geometry_msgs::PoseStamped& pose_stamped = waypoints.poses[i];
+    //     const geometry_msgs::Point& position = pose_stamped.pose.position;
+    //     const geometry_msgs::Quaternion& orientation = pose_stamped.pose.orientation;
+    //     ROS_INFO_STREAM("Waypoint " << i << ": position(" << position.x << ", " << position.y << ", " << position.z
+    //                 << "), orientation(" << orientation.x << ", " << orientation.y << ", " << orientation.z << ", " << orientation.w << ")");
+    // }
 
     pub1.publish(waypoints);
     geometry_msgs::PoseStamped init_pose;

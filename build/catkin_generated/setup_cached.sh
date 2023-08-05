@@ -8,8 +8,9 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/melodic/Aerial-Walker/devel:$CMAKE_PREFIX_PATH"
-export PATH='/opt/ros/melodic/bin:/home/melodic/miniconda3/bin:/home/melodic/miniconda3/condabin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+export LD_LIBRARY_PATH="/home/melodic/Aerial-Walker/devel/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/melodic/Aerial-Walker/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/home/melodic/Aerial-Walker/build'
-export PYTHONPATH='/home/melodic/catkin_ws/devel/lib/python2.7/dist-packages:/opt/ros/melodic/lib/python2.7/dist-packages:/home/melodic/Object-Goal-Navigation/dependencies/habitat-sim'
+export PYTHONPATH='/home/melodic/Aerial-Walker/devel/lib/python2.7/dist-packages:/home/melodic/catkin_ws/devel/lib/python2.7/dist-packages:/opt/ros/melodic/lib/python2.7/dist-packages:/home/melodic/Object-Goal-Navigation/dependencies/habitat-sim:/home/melodic/drive-any-robot/train/gnm_train:/home/melodic/Object-Goal-Navigation/dependencies/habitat-sim:/home/melodic/drive-any-robot/train/gnm_train'
 export ROSLISP_PACKAGE_DIRECTORIES="/home/melodic/Aerial-Walker/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/home/melodic/Aerial-Walker/src:$ROS_PACKAGE_PATH"
