@@ -1,8 +1,7 @@
 file(REMOVE_RECURSE
-  "/home/melodic/Aerial-Walker/devel/lib/libdecode_msgs.pdb"
-  "/home/melodic/Aerial-Walker/devel/lib/libdecode_msgs.so"
   "CMakeFiles/decode_msgs.dir/src/decode_msgs.cpp.o"
-  "CMakeFiles/decode_msgs.dir/src/decode_msgs.cpp.o.d"
+  "/root/Aerial-Walker/devel/lib/libdecode_msgs.pdb"
+  "/root/Aerial-Walker/devel/lib/libdecode_msgs.so"
 )
 
 # Per-language clean rules from dependency scanning.

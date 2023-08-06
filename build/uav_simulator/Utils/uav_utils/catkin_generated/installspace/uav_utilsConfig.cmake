@@ -67,14 +67,14 @@ set(uav_utils_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(uav_utils_SOURCE_PREFIX /home/melodic/Aerial-Walker/src/uav_simulator/Utils/uav_utils)
-  set(uav_utils_DEVEL_PREFIX /home/melodic/Aerial-Walker/devel)
+  set(uav_utils_SOURCE_PREFIX /root/Aerial-Walker/src/uav_simulator/Utils/uav_utils)
+  set(uav_utils_DEVEL_PREFIX /root/Aerial-Walker/devel)
   set(uav_utils_INSTALL_PREFIX "")
   set(uav_utils_PREFIX ${uav_utils_DEVEL_PREFIX})
 else()
   set(uav_utils_SOURCE_PREFIX "")
   set(uav_utils_DEVEL_PREFIX "")
-  set(uav_utils_INSTALL_PREFIX /home/melodic/Aerial-Walker/install)
+  set(uav_utils_INSTALL_PREFIX /root/Aerial-Walker/install)
   set(uav_utils_PREFIX ${uav_utils_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/melodic/Aerial-Walker/install/lib;/home/melodic/catkin_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /root/Aerial-Walker/install/lib;/root/Aerial-Walker/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

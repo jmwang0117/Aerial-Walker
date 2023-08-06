@@ -1,4 +1,4 @@
-prefix=/home/melodic/Aerial-Walker/install
+prefix=/root/Aerial-Walker/install
 
 Name: multi_map_server
 Description: Description of multi_map_server

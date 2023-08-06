@@ -1,8 +1,7 @@
 file(REMOVE_RECURSE
-  "/home/melodic/Aerial-Walker/devel/lib/libpose_utils.pdb"
-  "/home/melodic/Aerial-Walker/devel/lib/libpose_utils.so"
   "CMakeFiles/pose_utils.dir/src/pose_utils.cpp.o"
-  "CMakeFiles/pose_utils.dir/src/pose_utils.cpp.o.d"
+  "/root/Aerial-Walker/devel/lib/libpose_utils.pdb"
+  "/root/Aerial-Walker/devel/lib/libpose_utils.so"
 )
 
 # Per-language clean rules from dependency scanning.

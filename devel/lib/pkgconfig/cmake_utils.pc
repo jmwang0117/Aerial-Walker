@@ -1,4 +1,4 @@
-prefix=/home/melodic/Aerial-Walker/devel
+prefix=/root/Aerial-Walker/devel
 
 Name: cmake_utils
 Description: Description of cmake_utils

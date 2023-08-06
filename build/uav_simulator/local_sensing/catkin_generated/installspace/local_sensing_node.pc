@@ -1,4 +1,4 @@
-prefix=/home/melodic/Aerial-Walker/install
+prefix=/root/Aerial-Walker/install
 
 Name: local_sensing_node
 Description: Description of local_sensing_node

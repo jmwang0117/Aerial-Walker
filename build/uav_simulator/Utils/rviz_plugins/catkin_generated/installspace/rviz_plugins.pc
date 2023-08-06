@@ -1,4 +1,4 @@
-prefix=/home/melodic/Aerial-Walker/install
+prefix=/root/Aerial-Walker/install
 
 Name: rviz_plugins
 Description: Description of rviz_plugins

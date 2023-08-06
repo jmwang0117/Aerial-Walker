@@ -1,8 +1,8 @@
-prefix=/home/melodic/Aerial-Walker/devel
+prefix=/root/Aerial-Walker/devel
 
 Name: plan_env
 Description: Description of plan_env
 Version: 0.0.0
-Cflags: -I/home/melodic/Aerial-Walker/src/OC_Navigation/plan_env/include
+Cflags: -I/root/Aerial-Walker/src/oc_navigation/plan_env/include
 Libs: -L${prefix}/lib -lplan_env
 Requires: roscpp std_msgs traj_utils

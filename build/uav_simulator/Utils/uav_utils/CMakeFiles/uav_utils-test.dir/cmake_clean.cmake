@@ -1,8 +1,7 @@
 file(REMOVE_RECURSE
-  "/home/melodic/Aerial-Walker/devel/lib/uav_utils/uav_utils-test"
-  "/home/melodic/Aerial-Walker/devel/lib/uav_utils/uav_utils-test.pdb"
   "CMakeFiles/uav_utils-test.dir/src/uav_utils_test.cpp.o"
-  "CMakeFiles/uav_utils-test.dir/src/uav_utils_test.cpp.o.d"
+  "/root/Aerial-Walker/devel/lib/uav_utils/uav_utils-test.pdb"
+  "/root/Aerial-Walker/devel/lib/uav_utils/uav_utils-test"
 )
 
 # Per-language clean rules from dependency scanning.

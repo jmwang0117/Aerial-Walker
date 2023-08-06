@@ -1,0 +1,8 @@
+prefix=/root/Aerial-Walker/devel
+
+Name: ocnet_ros
+Description: Description of ocnet_ros
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

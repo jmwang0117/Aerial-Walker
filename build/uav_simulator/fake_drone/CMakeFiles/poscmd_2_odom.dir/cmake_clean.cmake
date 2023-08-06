@@ -1,8 +1,7 @@
 file(REMOVE_RECURSE
-  "/home/melodic/Aerial-Walker/devel/lib/poscmd_2_odom/poscmd_2_odom"
-  "/home/melodic/Aerial-Walker/devel/lib/poscmd_2_odom/poscmd_2_odom.pdb"
   "CMakeFiles/poscmd_2_odom.dir/src/poscmd_2_odom.cpp.o"
-  "CMakeFiles/poscmd_2_odom.dir/src/poscmd_2_odom.cpp.o.d"
+  "/root/Aerial-Walker/devel/lib/poscmd_2_odom/poscmd_2_odom.pdb"
+  "/root/Aerial-Walker/devel/lib/poscmd_2_odom/poscmd_2_odom"
 )
 
 # Per-language clean rules from dependency scanning.

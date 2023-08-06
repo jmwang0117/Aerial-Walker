@@ -1,8 +1,8 @@
-# Install script for directory: /home/melodic/Aerial-Walker/src/uav_simulator/Utils/uav_utils
+# Install script for directory: /root/Aerial-Walker/src/uav_simulator/Utils/uav_utils
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/melodic/Aerial-Walker/install")
+  set(CMAKE_INSTALL_PREFIX "/root/Aerial-Walker/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -37,27 +37,22 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-# Set default install directory permissions.
-if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/root/Aerial-Walker/build/uav_simulator/Utils/uav_utils/catkin_generated/installspace/uav_utils.pc")
 endif()
 
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/melodic/Aerial-Walker/build/uav_simulator/Utils/uav_utils/catkin_generated/installspace/uav_utils.pc")
-endif()
-
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/uav_utils/cmake" TYPE FILE FILES
-    "/home/melodic/Aerial-Walker/build/uav_simulator/Utils/uav_utils/catkin_generated/installspace/uav_utilsConfig.cmake"
-    "/home/melodic/Aerial-Walker/build/uav_simulator/Utils/uav_utils/catkin_generated/installspace/uav_utilsConfig-version.cmake"
+    "/root/Aerial-Walker/build/uav_simulator/Utils/uav_utils/catkin_generated/installspace/uav_utilsConfig.cmake"
+    "/root/Aerial-Walker/build/uav_simulator/Utils/uav_utils/catkin_generated/installspace/uav_utilsConfig-version.cmake"
     )
 endif()
 
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/uav_utils" TYPE FILE FILES "/home/melodic/Aerial-Walker/src/uav_simulator/Utils/uav_utils/package.xml")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/uav_utils" TYPE FILE FILES "/root/Aerial-Walker/src/uav_simulator/Utils/uav_utils/package.xml")
 endif()
 
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/uav_utils" TYPE DIRECTORY FILES "/home/melodic/Aerial-Walker/src/uav_simulator/Utils/uav_utils/include/uav_utils/" FILES_MATCHING REGEX "/[^/]*\\.h$" REGEX "/\\.svn$" EXCLUDE)
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/uav_utils" TYPE DIRECTORY FILES "/root/Aerial-Walker/src/uav_simulator/Utils/uav_utils/include/uav_utils/" FILES_MATCHING REGEX "/[^/]*\\.h$" REGEX "/\\.svn$" EXCLUDE)
 endif()
 

@@ -67,14 +67,14 @@ set(odom_visualization_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(odom_visualization_SOURCE_PREFIX /home/melodic/Aerial-Walker/src/uav_simulator/Utils/odom_visualization)
-  set(odom_visualization_DEVEL_PREFIX /home/melodic/Aerial-Walker/devel)
+  set(odom_visualization_SOURCE_PREFIX /root/Aerial-Walker/src/uav_simulator/Utils/odom_visualization)
+  set(odom_visualization_DEVEL_PREFIX /root/Aerial-Walker/devel)
   set(odom_visualization_INSTALL_PREFIX "")
   set(odom_visualization_PREFIX ${odom_visualization_DEVEL_PREFIX})
 else()
   set(odom_visualization_SOURCE_PREFIX "")
   set(odom_visualization_DEVEL_PREFIX "")
-  set(odom_visualization_INSTALL_PREFIX /home/melodic/Aerial-Walker/install)
+  set(odom_visualization_INSTALL_PREFIX /root/Aerial-Walker/install)
   set(odom_visualization_PREFIX ${odom_visualization_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/melodic/Aerial-Walker/install/lib;/home/melodic/catkin_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /root/Aerial-Walker/install/lib;/root/Aerial-Walker/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

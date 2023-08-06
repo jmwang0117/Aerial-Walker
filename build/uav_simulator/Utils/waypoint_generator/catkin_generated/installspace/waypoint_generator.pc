@@ -1,4 +1,4 @@
-prefix=/home/melodic/Aerial-Walker/install
+prefix=/root/Aerial-Walker/install
 
 Name: waypoint_generator
 Description: Description of waypoint_generator

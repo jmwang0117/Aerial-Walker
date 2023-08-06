@@ -1,4 +1,4 @@
-prefix=/home/melodic/Aerial-Walker/devel
+prefix=/root/Aerial-Walker/devel
 
 Name: map_generator
 Description: Description of map_generator

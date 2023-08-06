@@ -1,8 +1,8 @@
-# Install script for directory: /home/melodic/Aerial-Walker/src/uav_simulator/fake_drone
+# Install script for directory: /root/Aerial-Walker/src/uav_simulator/fake_drone
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/melodic/Aerial-Walker/install")
+  set(CMAKE_INSTALL_PREFIX "/root/Aerial-Walker/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -37,23 +37,18 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-# Set default install directory permissions.
-if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/root/Aerial-Walker/build/uav_simulator/fake_drone/catkin_generated/installspace/poscmd_2_odom.pc")
 endif()
 
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/melodic/Aerial-Walker/build/uav_simulator/fake_drone/catkin_generated/installspace/poscmd_2_odom.pc")
-endif()
-
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/poscmd_2_odom/cmake" TYPE FILE FILES
-    "/home/melodic/Aerial-Walker/build/uav_simulator/fake_drone/catkin_generated/installspace/poscmd_2_odomConfig.cmake"
-    "/home/melodic/Aerial-Walker/build/uav_simulator/fake_drone/catkin_generated/installspace/poscmd_2_odomConfig-version.cmake"
+    "/root/Aerial-Walker/build/uav_simulator/fake_drone/catkin_generated/installspace/poscmd_2_odomConfig.cmake"
+    "/root/Aerial-Walker/build/uav_simulator/fake_drone/catkin_generated/installspace/poscmd_2_odomConfig-version.cmake"
     )
 endif()
 
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/poscmd_2_odom" TYPE FILE FILES "/home/melodic/Aerial-Walker/src/uav_simulator/fake_drone/package.xml")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/poscmd_2_odom" TYPE FILE FILES "/root/Aerial-Walker/src/uav_simulator/fake_drone/package.xml")
 endif()
 

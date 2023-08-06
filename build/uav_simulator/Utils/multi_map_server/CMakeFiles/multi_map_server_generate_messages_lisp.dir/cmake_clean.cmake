@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
-  "/home/melodic/Aerial-Walker/devel/share/common-lisp/ros/multi_map_server/msg/MultiOccupancyGrid.lisp"
-  "/home/melodic/Aerial-Walker/devel/share/common-lisp/ros/multi_map_server/msg/MultiSparseMap3D.lisp"
-  "/home/melodic/Aerial-Walker/devel/share/common-lisp/ros/multi_map_server/msg/SparseMap3D.lisp"
-  "/home/melodic/Aerial-Walker/devel/share/common-lisp/ros/multi_map_server/msg/VerticalOccupancyGridList.lisp"
   "CMakeFiles/multi_map_server_generate_messages_lisp"
+  "/root/Aerial-Walker/devel/share/common-lisp/ros/multi_map_server/msg/MultiSparseMap3D.lisp"
+  "/root/Aerial-Walker/devel/share/common-lisp/ros/multi_map_server/msg/VerticalOccupancyGridList.lisp"
+  "/root/Aerial-Walker/devel/share/common-lisp/ros/multi_map_server/msg/SparseMap3D.lisp"
+  "/root/Aerial-Walker/devel/share/common-lisp/ros/multi_map_server/msg/MultiOccupancyGrid.lisp"
 )
 
 # Per-language clean rules from dependency scanning.

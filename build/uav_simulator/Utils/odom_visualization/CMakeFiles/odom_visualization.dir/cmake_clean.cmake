@@ -1,8 +1,7 @@
 file(REMOVE_RECURSE
-  "/home/melodic/Aerial-Walker/devel/lib/odom_visualization/odom_visualization"
-  "/home/melodic/Aerial-Walker/devel/lib/odom_visualization/odom_visualization.pdb"
   "CMakeFiles/odom_visualization.dir/src/odom_visualization.cpp.o"
-  "CMakeFiles/odom_visualization.dir/src/odom_visualization.cpp.o.d"
+  "/root/Aerial-Walker/devel/lib/odom_visualization/odom_visualization.pdb"
+  "/root/Aerial-Walker/devel/lib/odom_visualization/odom_visualization"
 )
 
 # Per-language clean rules from dependency scanning.

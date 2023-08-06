@@ -1,4 +1,4 @@
-prefix=/home/melodic/Aerial-Walker/devel
+prefix=/root/Aerial-Walker/devel
 
 Name: poscmd_2_odom
 Description: Description of poscmd_2_odom

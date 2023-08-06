@@ -1,8 +1,7 @@
 file(REMOVE_RECURSE
-  "/home/melodic/Aerial-Walker/devel/lib/multi_map_server/multi_map_visualization"
-  "/home/melodic/Aerial-Walker/devel/lib/multi_map_server/multi_map_visualization.pdb"
   "CMakeFiles/multi_map_visualization.dir/src/multi_map_visualization.cc.o"
-  "CMakeFiles/multi_map_visualization.dir/src/multi_map_visualization.cc.o.d"
+  "/root/Aerial-Walker/devel/lib/multi_map_server/multi_map_visualization.pdb"
+  "/root/Aerial-Walker/devel/lib/multi_map_server/multi_map_visualization"
 )
 
 # Per-language clean rules from dependency scanning.

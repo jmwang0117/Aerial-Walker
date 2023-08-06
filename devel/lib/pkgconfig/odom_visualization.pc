@@ -1,4 +1,4 @@
-prefix=/home/melodic/Aerial-Walker/devel
+prefix=/root/Aerial-Walker/devel
 
 Name: odom_visualization
 Description: Description of odom_visualization

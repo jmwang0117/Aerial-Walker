@@ -67,14 +67,14 @@ set(plan_env_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(plan_env_SOURCE_PREFIX /home/melodic/Aerial-Walker/src/OC_Navigation/plan_env)
-  set(plan_env_DEVEL_PREFIX /home/melodic/Aerial-Walker/devel)
+  set(plan_env_SOURCE_PREFIX /root/Aerial-Walker/src/oc_navigation/plan_env)
+  set(plan_env_DEVEL_PREFIX /root/Aerial-Walker/devel)
   set(plan_env_INSTALL_PREFIX "")
   set(plan_env_PREFIX ${plan_env_DEVEL_PREFIX})
 else()
   set(plan_env_SOURCE_PREFIX "")
   set(plan_env_DEVEL_PREFIX "")
-  set(plan_env_INSTALL_PREFIX /home/melodic/Aerial-Walker/install)
+  set(plan_env_INSTALL_PREFIX /root/Aerial-Walker/install)
   set(plan_env_PREFIX ${plan_env_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(plan_env_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/melodic/Aerial-Walker/src/OC_Navigation/plan_env/include " STREQUAL " ")
+if(NOT "/root/Aerial-Walker/src/oc_navigation/plan_env/include " STREQUAL " ")
   set(plan_env_INCLUDE_DIRS "")
-  set(_include_dirs "/home/melodic/Aerial-Walker/src/OC_Navigation/plan_env/include")
+  set(_include_dirs "/root/Aerial-Walker/src/oc_navigation/plan_env/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/melodic/Aerial-Walker/src/OC_Navigation/plan_env/include " STREQUA
         message(FATAL_ERROR "Project 'plan_env' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'plan_env' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/melodic/Aerial-Walker/src/OC_Navigation/plan_env/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'plan_env' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/root/Aerial-Walker/src/oc_navigation/plan_env/${idir}'.  ${_report}")
     endif()
     _list_append_unique(plan_env_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/melodic/Aerial-Walker/devel/lib;/home/melodic/catkin_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /root/Aerial-Walker/devel/lib;/root/Aerial-Walker/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
