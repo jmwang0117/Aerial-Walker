@@ -1,8 +1,8 @@
-prefix=/root/Aerial-Walker/devel
+prefix=/home/melodic/jetsonNX/Aerial-Walker/devel
 
 Name: path_searching
 Description: Description of path_searching
 Version: 0.0.0
-Cflags: -I/root/Aerial-Walker/src/oc_navigation/path_searching/include
+Cflags: -I/home/melodic/jetsonNX/Aerial-Walker/src/oc_navigation/path_searching/include
 Libs: -L${prefix}/lib -lpath_searching
 Requires: plan_env traj_utils

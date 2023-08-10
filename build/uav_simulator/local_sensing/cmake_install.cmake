@@ -1,8 +1,8 @@
-# Install script for directory: /root/Aerial-Walker/src/uav_simulator/local_sensing
+# Install script for directory: /home/melodic/jetsonNX/Aerial-Walker/src/uav_simulator/local_sensing
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/root/Aerial-Walker/install")
+  set(CMAKE_INSTALL_PREFIX "/home/melodic/jetsonNX/Aerial-Walker/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -37,34 +37,39 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/local_sensing_node" TYPE FILE FILES "/root/Aerial-Walker/devel/include/local_sensing_node/local_sensing_nodeConfig.h")
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/local_sensing_node" TYPE FILE FILES "/root/Aerial-Walker/devel/lib/python2.7/dist-packages/local_sensing_node/__init__.py")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/local_sensing_node" TYPE FILE FILES "/home/melodic/jetsonNX/Aerial-Walker/devel/include/local_sensing_node/local_sensing_nodeConfig.h")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python2" -m compileall "/root/Aerial-Walker/devel/lib/python2.7/dist-packages/local_sensing_node/cfg")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/local_sensing_node" TYPE FILE FILES "/home/melodic/jetsonNX/Aerial-Walker/devel/lib/python2.7/dist-packages/local_sensing_node/__init__.py")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/local_sensing_node" TYPE DIRECTORY FILES "/root/Aerial-Walker/devel/lib/python2.7/dist-packages/local_sensing_node/cfg")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/melodic/jetsonNX/Aerial-Walker/devel/lib/python2.7/dist-packages/local_sensing_node/cfg")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/root/Aerial-Walker/build/uav_simulator/local_sensing/catkin_generated/installspace/local_sensing_node.pc")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/local_sensing_node" TYPE DIRECTORY FILES "/home/melodic/jetsonNX/Aerial-Walker/devel/lib/python2.7/dist-packages/local_sensing_node/cfg")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/melodic/jetsonNX/Aerial-Walker/build/uav_simulator/local_sensing/catkin_generated/installspace/local_sensing_node.pc")
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/local_sensing_node/cmake" TYPE FILE FILES
-    "/root/Aerial-Walker/build/uav_simulator/local_sensing/catkin_generated/installspace/local_sensing_nodeConfig.cmake"
-    "/root/Aerial-Walker/build/uav_simulator/local_sensing/catkin_generated/installspace/local_sensing_nodeConfig-version.cmake"
+    "/home/melodic/jetsonNX/Aerial-Walker/build/uav_simulator/local_sensing/catkin_generated/installspace/local_sensing_nodeConfig.cmake"
+    "/home/melodic/jetsonNX/Aerial-Walker/build/uav_simulator/local_sensing/catkin_generated/installspace/local_sensing_nodeConfig-version.cmake"
     )
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/local_sensing_node" TYPE FILE FILES "/root/Aerial-Walker/src/uav_simulator/local_sensing/package.xml")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/local_sensing_node" TYPE FILE FILES "/home/melodic/jetsonNX/Aerial-Walker/src/uav_simulator/local_sensing/package.xml")
 endif()
 

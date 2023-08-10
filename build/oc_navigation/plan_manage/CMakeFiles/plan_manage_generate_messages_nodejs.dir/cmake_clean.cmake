@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
+  "/home/melodic/jetsonNX/Aerial-Walker/devel/share/gennodejs/ros/plan_manage/msg/Bspline.js"
   "CMakeFiles/plan_manage_generate_messages_nodejs"
-  "/root/Aerial-Walker/devel/share/gennodejs/ros/plan_manage/msg/Bspline.js"
 )
 
 # Per-language clean rules from dependency scanning.

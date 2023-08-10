@@ -3,5 +3,5 @@
 -DROS_PACKAGE_NAME="rviz_plugins"
 -DROSCONSOLE_BACKEND_LOG4CXX
 -o
-/root/Aerial-Walker/build/uav_simulator/Utils/rviz_plugins/src/moc_probmap_display.cpp
-/root/Aerial-Walker/src/uav_simulator/Utils/rviz_plugins/src/probmap_display.h
+/home/melodic/jetsonNX/Aerial-Walker/build/uav_simulator/Utils/rviz_plugins/src/moc_probmap_display.cpp
+/home/melodic/jetsonNX/Aerial-Walker/src/uav_simulator/Utils/rviz_plugins/src/probmap_display.h

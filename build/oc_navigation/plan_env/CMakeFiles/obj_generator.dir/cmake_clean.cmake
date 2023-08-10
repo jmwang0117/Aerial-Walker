@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
+  "/home/melodic/jetsonNX/Aerial-Walker/devel/lib/plan_env/obj_generator"
+  "/home/melodic/jetsonNX/Aerial-Walker/devel/lib/plan_env/obj_generator.pdb"
   "CMakeFiles/obj_generator.dir/src/obj_generator.cpp.o"
-  "/root/Aerial-Walker/devel/lib/plan_env/obj_generator.pdb"
-  "/root/Aerial-Walker/devel/lib/plan_env/obj_generator"
+  "CMakeFiles/obj_generator.dir/src/obj_generator.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

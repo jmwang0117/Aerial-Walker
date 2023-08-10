@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /root/Aerial-Walker/install/setup.sh
+    local-name: /home/melodic/jetsonNX/Aerial-Walker/install/setup.sh

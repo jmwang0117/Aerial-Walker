@@ -1,4 +1,4 @@
-prefix=/root/Aerial-Walker/install
+prefix=/home/melodic/jetsonNX/Aerial-Walker/install
 
 Name: path_searching
 Description: Description of path_searching

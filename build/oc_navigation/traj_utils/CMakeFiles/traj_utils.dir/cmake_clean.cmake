@@ -1,9 +1,12 @@
 file(REMOVE_RECURSE
+  "/home/melodic/jetsonNX/Aerial-Walker/devel/lib/libtraj_utils.pdb"
+  "/home/melodic/jetsonNX/Aerial-Walker/devel/lib/libtraj_utils.so"
   "CMakeFiles/traj_utils.dir/src/planning_visualization.cpp.o"
+  "CMakeFiles/traj_utils.dir/src/planning_visualization.cpp.o.d"
   "CMakeFiles/traj_utils.dir/src/poly_traj_utils.cpp.o"
+  "CMakeFiles/traj_utils.dir/src/poly_traj_utils.cpp.o.d"
   "CMakeFiles/traj_utils.dir/src/polynomial_traj.cpp.o"
-  "/root/Aerial-Walker/devel/lib/libtraj_utils.pdb"
-  "/root/Aerial-Walker/devel/lib/libtraj_utils.so"
+  "CMakeFiles/traj_utils.dir/src/polynomial_traj.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

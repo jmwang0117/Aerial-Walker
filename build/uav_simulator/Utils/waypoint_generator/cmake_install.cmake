@@ -1,8 +1,8 @@
-# Install script for directory: /root/Aerial-Walker/src/uav_simulator/Utils/waypoint_generator
+# Install script for directory: /home/melodic/jetsonNX/Aerial-Walker/src/uav_simulator/Utils/waypoint_generator
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/root/Aerial-Walker/install")
+  set(CMAKE_INSTALL_PREFIX "/home/melodic/jetsonNX/Aerial-Walker/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -37,18 +37,23 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/root/Aerial-Walker/build/uav_simulator/Utils/waypoint_generator/catkin_generated/installspace/waypoint_generator.pc")
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/melodic/jetsonNX/Aerial-Walker/build/uav_simulator/Utils/waypoint_generator/catkin_generated/installspace/waypoint_generator.pc")
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/waypoint_generator/cmake" TYPE FILE FILES
-    "/root/Aerial-Walker/build/uav_simulator/Utils/waypoint_generator/catkin_generated/installspace/waypoint_generatorConfig.cmake"
-    "/root/Aerial-Walker/build/uav_simulator/Utils/waypoint_generator/catkin_generated/installspace/waypoint_generatorConfig-version.cmake"
+    "/home/melodic/jetsonNX/Aerial-Walker/build/uav_simulator/Utils/waypoint_generator/catkin_generated/installspace/waypoint_generatorConfig.cmake"
+    "/home/melodic/jetsonNX/Aerial-Walker/build/uav_simulator/Utils/waypoint_generator/catkin_generated/installspace/waypoint_generatorConfig-version.cmake"
     )
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/waypoint_generator" TYPE FILE FILES "/root/Aerial-Walker/src/uav_simulator/Utils/waypoint_generator/package.xml")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/waypoint_generator" TYPE FILE FILES "/home/melodic/jetsonNX/Aerial-Walker/src/uav_simulator/Utils/waypoint_generator/package.xml")
 endif()
 

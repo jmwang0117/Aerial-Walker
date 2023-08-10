@@ -1,4 +1,4 @@
-prefix=/root/Aerial-Walker/devel
+prefix=/home/melodic/jetsonNX/Aerial-Walker/devel
 
 Name: ocnet_ros
 Description: Description of ocnet_ros

@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
+  "/home/melodic/jetsonNX/Aerial-Walker/devel/lib/map_generator/random_forest"
+  "/home/melodic/jetsonNX/Aerial-Walker/devel/lib/map_generator/random_forest.pdb"
   "CMakeFiles/random_forest.dir/src/random_forest_sensing.cpp.o"
-  "/root/Aerial-Walker/devel/lib/map_generator/random_forest.pdb"
-  "/root/Aerial-Walker/devel/lib/map_generator/random_forest"
+  "CMakeFiles/random_forest.dir/src/random_forest_sensing.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

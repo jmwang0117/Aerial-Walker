@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /root/Aerial-Walker/src
-# Build directory: /root/Aerial-Walker/build
+# Source directory: /home/melodic/jetsonNX/Aerial-Walker/src
+# Build directory: /home/melodic/jetsonNX/Aerial-Walker/build
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.

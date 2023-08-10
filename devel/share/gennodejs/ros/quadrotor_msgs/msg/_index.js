@@ -1,32 +1,32 @@
 
 "use strict";
 
-let TRPYCommand = require('./TRPYCommand.js');
-let Corrections = require('./Corrections.js');
-let Odometry = require('./Odometry.js');
+let PositionCommand = require('./PositionCommand.js');
+let StatusData = require('./StatusData.js');
 let PolynomialTrajectory = require('./PolynomialTrajectory.js');
+let Odometry = require('./Odometry.js');
+let Corrections = require('./Corrections.js');
+let TRPYCommand = require('./TRPYCommand.js');
+let Serial = require('./Serial.js');
+let AuxCommand = require('./AuxCommand.js');
+let SO3Command = require('./SO3Command.js');
+let OutputData = require('./OutputData.js');
 let LQRTrajectory = require('./LQRTrajectory.js');
 let PPROutputData = require('./PPROutputData.js');
-let AuxCommand = require('./AuxCommand.js');
 let Gains = require('./Gains.js');
-let PositionCommand = require('./PositionCommand.js');
-let OutputData = require('./OutputData.js');
-let StatusData = require('./StatusData.js');
-let Serial = require('./Serial.js');
-let SO3Command = require('./SO3Command.js');
 
 module.exports = {
-  TRPYCommand: TRPYCommand,
-  Corrections: Corrections,
-  Odometry: Odometry,
+  PositionCommand: PositionCommand,
+  StatusData: StatusData,
   PolynomialTrajectory: PolynomialTrajectory,
+  Odometry: Odometry,
+  Corrections: Corrections,
+  TRPYCommand: TRPYCommand,
+  Serial: Serial,
+  AuxCommand: AuxCommand,
+  SO3Command: SO3Command,
+  OutputData: OutputData,
   LQRTrajectory: LQRTrajectory,
   PPROutputData: PPROutputData,
-  AuxCommand: AuxCommand,
   Gains: Gains,
-  PositionCommand: PositionCommand,
-  OutputData: OutputData,
-  StatusData: StatusData,
-  Serial: Serial,
-  SO3Command: SO3Command,
 };

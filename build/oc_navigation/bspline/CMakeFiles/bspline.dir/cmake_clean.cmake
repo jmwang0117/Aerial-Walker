@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
+  "/home/melodic/jetsonNX/Aerial-Walker/devel/lib/libbspline.pdb"
+  "/home/melodic/jetsonNX/Aerial-Walker/devel/lib/libbspline.so"
   "CMakeFiles/bspline.dir/src/non_uniform_bspline.cpp.o"
-  "/root/Aerial-Walker/devel/lib/libbspline.pdb"
-  "/root/Aerial-Walker/devel/lib/libbspline.so"
+  "CMakeFiles/bspline.dir/src/non_uniform_bspline.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

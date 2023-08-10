@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
+  "/home/melodic/jetsonNX/Aerial-Walker/devel/lib/plan_manage/move_publish_node"
+  "/home/melodic/jetsonNX/Aerial-Walker/devel/lib/plan_manage/move_publish_node.pdb"
   "CMakeFiles/move_publish_node.dir/src/move_publish.cpp.o"
-  "/root/Aerial-Walker/devel/lib/plan_manage/move_publish_node.pdb"
-  "/root/Aerial-Walker/devel/lib/plan_manage/move_publish_node"
+  "CMakeFiles/move_publish_node.dir/src/move_publish.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

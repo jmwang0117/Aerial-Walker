@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
+  "/home/melodic/jetsonNX/Aerial-Walker/devel/include/plan_manage/Bspline.h"
   "CMakeFiles/plan_manage_generate_messages_cpp"
-  "/root/Aerial-Walker/devel/include/plan_manage/Bspline.h"
 )
 
 # Per-language clean rules from dependency scanning.

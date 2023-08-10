@@ -1,4 +1,4 @@
-prefix=/root/Aerial-Walker/install
+prefix=/home/melodic/jetsonNX/Aerial-Walker/install
 
 Name: multi_map_server
 Description: Description of multi_map_server

@@ -67,14 +67,14 @@ set(waypoint_generator_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(waypoint_generator_SOURCE_PREFIX /root/Aerial-Walker/src/uav_simulator/Utils/waypoint_generator)
-  set(waypoint_generator_DEVEL_PREFIX /root/Aerial-Walker/devel)
+  set(waypoint_generator_SOURCE_PREFIX /home/melodic/jetsonNX/Aerial-Walker/src/uav_simulator/Utils/waypoint_generator)
+  set(waypoint_generator_DEVEL_PREFIX /home/melodic/jetsonNX/Aerial-Walker/devel)
   set(waypoint_generator_INSTALL_PREFIX "")
   set(waypoint_generator_PREFIX ${waypoint_generator_DEVEL_PREFIX})
 else()
   set(waypoint_generator_SOURCE_PREFIX "")
   set(waypoint_generator_DEVEL_PREFIX "")
-  set(waypoint_generator_INSTALL_PREFIX /root/Aerial-Walker/install)
+  set(waypoint_generator_INSTALL_PREFIX /home/melodic/jetsonNX/Aerial-Walker/install)
   set(waypoint_generator_PREFIX ${waypoint_generator_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /root/Aerial-Walker/install/lib;/root/Aerial-Walker/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/melodic/jetsonNX/Aerial-Walker/install/lib;/home/melodic/jetsonNX/Aerial-Walker/devel/lib;/home/melodic/catkin_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

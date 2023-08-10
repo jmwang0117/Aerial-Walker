@@ -1,4 +1,4 @@
-prefix=/root/Aerial-Walker/install
+prefix=/home/melodic/jetsonNX/Aerial-Walker/install
 
 Name: pose_utils
 Description: Description of pose_utils

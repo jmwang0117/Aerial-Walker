@@ -1,4 +1,4 @@
-prefix=/root/Aerial-Walker/install
+prefix=/home/melodic/jetsonNX/Aerial-Walker/install
 
 Name: local_sensing_node
 Description: Description of local_sensing_node

@@ -1,8 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/path_searching.dir/src/kinodynamic_astar.cpp.o"
+  "/home/melodic/jetsonNX/Aerial-Walker/devel/lib/libpath_searching.pdb"
+  "/home/melodic/jetsonNX/Aerial-Walker/devel/lib/libpath_searching.so"
   "CMakeFiles/path_searching.dir/src/astar.cpp.o"
-  "/root/Aerial-Walker/devel/lib/libpath_searching.pdb"
-  "/root/Aerial-Walker/devel/lib/libpath_searching.so"
+  "CMakeFiles/path_searching.dir/src/astar.cpp.o.d"
+  "CMakeFiles/path_searching.dir/src/kinodynamic_astar.cpp.o"
+  "CMakeFiles/path_searching.dir/src/kinodynamic_astar.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

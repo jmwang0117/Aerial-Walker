@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
+  "/home/melodic/jetsonNX/Aerial-Walker/devel/include/multi_map_server/MultiOccupancyGrid.h"
+  "/home/melodic/jetsonNX/Aerial-Walker/devel/include/multi_map_server/MultiSparseMap3D.h"
+  "/home/melodic/jetsonNX/Aerial-Walker/devel/include/multi_map_server/SparseMap3D.h"
+  "/home/melodic/jetsonNX/Aerial-Walker/devel/include/multi_map_server/VerticalOccupancyGridList.h"
   "CMakeFiles/multi_map_server_generate_messages_cpp"
-  "/root/Aerial-Walker/devel/include/multi_map_server/MultiSparseMap3D.h"
-  "/root/Aerial-Walker/devel/include/multi_map_server/VerticalOccupancyGridList.h"
-  "/root/Aerial-Walker/devel/include/multi_map_server/SparseMap3D.h"
-  "/root/Aerial-Walker/devel/include/multi_map_server/MultiOccupancyGrid.h"
 )
 
 # Per-language clean rules from dependency scanning.

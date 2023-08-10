@@ -1,8 +1,8 @@
-# Install script for directory: /root/Aerial-Walker/src
+# Install script for directory: /home/melodic/jetsonNX/Aerial-Walker/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/root/Aerial-Walker/install")
+  set(CMAKE_INSTALL_PREFIX "/home/melodic/jetsonNX/Aerial-Walker/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -37,7 +37,12 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   
       if (NOT EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}")
         file(MAKE_DIRECTORY "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}")
@@ -47,109 +52,109 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
       endif()
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/root/Aerial-Walker/install/_setup_util.py")
+   "/home/melodic/jetsonNX/Aerial-Walker/install/_setup_util.py")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/root/Aerial-Walker/install" TYPE PROGRAM FILES "/root/Aerial-Walker/build/catkin_generated/installspace/_setup_util.py")
+  file(INSTALL DESTINATION "/home/melodic/jetsonNX/Aerial-Walker/install" TYPE PROGRAM FILES "/home/melodic/jetsonNX/Aerial-Walker/build/catkin_generated/installspace/_setup_util.py")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/root/Aerial-Walker/install/env.sh")
+   "/home/melodic/jetsonNX/Aerial-Walker/install/env.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/root/Aerial-Walker/install" TYPE PROGRAM FILES "/root/Aerial-Walker/build/catkin_generated/installspace/env.sh")
+  file(INSTALL DESTINATION "/home/melodic/jetsonNX/Aerial-Walker/install" TYPE PROGRAM FILES "/home/melodic/jetsonNX/Aerial-Walker/build/catkin_generated/installspace/env.sh")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/root/Aerial-Walker/install/setup.bash;/root/Aerial-Walker/install/local_setup.bash")
+   "/home/melodic/jetsonNX/Aerial-Walker/install/setup.bash;/home/melodic/jetsonNX/Aerial-Walker/install/local_setup.bash")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/root/Aerial-Walker/install" TYPE FILE FILES
-    "/root/Aerial-Walker/build/catkin_generated/installspace/setup.bash"
-    "/root/Aerial-Walker/build/catkin_generated/installspace/local_setup.bash"
+  file(INSTALL DESTINATION "/home/melodic/jetsonNX/Aerial-Walker/install" TYPE FILE FILES
+    "/home/melodic/jetsonNX/Aerial-Walker/build/catkin_generated/installspace/setup.bash"
+    "/home/melodic/jetsonNX/Aerial-Walker/build/catkin_generated/installspace/local_setup.bash"
     )
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/root/Aerial-Walker/install/setup.sh;/root/Aerial-Walker/install/local_setup.sh")
+   "/home/melodic/jetsonNX/Aerial-Walker/install/setup.sh;/home/melodic/jetsonNX/Aerial-Walker/install/local_setup.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/root/Aerial-Walker/install" TYPE FILE FILES
-    "/root/Aerial-Walker/build/catkin_generated/installspace/setup.sh"
-    "/root/Aerial-Walker/build/catkin_generated/installspace/local_setup.sh"
+  file(INSTALL DESTINATION "/home/melodic/jetsonNX/Aerial-Walker/install" TYPE FILE FILES
+    "/home/melodic/jetsonNX/Aerial-Walker/build/catkin_generated/installspace/setup.sh"
+    "/home/melodic/jetsonNX/Aerial-Walker/build/catkin_generated/installspace/local_setup.sh"
     )
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/root/Aerial-Walker/install/setup.zsh;/root/Aerial-Walker/install/local_setup.zsh")
+   "/home/melodic/jetsonNX/Aerial-Walker/install/setup.zsh;/home/melodic/jetsonNX/Aerial-Walker/install/local_setup.zsh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/root/Aerial-Walker/install" TYPE FILE FILES
-    "/root/Aerial-Walker/build/catkin_generated/installspace/setup.zsh"
-    "/root/Aerial-Walker/build/catkin_generated/installspace/local_setup.zsh"
+  file(INSTALL DESTINATION "/home/melodic/jetsonNX/Aerial-Walker/install" TYPE FILE FILES
+    "/home/melodic/jetsonNX/Aerial-Walker/build/catkin_generated/installspace/setup.zsh"
+    "/home/melodic/jetsonNX/Aerial-Walker/build/catkin_generated/installspace/local_setup.zsh"
     )
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/root/Aerial-Walker/install/.rosinstall")
+   "/home/melodic/jetsonNX/Aerial-Walker/install/.rosinstall")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/root/Aerial-Walker/install" TYPE FILE FILES "/root/Aerial-Walker/build/catkin_generated/installspace/.rosinstall")
+  file(INSTALL DESTINATION "/home/melodic/jetsonNX/Aerial-Walker/install" TYPE FILE FILES "/home/melodic/jetsonNX/Aerial-Walker/build/catkin_generated/installspace/.rosinstall")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/root/Aerial-Walker/build/gtest/cmake_install.cmake")
-  include("/root/Aerial-Walker/build/uav_simulator/Utils/quadrotor_msgs/cmake_install.cmake")
-  include("/root/Aerial-Walker/build/oc_navigation/bspline/cmake_install.cmake")
-  include("/root/Aerial-Walker/build/uav_simulator/Utils/cmake_utils/cmake_install.cmake")
-  include("/root/Aerial-Walker/build/uav_simulator/map_generator/cmake_install.cmake")
-  include("/root/Aerial-Walker/build/ocnet_ros/cmake_install.cmake")
-  include("/root/Aerial-Walker/build/uav_simulator/Utils/poly_traj_server/cmake_install.cmake")
-  include("/root/Aerial-Walker/build/uav_simulator/fake_drone/cmake_install.cmake")
-  include("/root/Aerial-Walker/build/uav_simulator/Utils/pose_utils/cmake_install.cmake")
-  include("/root/Aerial-Walker/build/uav_simulator/Utils/odom_visualization/cmake_install.cmake")
-  include("/root/Aerial-Walker/build/uav_simulator/local_sensing/cmake_install.cmake")
-  include("/root/Aerial-Walker/build/uav_simulator/Utils/multi_map_server/cmake_install.cmake")
-  include("/root/Aerial-Walker/build/oc_navigation/traj_utils/cmake_install.cmake")
-  include("/root/Aerial-Walker/build/oc_navigation/plan_env/cmake_install.cmake")
-  include("/root/Aerial-Walker/build/oc_navigation/bspline_opt/cmake_install.cmake")
-  include("/root/Aerial-Walker/build/oc_navigation/path_searching/cmake_install.cmake")
-  include("/root/Aerial-Walker/build/uav_simulator/Utils/uav_utils/cmake_install.cmake")
-  include("/root/Aerial-Walker/build/oc_navigation/plan_manage/cmake_install.cmake")
-  include("/root/Aerial-Walker/build/uav_simulator/Utils/rviz_plugins/cmake_install.cmake")
-  include("/root/Aerial-Walker/build/uav_simulator/Utils/waypoint_generator/cmake_install.cmake")
+  include("/home/melodic/jetsonNX/Aerial-Walker/build/gtest/cmake_install.cmake")
+  include("/home/melodic/jetsonNX/Aerial-Walker/build/uav_simulator/Utils/quadrotor_msgs/cmake_install.cmake")
+  include("/home/melodic/jetsonNX/Aerial-Walker/build/oc_navigation/bspline/cmake_install.cmake")
+  include("/home/melodic/jetsonNX/Aerial-Walker/build/uav_simulator/Utils/cmake_utils/cmake_install.cmake")
+  include("/home/melodic/jetsonNX/Aerial-Walker/build/uav_simulator/map_generator/cmake_install.cmake")
+  include("/home/melodic/jetsonNX/Aerial-Walker/build/ocnet_ros/cmake_install.cmake")
+  include("/home/melodic/jetsonNX/Aerial-Walker/build/uav_simulator/Utils/poly_traj_server/cmake_install.cmake")
+  include("/home/melodic/jetsonNX/Aerial-Walker/build/uav_simulator/fake_drone/cmake_install.cmake")
+  include("/home/melodic/jetsonNX/Aerial-Walker/build/uav_simulator/Utils/pose_utils/cmake_install.cmake")
+  include("/home/melodic/jetsonNX/Aerial-Walker/build/uav_simulator/Utils/odom_visualization/cmake_install.cmake")
+  include("/home/melodic/jetsonNX/Aerial-Walker/build/uav_simulator/local_sensing/cmake_install.cmake")
+  include("/home/melodic/jetsonNX/Aerial-Walker/build/uav_simulator/Utils/multi_map_server/cmake_install.cmake")
+  include("/home/melodic/jetsonNX/Aerial-Walker/build/oc_navigation/traj_utils/cmake_install.cmake")
+  include("/home/melodic/jetsonNX/Aerial-Walker/build/oc_navigation/plan_env/cmake_install.cmake")
+  include("/home/melodic/jetsonNX/Aerial-Walker/build/oc_navigation/bspline_opt/cmake_install.cmake")
+  include("/home/melodic/jetsonNX/Aerial-Walker/build/oc_navigation/path_searching/cmake_install.cmake")
+  include("/home/melodic/jetsonNX/Aerial-Walker/build/uav_simulator/Utils/uav_utils/cmake_install.cmake")
+  include("/home/melodic/jetsonNX/Aerial-Walker/build/oc_navigation/plan_manage/cmake_install.cmake")
+  include("/home/melodic/jetsonNX/Aerial-Walker/build/uav_simulator/Utils/rviz_plugins/cmake_install.cmake")
+  include("/home/melodic/jetsonNX/Aerial-Walker/build/uav_simulator/Utils/waypoint_generator/cmake_install.cmake")
 
 endif()
 
@@ -161,5 +166,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/root/Aerial-Walker/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/melodic/jetsonNX/Aerial-Walker/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

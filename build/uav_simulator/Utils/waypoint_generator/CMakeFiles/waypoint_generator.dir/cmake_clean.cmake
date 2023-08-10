@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
+  "/home/melodic/jetsonNX/Aerial-Walker/devel/lib/waypoint_generator/waypoint_generator"
+  "/home/melodic/jetsonNX/Aerial-Walker/devel/lib/waypoint_generator/waypoint_generator.pdb"
   "CMakeFiles/waypoint_generator.dir/src/waypoint_generator.cpp.o"
-  "/root/Aerial-Walker/devel/lib/waypoint_generator/waypoint_generator.pdb"
-  "/root/Aerial-Walker/devel/lib/waypoint_generator/waypoint_generator"
+  "CMakeFiles/waypoint_generator.dir/src/waypoint_generator.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

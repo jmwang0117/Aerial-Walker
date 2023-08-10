@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 # -*-coding:utf-8 -*-
 
 import os
@@ -54,10 +54,10 @@ def test(model, dset, _cfg, logger, out_path_root):
                 input_filename = dset.dataset.filepaths['3D_OCCUPANCY'][indices[curr_index]]
                 filename, extension = os.path.splitext(os.path.basename(input_filename))
                 sequence = os.path.dirname(input_filename).split('/')[-2]
-                out_filename = os.path.join(out_path_root, 'sequences', sequence, 'predictions', filename + '.label')
+                out_filename = os.path.join(out_path_root, 'predictions', filename + '.label')
                 _create_directory(os.path.dirname(out_filename))
                 score.tofile(out_filename)
-                logger.info('=> Sequence {} - File {} saved'.format(sequence, os.path.basename(out_filename)))
+                #logger.info('=> Sequence {} - File {} saved'.format(sequence, os.path.basename(out_filename)))
                 curr_index += 1
 
     elapsed_time = time.time() - start_time

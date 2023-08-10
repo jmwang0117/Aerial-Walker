@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "${prefix}/include".split(';') if "${prefix}/i
 PROJECT_CATKIN_DEPENDS = "bspline".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "-ltraj_utils".split(';') if "-ltraj_utils" != "" else []
 PROJECT_NAME = "traj_utils"
-PROJECT_SPACE_DIR = "/root/Aerial-Walker/install"
+PROJECT_SPACE_DIR = "/home/melodic/jetsonNX/Aerial-Walker/install"
 PROJECT_VERSION = "0.0.0"

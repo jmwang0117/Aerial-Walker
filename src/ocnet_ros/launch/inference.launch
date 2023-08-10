@@ -1,7 +1,7 @@
 <launch>
-  <arg name="weights_file" default="/root/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" />
-  <arg name="dataset_root" default="/root/datasets/semantic_kitti" />
-  <arg name="output_path" default="/root/Aerial-Walker/src/ocnet_ros/OCNet/output" />
+  <arg name="weights_file" default="/home/melodic/jetsonNX/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" />
+  <arg name="dataset_root" default="/home/melodic/jetsonNX/Aerial-Walker/src/ocnet_ros/OCNet/datasets" />
+  <arg name="output_path" default="/home/melodic/jetsonNX/Aerial-Walker/src/ocnet_ros/OCNet/output" />
 
   <node name="inference_ros" pkg="ocnet_ros" type="inference_ros.py" output="screen">
     <param name="weights_file" value="$(arg weights_file)" />

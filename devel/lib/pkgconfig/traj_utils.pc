@@ -1,8 +1,8 @@
-prefix=/root/Aerial-Walker/devel
+prefix=/home/melodic/jetsonNX/Aerial-Walker/devel
 
 Name: traj_utils
 Description: Description of traj_utils
 Version: 0.0.0
-Cflags: -I/root/Aerial-Walker/src/oc_navigation/traj_utils/include
+Cflags: -I/home/melodic/jetsonNX/Aerial-Walker/src/oc_navigation/traj_utils/include
 Libs: -L${prefix}/lib -ltraj_utils
 Requires: bspline

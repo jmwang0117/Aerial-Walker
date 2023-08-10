@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
+  "/home/melodic/jetsonNX/Aerial-Walker/devel/share/common-lisp/ros/plan_manage/msg/Bspline.lisp"
   "CMakeFiles/plan_manage_generate_messages_lisp"
-  "/root/Aerial-Walker/devel/share/common-lisp/ros/plan_manage/msg/Bspline.lisp"
 )
 
 # Per-language clean rules from dependency scanning.

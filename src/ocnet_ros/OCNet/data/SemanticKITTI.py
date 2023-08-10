@@ -58,33 +58,33 @@ class SemanticKITTI_dataloader(Dataset):
     Set modality filepaths with split according to phase (train, val, test)
     '''
 
-    sequences = list(sorted(glob(os.path.join(self.root_dir, 'dataset', 'sequences', '*')))[i] for i in self.split[self.phase])
+    #sequences = list(sorted(glob(os.path.join(self.root_dir, 'dataset', 'sequences', '*')))[i] for i in self.split[self.phase])
 
-    if self.phase != 'test':
+    #if self.phase != 'test':
 
-      if modality == '3D_LABEL':
-        self.filepaths['3D_LABEL'] = {'1_1': [], '1_2': [], '1_4': [], '1_8': []}
-        self.filepaths['3D_INVALID'] = {'1_1': [], '1_2': [], '1_4': [], '1_8': []}
-        for sequence in sequences:
-          assert len(os.listdir(sequence)) > 0, 'Error, No files in sequence: {}'.format(sequence)
-          # Scale 1:1
-          self.filepaths['3D_LABEL']['1_1'] += sorted(glob(os.path.join(sequence, 'voxels', '*.label')))
-          self.filepaths['3D_INVALID']['1_1'] += sorted(glob(os.path.join(sequence, 'voxels', '*.invalid')))
-          # Scale 1:2
-          self.filepaths['3D_LABEL']['1_2'] += sorted(glob(os.path.join(sequence, 'voxels', '*.label_1_2')))
-          self.filepaths['3D_INVALID']['1_2'] += sorted(glob(os.path.join(sequence, 'voxels', '*.invalid_1_2')))
-          # Scale 1:4
-          self.filepaths['3D_LABEL']['1_4'] += sorted(glob(os.path.join(sequence, 'voxels', '*.label_1_4')))
-          self.filepaths['3D_INVALID']['1_4'] += sorted(glob(os.path.join(sequence, 'voxels', '*.invalid_1_4')))
-          # Scale 1:8
-          self.filepaths['3D_LABEL']['1_8'] += sorted(glob(os.path.join(sequence, 'voxels', '*.label_1_8')))
-          self.filepaths['3D_INVALID']['1_8'] += sorted(glob(os.path.join(sequence, 'voxels', '*.invalid_1_8')))
+      # if modality == '3D_LABEL':
+      #   self.filepaths['3D_LABEL'] = {'1_1': [], '1_2': [], '1_4': [], '1_8': []}
+      #   self.filepaths['3D_INVALID'] = {'1_1': [], '1_2': [], '1_4': [], '1_8': []}
+      #   for sequence in sequences:
+      #     assert len(os.listdir(sequence)) > 0, 'Error, No files in sequence: {}'.format(sequence)
+      #     # Scale 1:1
+      #     self.filepaths['3D_LABEL']['1_1'] += sorted(glob(os.path.join(sequence, 'voxels', '*.label')))
+      #     self.filepaths['3D_INVALID']['1_1'] += sorted(glob(os.path.join(sequence, 'voxels', '*.invalid')))
+      #     # Scale 1:2
+      #     self.filepaths['3D_LABEL']['1_2'] += sorted(glob(os.path.join(sequence, 'voxels', '*.label_1_2')))
+      #     self.filepaths['3D_INVALID']['1_2'] += sorted(glob(os.path.join(sequence, 'voxels', '*.invalid_1_2')))
+      #     # Scale 1:4
+      #     self.filepaths['3D_LABEL']['1_4'] += sorted(glob(os.path.join(sequence, 'voxels', '*.label_1_4')))
+      #     self.filepaths['3D_INVALID']['1_4'] += sorted(glob(os.path.join(sequence, 'voxels', '*.invalid_1_4')))
+      #     # Scale 1:8
+      #     self.filepaths['3D_LABEL']['1_8'] += sorted(glob(os.path.join(sequence, 'voxels', '*.label_1_8')))
+      #     self.filepaths['3D_INVALID']['1_8'] += sorted(glob(os.path.join(sequence, 'voxels', '*.invalid_1_8')))
 
-      if modality == '3D_OCCLUDED':
-        self.filepaths['3D_OCCLUDED'] = []
-        for sequence in sequences:
-          assert len(os.listdir(sequence)) > 0, 'Error, No files in sequence: {}'.format(sequence)
-          self.filepaths['3D_OCCLUDED'] += sorted(glob(os.path.join(sequence, 'voxels', '*.occluded')))
+      # if modality == '3D_OCCLUDED':
+      #   self.filepaths['3D_OCCLUDED'] = []
+      #   for sequence in sequences:
+      #     assert len(os.listdir(sequence)) > 0, 'Error, No files in sequence: {}'.format(sequence)
+      #     self.filepaths['3D_OCCLUDED'] += sorted(glob(os.path.join(sequence, 'voxels', '*.occluded')))
 
     # if modality == '3D_OCCUPANCY':
     #   self.filepaths['3D_OCCUPANCY'] = []
@@ -94,7 +94,7 @@ class SemanticKITTI_dataloader(Dataset):
 
     if modality == '3D_OCCUPANCY':
       self.filepaths['3D_OCCUPANCY'] = []
-      specified_bin_file = '/root/datasets/semantic_kitti/dataset/sequences/00/voxels/000005.bin'
+      specified_bin_file = '/home/melodic/jetsonNX/Aerial-Walker/src/ocnet_ros/OCNet/datasets/voxels/000000.bin'
       self.filepaths['3D_OCCUPANCY'].append(specified_bin_file)
       
     # if modality == '2D_RGB':
