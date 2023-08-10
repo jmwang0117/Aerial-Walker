@@ -734,8 +734,8 @@ void SDFMap::OCNetQuery(int x, int y, int z) {
   int center_y = (this->md_.local_bound_max_(1) + this->md_.local_bound_min_(1)) / 2;
   int address = this->toAddress(x, y, z);
 
-  if (x >= center_x - 6 && x <= center_x + 6 &&
-      y >= center_y - 6 && y <= center_y + 6) {
+  if (x >= center_x - 3 && x <= center_x + 3 &&
+      y >= center_y - 3 && y <= center_y + 3) {
     md_.occupancy_buffer_inflate_[address] = 1;
   }
 }
@@ -784,10 +784,10 @@ void SDFMap::clearAndInflateLocalMap() {
           }
         }
         // Call setCenterOccupied function
-        int oc = toAddress(x, y, z);
-        if (occupied_centers.find(oc) == occupied_centers.end()) {
-          OCNetQuery(x, y, z);
-        }
+        // int oc = toAddress(x, y, z);
+        // if (occupied_centers.find(oc) == occupied_centers.end()) {
+        //   OCNetQuery(x, y, z);
+        // }
         
   }
 

@@ -94,7 +94,7 @@ class SemanticKITTI_dataloader(Dataset):
 
     if modality == '3D_OCCUPANCY':
       self.filepaths['3D_OCCUPANCY'] = []
-      specified_bin_file = '/home/melodic/jetsonNX/Aerial-Walker/src/ocnet_ros/OCNet/datasets/voxels/000000.bin'
+      specified_bin_file = '/home/melodic/jetsonNX/Aerial-Walker/src/oc_navigation/plan_manage/raw_point_data/scan_000005.bin'
       self.filepaths['3D_OCCUPANCY'].append(specified_bin_file)
       
     # if modality == '2D_RGB':
