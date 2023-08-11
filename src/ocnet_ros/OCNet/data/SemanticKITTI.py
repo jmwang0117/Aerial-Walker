@@ -86,17 +86,22 @@ class SemanticKITTI_dataloader(Dataset):
       #     assert len(os.listdir(sequence)) > 0, 'Error, No files in sequence: {}'.format(sequence)
       #     self.filepaths['3D_OCCLUDED'] += sorted(glob(os.path.join(sequence, 'voxels', '*.occluded')))
 
-    # if modality == '3D_OCCUPANCY':
-    #   self.filepaths['3D_OCCUPANCY'] = []
-    #   for sequence in sequences:
-    #     assert len(os.listdir(sequence)) > 0, 'Error, No files in sequence: {}'.format(sequence)
-    #     self.filepaths['3D_OCCUPANCY'] += sorted(glob(os.path.join(sequence, 'voxels', '*.bin')))
 
+      
     if modality == '3D_OCCUPANCY':
       self.filepaths['3D_OCCUPANCY'] = []
-      specified_bin_file = '/home/melodic/jetsonNX/Aerial-Walker/src/oc_navigation/plan_manage/raw_data/voxels/000174.bin'
+      dataset_dir = '/home/melodic/jetsonNX/Aerial-Walker/src/oc_navigation/plan_manage/raw_data/voxels'
+      file_pattern = '*.bin' 
+      # Combine the dataset path, file pattern (e.g., '*.bin') and sort the resulting list
+      self.filepaths['3D_OCCUPANCY'] = sorted(glob(os.path.join(dataset_dir, file_pattern)))
+      #print(self.filepaths['3D_OCCUPANCY'])
       
-      self.filepaths['3D_OCCUPANCY'].append(specified_bin_file)
+      
+    # if modality == '3D_OCCUPANCY':
+    #   self.filepaths['3D_OCCUPANCY'] = []
+    #   specified_bin_file = '/home/melodic/jetsonNX/Aerial-Walker/src/oc_navigation/plan_manage/raw_data/voxels/000174.bin'
+      
+    #   self.filepaths['3D_OCCUPANCY'].append(specified_bin_file)
       
     # if modality == '2D_RGB':
     #   self.filepaths['2D_RGB'] = []
@@ -140,7 +145,10 @@ class SemanticKITTI_dataloader(Dataset):
 
     if modality == '3D_OCCUPANCY':
       OCCUPANCY = SemanticKittiIO._read_occupancy_SemKITTI(self.filepaths[modality][idx])
-    
+      print(OCCUPANCY.reshape([self.grid_dimensions[0],
+                                                 self.grid_dimensions[2],
+                                                 self.grid_dimensions[1]]).shape)
+      
       OCCUPANCY = np.moveaxis(OCCUPANCY.reshape([self.grid_dimensions[0],
                                                  self.grid_dimensions[2],
                                                  self.grid_dimensions[1]]), [0, 1, 2], [0, 2, 1])

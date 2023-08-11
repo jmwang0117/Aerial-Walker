@@ -205,3 +205,147 @@
 2023-08-10 18:00:57,874 -- topic[/rosout] removing connection to /rosout
 2023-08-10 18:00:57,875 -- signal-2
 2023-08-10 18:00:58,474 -- signal_shutdown [atexit]
+2023-08-11 07:40:49,811 -- ============ Test weights: "/home/melodic/jetsonNX/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-11 07:40:49,843 -- signal_shutdown [atexit]
+2023-08-11 07:40:49,844 -- atexit
+2023-08-11 07:41:31,711 -- ============ Test weights: "/home/melodic/jetsonNX/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-11 07:41:31,741 -- signal_shutdown [atexit]
+2023-08-11 07:41:31,742 -- atexit
+2023-08-11 07:48:19,369 -- ============ Test weights: "/home/melodic/jetsonNX/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-11 07:48:19,396 -- signal_shutdown [atexit]
+2023-08-11 07:48:19,397 -- atexit
+2023-08-11 07:48:51,564 -- ============ Test weights: "/home/melodic/jetsonNX/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-11 07:48:51,594 -- signal_shutdown [atexit]
+2023-08-11 07:48:51,595 -- atexit
+2023-08-11 07:49:19,632 -- ============ Test weights: "/home/melodic/jetsonNX/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-11 07:49:19,663 -- => Loading network architecture...
+2023-08-11 07:49:19,711 -- => Loading network weights...
+2023-08-11 07:49:19,718 -- => Model loaded at /home/melodic/jetsonNX/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-11 07:49:19,868 -- topic[/rosout] adding connection to [/rosout], count 0
+2023-08-11 07:49:20,245 -- => Passing the network on the test set...
+2023-08-11 07:49:21,975 -- Inference FPS: 0.66
+2023-08-11 07:49:21,978 -- => ============ Network Test Done ============
+2023-08-11 07:50:11,751 -- signal_shutdown [signal-2]
+2023-08-11 07:50:11,754 -- topic[/rosout] removing connection to /rosout
+2023-08-11 07:50:11,754 -- signal-2
+2023-08-11 07:50:12,355 -- signal_shutdown [atexit]
+2023-08-11 07:59:56,964 -- ============ Test weights: "/home/melodic/jetsonNX/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-11 07:59:56,995 -- => Loading network architecture...
+2023-08-11 07:59:57,054 -- => Loading network weights...
+2023-08-11 07:59:57,065 -- => Model loaded at /home/melodic/jetsonNX/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-11 07:59:57,199 -- topic[/rosout] adding connection to [/rosout], count 0
+2023-08-11 07:59:57,408 -- => Passing the network on the test set...
+2023-08-11 07:59:58,972 -- Average Inference FPS: 0.74
+2023-08-11 07:59:58,974 -- => ============ Network Test Done ============
+2023-08-11 08:09:42,233 -- signal_shutdown [signal-2]
+2023-08-11 08:09:42,236 -- topic[/rosout] removing connection to /rosout
+2023-08-11 08:09:42,236 -- signal-2
+2023-08-11 08:09:42,837 -- signal_shutdown [atexit]
+2023-08-11 09:10:18,129 -- ============ Test weights: "/home/melodic/jetsonNX/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-11 09:10:18,160 -- => Loading network architecture...
+2023-08-11 09:10:18,194 -- => Loading network weights...
+2023-08-11 09:10:18,200 -- => Model loaded at /home/melodic/jetsonNX/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-11 09:10:18,399 -- topic[/rosout] adding connection to [/rosout], count 0
+2023-08-11 09:10:18,700 -- => Passing the network on the test set...
+2023-08-11 09:10:18,760 -- signal_shutdown [atexit]
+2023-08-11 09:10:18,762 -- topic[/rosout] removing connection to /rosout
+2023-08-11 09:10:18,762 -- atexit
+2023-08-11 09:10:45,970 -- ============ Test weights: "/home/melodic/jetsonNX/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-11 09:10:46,000 -- => Loading network architecture...
+2023-08-11 09:10:46,032 -- => Loading network weights...
+2023-08-11 09:10:46,037 -- => Model loaded at /home/melodic/jetsonNX/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-11 09:10:46,200 -- topic[/rosout] adding connection to [/rosout], count 0
+2023-08-11 09:10:46,369 -- => Passing the network on the test set...
+2023-08-11 09:10:46,436 -- signal_shutdown [atexit]
+2023-08-11 09:10:46,439 -- topic[/rosout] removing connection to /rosout
+2023-08-11 09:10:46,439 -- atexit
+2023-08-11 09:11:09,684 -- ============ Test weights: "/home/melodic/jetsonNX/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-11 09:11:09,711 -- => Loading network architecture...
+2023-08-11 09:11:09,742 -- => Loading network weights...
+2023-08-11 09:11:09,747 -- => Model loaded at /home/melodic/jetsonNX/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-11 09:11:09,927 -- topic[/rosout] adding connection to [/rosout], count 0
+2023-08-11 09:11:10,064 -- => Passing the network on the test set...
+2023-08-11 09:11:11,803 -- Average Inference FPS: 0.65
+2023-08-11 09:11:11,804 -- => ============ Network Test Done ============
+2023-08-11 09:11:15,181 -- signal_shutdown [signal-2]
+2023-08-11 09:11:15,184 -- topic[/rosout] removing connection to /rosout
+2023-08-11 09:11:15,184 -- signal-2
+2023-08-11 09:11:15,785 -- signal_shutdown [atexit]
+2023-08-11 09:12:41,077 -- ============ Test weights: "/home/melodic/jetsonNX/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-11 09:12:41,107 -- => Loading network architecture...
+2023-08-11 09:12:41,140 -- => Loading network weights...
+2023-08-11 09:12:41,146 -- => Model loaded at /home/melodic/jetsonNX/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-11 09:12:41,299 -- topic[/rosout] adding connection to [/rosout], count 0
+2023-08-11 09:12:41,469 -- => Passing the network on the test set...
+2023-08-11 09:12:41,500 -- signal_shutdown [atexit]
+2023-08-11 09:12:41,502 -- topic[/rosout] removing connection to /rosout
+2023-08-11 09:12:41,502 -- atexit
+2023-08-11 09:13:09,478 -- ============ Test weights: "/home/melodic/jetsonNX/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-11 09:13:09,508 -- => Loading network architecture...
+2023-08-11 09:13:09,540 -- => Loading network weights...
+2023-08-11 09:13:09,546 -- => Model loaded at /home/melodic/jetsonNX/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-11 09:13:09,711 -- topic[/rosout] adding connection to [/rosout], count 0
+2023-08-11 09:13:09,890 -- => Passing the network on the test set...
+2023-08-11 09:13:11,475 -- Average Inference FPS: 0.74
+2023-08-11 09:13:11,477 -- => ============ Network Test Done ============
+2023-08-11 09:13:16,370 -- signal_shutdown [signal-2]
+2023-08-11 09:13:16,373 -- topic[/rosout] removing connection to /rosout
+2023-08-11 09:13:16,373 -- signal-2
+2023-08-11 09:13:16,974 -- signal_shutdown [atexit]
+2023-08-11 09:15:06,829 -- ============ Test weights: "/home/melodic/jetsonNX/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-11 09:15:06,855 -- => Loading network architecture...
+2023-08-11 09:15:06,887 -- => Loading network weights...
+2023-08-11 09:15:06,893 -- => Model loaded at /home/melodic/jetsonNX/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-11 09:15:07,061 -- topic[/rosout] adding connection to [/rosout], count 0
+2023-08-11 09:15:07,213 -- => Passing the network on the test set...
+2023-08-11 09:15:08,775 -- Average Inference FPS: 0.74
+2023-08-11 09:15:08,777 -- => ============ Network Test Done ============
+2023-08-11 09:15:51,929 -- signal_shutdown [signal-2]
+2023-08-11 09:15:51,932 -- topic[/rosout] removing connection to /rosout
+2023-08-11 09:15:51,933 -- signal-2
+2023-08-11 09:15:52,534 -- signal_shutdown [atexit]
+2023-08-11 10:51:19,845 -- ============ Test weights: "/home/melodic/jetsonNX/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-11 10:51:19,876 -- => Loading network architecture...
+2023-08-11 10:51:19,932 -- => Loading network weights...
+2023-08-11 10:51:19,941 -- => Model loaded at /home/melodic/jetsonNX/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-11 10:51:20,082 -- topic[/rosout] adding connection to [/rosout], count 0
+2023-08-11 10:51:20,285 -- => Passing the network on the test set...
+2023-08-11 10:51:21,830 -- signal_shutdown [atexit]
+2023-08-11 10:51:21,831 -- topic[/rosout] removing connection to /rosout
+2023-08-11 10:51:21,831 -- atexit
+2023-08-11 10:52:02,946 -- ============ Test weights: "/home/melodic/jetsonNX/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-11 10:52:02,976 -- => Loading network architecture...
+2023-08-11 10:52:02,990 -- => Loading network weights...
+2023-08-11 10:52:02,995 -- => Model loaded at /home/melodic/jetsonNX/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-11 10:52:03,157 -- topic[/rosout] adding connection to [/rosout], count 0
+2023-08-11 10:52:03,321 -- => Passing the network on the test set...
+2023-08-11 10:52:04,863 -- signal_shutdown [atexit]
+2023-08-11 10:52:04,864 -- topic[/rosout] removing connection to /rosout
+2023-08-11 10:52:04,864 -- atexit
+2023-08-11 10:52:32,840 -- ============ Test weights: "/home/melodic/jetsonNX/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-11 10:52:32,866 -- => Loading network architecture...
+2023-08-11 10:52:32,901 -- => Loading network weights...
+2023-08-11 10:52:32,907 -- => Model loaded at /home/melodic/jetsonNX/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-11 10:52:33,088 -- topic[/rosout] adding connection to [/rosout], count 0
+2023-08-11 10:52:33,216 -- => Passing the network on the test set...
+2023-08-11 10:52:34,793 -- Average Inference FPS: 0.74
+2023-08-11 10:52:34,796 -- => ============ Network Test Done ============
+2023-08-11 10:52:45,461 -- signal_shutdown [signal-2]
+2023-08-11 10:52:45,464 -- topic[/rosout] removing connection to /rosout
+2023-08-11 10:52:45,465 -- signal-2
+2023-08-11 10:52:46,065 -- signal_shutdown [atexit]

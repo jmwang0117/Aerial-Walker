@@ -46,7 +46,7 @@ def listener():
     rospy.init_node('pointcloud_listener', anonymous=True)
 
     # Choose the desired topic ("/sdf_map/cloud" or "/sdf_map/occupancy")
-    topic = "/sdf_map/obstacle_cloud"  # Replace with the desired topic name
+    topic = "/sdf_map/occupancy_inflate"  # Replace with the desired topic name
 
     rospy.Subscriber(topic, PointCloud2, callback)
 

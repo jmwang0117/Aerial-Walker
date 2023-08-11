@@ -20,9 +20,6 @@ from OCNet.common.logger import get_logger
 from OCNet.common.io_tools import dict_to, _create_directory
 import OCNet.common.checkpoint as checkpoint
 
-
-
-
 def test(model, dset, _cfg, logger, out_path_root):
     device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
     dtype = torch.float32
@@ -33,16 +30,22 @@ def test(model, dset, _cfg, logger, out_path_root):
     inv_remap_lut = dset.dataset.get_inv_remap_lut()
 
     start_time = time.time()
-    inference_time = 0
+    inference_time = []
 
     with torch.no_grad():
         for t, (data, indices) in enumerate(dset):
             data = dict_to(data, device, dtype)
 
+            # Record the inference start time
             inference_start_time = time.time()
+
             scores = model(data)
+            
+            # Record the inference end time
             inference_end_time = time.time()
-            inference_time += (inference_end_time - inference_start_time)
+            
+            # Log the inference time of each sample
+            inference_time.append(inference_end_time - inference_start_time)
 
             for key in scores:
                 scores[key] = torch.argmax(scores[key], dim=1).data.cpu().numpy()
@@ -59,10 +62,11 @@ def test(model, dset, _cfg, logger, out_path_root):
                 score.tofile(out_filename)
                 #logger.info('=> Sequence {} - File {} saved'.format(sequence, os.path.basename(out_filename)))
                 curr_index += 1
-
+    # Calculate the average FPS for all samples
+    avg_fps = len(dset) / np.sum(inference_time)
+    logger.info('Average Inference FPS: {:.2f}'.format(avg_fps))
     elapsed_time = time.time() - start_time
-    fps = len(dset) / inference_time
-    logger.info('Inference FPS: {:.2f}'.format(fps))
+    
     return
 
 

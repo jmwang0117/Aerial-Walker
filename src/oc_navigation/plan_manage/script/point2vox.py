@@ -49,6 +49,8 @@ def voxelization(input_folder, output_folder, grid_size):
             # Read point cloud
             point_cloud = _read_pointcloud_SemKITTI(input_path)
             points_xyz = point_cloud[:, :3]
+            # import pdb
+            # pdb.set_trace()
 
             # Voxelization
             voxel_coords = ((points_xyz - voxel_origin) // voxel_size).astype(int)
@@ -79,12 +81,36 @@ def voxelization(input_folder, output_folder, grid_size):
             print(f"File: {file_name}, Occupied voxels: {occupied_voxels_count}")
 
 
+def compute_voxel_params(input_folder, grid_size):
+    min_coords = np.full(3, np.inf)
+    max_coords = np.full(3, -np.inf)
+
+    for file_name in os.listdir(input_folder):
+        if file_name.endswith('.bin'):
+            input_path = os.path.join(input_folder, file_name)
+
+            # Read point cloud
+            point_cloud = _read_pointcloud_SemKITTI(input_path)
+            points_xyz = point_cloud[:, :3]
+
+            # Update min_coords and max_coords
+            min_coords = np.minimum(min_coords, np.min(points_xyz, axis=0))
+            max_coords = np.maximum(max_coords, np.max(points_xyz, axis=0))
+
+    voxel_origin = min_coords
+    desired_size = max_coords - min_coords
+    # voxel_size = desired_size / np.asarray(grid_size)
+    voxel_size = 0.2
+
+    return voxel_origin, voxel_size
+
 if __name__ == '__main__':
     input_folder = '/home/melodic/jetsonNX/Aerial-Walker/src/oc_navigation/plan_manage/raw_data/velodyne'
     output_folder = '/home/melodic/jetsonNX/Aerial-Walker/src/oc_navigation/plan_manage/raw_data/voxels'
     grid_size = (256, 256, 32)  # Set the desired grid size (x, y, z)
 
-    voxel_origin = np.array([0.0, 0.0, 0.0])  # Specify the origin of the voxel grid
-    voxel_size = 0.05 # Set the desired voxel size
+    # Compute voxel origin and size for the entire sequence
+    voxel_origin, voxel_size = compute_voxel_params(input_folder, grid_size)
 
+    # Call voxelization using the computed voxel_origin and voxel_size
     voxelization(input_folder, output_folder, grid_size)
