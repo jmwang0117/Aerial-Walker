@@ -94,7 +94,8 @@ class SemanticKITTI_dataloader(Dataset):
 
     if modality == '3D_OCCUPANCY':
       self.filepaths['3D_OCCUPANCY'] = []
-      specified_bin_file = '/home/melodic/jetsonNX/Aerial-Walker/src/oc_navigation/plan_manage/raw_point_data/scan_000005.bin'
+      specified_bin_file = '/home/melodic/jetsonNX/Aerial-Walker/src/oc_navigation/plan_manage/raw_data/voxels/000174.bin'
+      
       self.filepaths['3D_OCCUPANCY'].append(specified_bin_file)
       
     # if modality == '2D_RGB':
@@ -139,6 +140,7 @@ class SemanticKITTI_dataloader(Dataset):
 
     if modality == '3D_OCCUPANCY':
       OCCUPANCY = SemanticKittiIO._read_occupancy_SemKITTI(self.filepaths[modality][idx])
+    
       OCCUPANCY = np.moveaxis(OCCUPANCY.reshape([self.grid_dimensions[0],
                                                  self.grid_dimensions[2],
                                                  self.grid_dimensions[1]]), [0, 1, 2], [0, 2, 1])
