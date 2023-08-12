@@ -38,7 +38,7 @@
 #include <ros/ros.h>
 #include <tuple>
 #include <visualization_msgs/Marker.h>
-
+#include <std_msgs/Float64MultiArray.h>
 #include <pcl/point_cloud.h>
 #include <pcl/point_types.h>
 #include <pcl_conversions/pcl_conversions.h>
@@ -179,7 +179,17 @@ public:
   enum { POSE_STAMPED = 1, ODOMETRY = 2, INVALID_IDX = -10000 };
  
   // Add the declaration for the OCNetQuery function
-  void OCNetQuery(int x, int y, int z);
+  // void OCNetQuery(int x, int y, int z);
+  // Declare a subscriber
+  // Define the data members
+ 
+  //void OCNetQuery(int x, int y, int z);
+  
+  // Define member functions
+  void nonIntersectionCallback(const std_msgs::Float64MultiArray::ConstPtr& msg);
+  void OCNetQuery();
+
+
 
   // occupancy map management
   void resetBuffer();
@@ -292,6 +302,9 @@ private:
   SynchronizerImagePose sync_image_pose_;
   SynchronizerImageOdom sync_image_odom_;
 
+  ros::Subscriber non_intersection_subscriber_;
+  std::set<int> non_intersection_addresses_;
+  std::vector<int> non_intersection_coordinates_;
   ros::Subscriber indep_depth_sub_, indep_odom_sub_, indep_pose_sub_, indep_cloud_sub_;
   ros::Publisher map_pub_, esdf_pub_, map_inf_pub_, update_range_pub_;
   ros::Publisher unknown_pub_, depth_pub_, ground_pub_, obstacle_pub_;

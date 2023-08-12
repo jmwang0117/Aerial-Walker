@@ -21,8 +21,8 @@
 * along with Fast-Planner. If not, see <http://www.gnu.org/licenses/>.
 */
 
-
-
+#include <ros/ros.h>
+#include <std_msgs/Float64MultiArray.h>
 #include "plan_env/sdf_map.h"
 
 // #define current_img_ md_.depth_image_[image_cnt_ & 1]
@@ -30,7 +30,8 @@
 
 void SDFMap::initMap(ros::NodeHandle& nh) {
   node_ = nh;
-
+ 
+  
   /* get parameter */
   double x_size, y_size, z_size;
   node_.param("sdf_map/resolution", mp_.resolution_, -1.0);
@@ -110,6 +111,7 @@ void SDFMap::initMap(ros::NodeHandle& nh) {
   // initialize data buffers
 
   int buffer_size = mp_.map_voxel_num_(0) * mp_.map_voxel_num_(1) * mp_.map_voxel_num_(2);
+  cout << "buffer_size: " << buffer_size<< endl;
 
   md_.occupancy_buffer_ = vector<double>(buffer_size, mp_.clamp_min_log_ - mp_.unknown_flag_);
   md_.occupancy_buffer_neg = vector<char>(buffer_size, 0);
@@ -193,6 +195,9 @@ void SDFMap::initMap(ros::NodeHandle& nh) {
   depth_pub_ = node_.advertise<sensor_msgs::PointCloud2>("/sdf_map/depth_cloud", 10);
   ground_pub_ = node_.advertise<sensor_msgs::PointCloud2>("/sdf_map/ground_cloud", 10);
   obstacle_pub_ = node_.advertise<sensor_msgs::PointCloud2>("/sdf_map/obstacle_cloud", 10);
+
+  non_intersection_subscriber_ = node_.subscribe<std_msgs::Float64MultiArray>("/non_intersection_coordinates", 10, &SDFMap::nonIntersectionCallback, this);
+
 
   md_.occ_need_update_ = false;
   md_.local_updated_ = false;
@@ -729,14 +734,53 @@ Eigen::Vector3d SDFMap::closetPointInMap(const Eigen::Vector3d& pt, const Eigen:
 }
 
 
-void SDFMap::OCNetQuery(int x, int y, int z) {
-  int center_x = (this->md_.local_bound_max_(0) + this->md_.local_bound_min_(0)) / 2;
-  int center_y = (this->md_.local_bound_max_(1) + this->md_.local_bound_min_(1)) / 2;
-  int address = this->toAddress(x, y, z);
+// void SDFMap::OCNetQuery(int x, int y, int z) {
+//   int center_x = (this->md_.local_bound_max_(0) + this->md_.local_bound_min_(0)) / 2;
+//   int center_y = (this->md_.local_bound_max_(1) + this->md_.local_bound_min_(1)) / 2;
+//   int address = this->toAddress(x, y, z);
+//   std::cout << "x: " << x << ", y: " << y << ", z: " << z << std::endl;
+//   if (x >= center_x - 3 && x <= center_x + 3 &&
+//       y >= center_y - 3 && y <= center_y + 3) {
+//     md_.occupancy_buffer_inflate_[address] = 1;
+//   }
+// }
 
-  if (x >= center_x - 3 && x <= center_x + 3 &&
-      y >= center_y - 3 && y <= center_y + 3) {
-    md_.occupancy_buffer_inflate_[address] = 1;
+
+
+void SDFMap::nonIntersectionCallback(const std_msgs::Float64MultiArray::ConstPtr& msg) {
+  non_intersection_coordinates_.clear();
+  std::cout << "Received non_intersection_coordinates message" << std::endl; 
+  for (size_t i = 0; i < msg->data.size(); i += 3) {
+    non_intersection_coordinates_.push_back(static_cast<int>(msg->data[i]));
+    non_intersection_coordinates_.push_back(static_cast<int>(msg->data[i + 1]));
+    non_intersection_coordinates_.push_back(static_cast<int>(msg->data[i + 2]));
+  }
+}
+
+void SDFMap::OCNetQuery() {
+  int inf_step = ceil(mp_.obstacles_inflation_ / mp_.resolution_);  
+  vector<Eigen::Vector3i> inf_pts(pow(2 * inf_step + 1, 3));
+  Eigen::Vector3i inf_pt;
+
+  for (size_t i = 0; i < non_intersection_coordinates_.size(); i += 3) {
+    int x = non_intersection_coordinates_[i];
+    int y = non_intersection_coordinates_[i + 1];
+
+    std::cout << "x: " << x << ", y: " << y << std::endl;
+
+    // Inflate non_intersection point
+    inflatePoint(Eigen::Vector3i(x, y, md_.local_bound_min_(2)), inf_step, inf_pts);
+
+    for (int k = 0; k < (int)inf_pts.size(); ++k) {
+      inf_pt = inf_pts[k];
+      int idx_inf = toAddress(inf_pt);
+      if (idx_inf < 0 ||
+          idx_inf >= mp_.map_voxel_num_(0) * mp_.map_voxel_num_(1) * mp_.map_voxel_num_(2)) {
+        continue;
+      }
+      md_.occupancy_buffer_inflate_[idx_inf] = 1;
+      non_intersection_addresses_.insert(idx_inf);
+    }
   }
 }
 
@@ -756,6 +800,10 @@ void SDFMap::clearAndInflateLocalMap() {
   int inf_step = ceil(mp_.obstacles_inflation_ / mp_.resolution_);  
   vector<Eigen::Vector3i> inf_pts(pow(2 * inf_step + 1, 3));
   Eigen::Vector3i inf_pt;
+
+  std::cout << "x_min: " << md_.local_bound_min_(0) << ", x_max: " << md_.local_bound_max_(0) << std::endl;
+  std::cout << "y_min: " << md_.local_bound_min_(1) << ", y_max: " << md_.local_bound_max_(1) << std::endl;
+  std::cout << "z_min: " << md_.local_bound_min_(2) << ", z_max: " << md_.local_bound_max_(2) << std::endl;
 
   // clear outdated data
   for (int x = md_.local_bound_min_(0); x <= md_.local_bound_max_(0); ++x)
@@ -783,13 +831,15 @@ void SDFMap::clearAndInflateLocalMap() {
             occupied_centers.insert(idx_inf);
           }
         }
-        // Call setCenterOccupied function
+        //Call setCenterOccupied function
         // int oc = toAddress(x, y, z);
         // if (occupied_centers.find(oc) == occupied_centers.end()) {
         //   OCNetQuery(x, y, z);
         // }
-        
   }
+
+  // Handle non-intersection coordinates after clearing and inflating the local map
+  OCNetQuery();
 
   // add virtual ceiling to limit flight height
   if (mp_.virtual_ceil_height_ > -0.5) {

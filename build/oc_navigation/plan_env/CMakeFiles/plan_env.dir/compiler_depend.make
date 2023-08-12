@@ -1421,6 +1421,9 @@ oc_navigation/plan_env/CMakeFiles/plan_env.dir/src/edt_environment.cpp.o: /home/
   /usr/include/c++/7/bits/stl_deque.h \
   /usr/include/c++/7/bits/deque.tcc \
   /usr/include/c++/7/bits/stl_queue.h \
+  /opt/ros/melodic/include/std_msgs/Float64MultiArray.h \
+  /opt/ros/melodic/include/std_msgs/MultiArrayLayout.h \
+  /opt/ros/melodic/include/std_msgs/MultiArrayDimension.h \
   /usr/include/pcl-1.8/pcl/point_cloud.h \
   /usr/include/eigen3/Eigen/Geometry \
   /usr/include/pcl-1.8/pcl/PCLHeader.h \
@@ -4055,12 +4058,11 @@ oc_navigation/plan_env/CMakeFiles/plan_env.dir/src/raycast.cpp.o: /home/melodic/
 
 oc_navigation/plan_env/CMakeFiles/plan_env.dir/src/sdf_map.cpp.o: /home/melodic/jetsonNX/Aerial-Walker/src/oc_navigation/plan_env/src/sdf_map.cpp \
   /usr/include/stdc-predef.h \
-  /home/melodic/jetsonNX/Aerial-Walker/src/oc_navigation/plan_env/include/plan_env/sdf_map.h \
-  /usr/include/eigen3/Eigen/Eigen \
-  /usr/include/eigen3/Eigen/Dense \
-  /usr/include/eigen3/Eigen/Core \
-  /usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h \
-  /usr/include/c++/7/new \
+  /opt/ros/melodic/include/ros/ros.h \
+  /opt/ros/melodic/include/ros/time.h \
+  /opt/ros/melodic/include/ros/platform.h \
+  /usr/include/c++/7/stdlib.h \
+  /usr/include/c++/7/cstdlib \
   /usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/7/bits/os_defines.h \
   /usr/include/features.h \
@@ -4070,45 +4072,18 @@ oc_navigation/plan_env/CMakeFiles/plan_env.dir/src/sdf_map.cpp.o: /home/melodic/
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/c++/7/bits/cpu_defines.h \
-  /usr/include/c++/7/exception \
-  /usr/include/c++/7/bits/exception.h \
-  /usr/include/c++/7/bits/exception_ptr.h \
-  /usr/include/c++/7/bits/exception_defines.h \
-  /usr/include/c++/7/bits/cxxabi_init_exception.h \
-  /usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h \
-  /usr/include/c++/7/typeinfo \
-  /usr/include/c++/7/bits/hash_bytes.h \
-  /usr/include/c++/7/bits/nested_exception.h \
-  /usr/include/c++/7/bits/move.h \
-  /usr/include/c++/7/bits/concept_check.h \
-  /usr/include/c++/7/type_traits \
-  /usr/include/eigen3/Eigen/src/Core/util/Macros.h \
-  /usr/include/c++/7/complex \
-  /usr/include/c++/7/bits/cpp_type_traits.h \
-  /usr/include/c++/7/ext/type_traits.h \
-  /usr/include/c++/7/cmath \
-  /usr/include/math.h \
-  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
-  /usr/include/x86_64-linux-gnu/bits/types.h \
-  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
-  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
-  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
-  /usr/include/x86_64-linux-gnu/bits/floatn.h \
-  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
-  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
-  /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
-  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
-  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
-  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
-  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
-  /usr/include/x86_64-linux-gnu/bits/mathinline.h \
-  /usr/include/c++/7/bits/std_abs.h \
   /usr/include/stdlib.h \
+  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+  /usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h \
   /usr/include/x86_64-linux-gnu/bits/waitflags.h \
   /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/x86_64-linux-gnu/sys/types.h \
+  /usr/include/x86_64-linux-gnu/bits/types.h \
+  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
   /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
@@ -4135,12 +4110,28 @@ oc_navigation/plan_env/CMakeFiles/plan_env.dir/src/sdf_map.cpp.o: /home/melodic/
   /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib.h \
-  /usr/include/c++/7/sstream \
-  /usr/include/c++/7/istream \
-  /usr/include/c++/7/ios \
-  /usr/include/c++/7/iosfwd \
+  /usr/include/c++/7/bits/std_abs.h \
+  /usr/include/c++/7/string \
   /usr/include/c++/7/bits/stringfwd.h \
   /usr/include/c++/7/bits/memoryfwd.h \
+  /usr/include/c++/7/bits/char_traits.h \
+  /usr/include/c++/7/bits/stl_algobase.h \
+  /usr/include/c++/7/bits/functexcept.h \
+  /usr/include/c++/7/bits/exception_defines.h \
+  /usr/include/c++/7/bits/cpp_type_traits.h \
+  /usr/include/c++/7/ext/type_traits.h \
+  /usr/include/c++/7/ext/numeric_traits.h \
+  /usr/include/c++/7/bits/stl_pair.h \
+  /usr/include/c++/7/bits/move.h \
+  /usr/include/c++/7/bits/concept_check.h \
+  /usr/include/c++/7/type_traits \
+  /usr/include/c++/7/bits/stl_iterator_base_types.h \
+  /usr/include/c++/7/bits/stl_iterator_base_funcs.h \
+  /usr/include/c++/7/debug/assertions.h \
+  /usr/include/c++/7/bits/stl_iterator.h \
+  /usr/include/c++/7/bits/ptr_traits.h \
+  /usr/include/c++/7/debug/debug.h \
+  /usr/include/c++/7/bits/predefined_ops.h \
   /usr/include/c++/7/bits/postypes.h \
   /usr/include/c++/7/cwchar \
   /usr/include/wchar.h \
@@ -4152,30 +4143,36 @@ oc_navigation/plan_env/CMakeFiles/plan_env.dir/src/sdf_map.cpp.o: /home/melodic/
   /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
   /usr/include/x86_64-linux-gnu/bits/wchar2.h \
-  /usr/include/c++/7/bits/char_traits.h \
-  /usr/include/c++/7/bits/stl_algobase.h \
-  /usr/include/c++/7/bits/functexcept.h \
-  /usr/include/c++/7/ext/numeric_traits.h \
-  /usr/include/c++/7/bits/stl_pair.h \
-  /usr/include/c++/7/bits/stl_iterator_base_types.h \
-  /usr/include/c++/7/bits/stl_iterator_base_funcs.h \
-  /usr/include/c++/7/debug/assertions.h \
-  /usr/include/c++/7/bits/stl_iterator.h \
-  /usr/include/c++/7/bits/ptr_traits.h \
-  /usr/include/c++/7/debug/debug.h \
-  /usr/include/c++/7/bits/predefined_ops.h \
   /usr/include/c++/7/cstdint \
   /usr/lib/gcc/x86_64-linux-gnu/7/include/stdint.h \
   /usr/include/stdint.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+  /usr/include/c++/7/bits/allocator.h \
+  /usr/include/x86_64-linux-gnu/c++/7/bits/c++allocator.h \
+  /usr/include/c++/7/ext/new_allocator.h \
+  /usr/include/c++/7/new \
+  /usr/include/c++/7/exception \
+  /usr/include/c++/7/bits/exception.h \
+  /usr/include/c++/7/bits/exception_ptr.h \
+  /usr/include/c++/7/bits/cxxabi_init_exception.h \
+  /usr/include/c++/7/typeinfo \
+  /usr/include/c++/7/bits/hash_bytes.h \
+  /usr/include/c++/7/bits/nested_exception.h \
   /usr/include/c++/7/bits/localefwd.h \
   /usr/include/x86_64-linux-gnu/c++/7/bits/c++locale.h \
   /usr/include/c++/7/clocale \
   /usr/include/locale.h \
   /usr/include/x86_64-linux-gnu/bits/locale.h \
+  /usr/include/c++/7/iosfwd \
   /usr/include/c++/7/cctype \
   /usr/include/ctype.h \
-  /usr/include/c++/7/bits/ios_base.h \
+  /usr/include/c++/7/bits/ostream_insert.h \
+  /usr/include/c++/7/bits/cxxabi_forced.h \
+  /usr/include/c++/7/bits/stl_function.h \
+  /usr/include/c++/7/backward/binders.h \
+  /usr/include/c++/7/bits/range_access.h \
+  /usr/include/c++/7/initializer_list \
+  /usr/include/c++/7/bits/basic_string.h \
   /usr/include/c++/7/ext/atomicity.h \
   /usr/include/x86_64-linux-gnu/c++/7/bits/gthr.h \
   /usr/include/x86_64-linux-gnu/c++/7/bits/gthr-default.h \
@@ -4190,22 +4187,9 @@ oc_navigation/plan_env/CMakeFiles/plan_env.dir/src/sdf_map.cpp.o: /home/melodic/
   /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
   /usr/include/x86_64-linux-gnu/bits/setjmp.h \
   /usr/include/x86_64-linux-gnu/c++/7/bits/atomic_word.h \
-  /usr/include/c++/7/bits/locale_classes.h \
-  /usr/include/c++/7/string \
-  /usr/include/c++/7/bits/allocator.h \
-  /usr/include/x86_64-linux-gnu/c++/7/bits/c++allocator.h \
-  /usr/include/c++/7/ext/new_allocator.h \
-  /usr/include/c++/7/bits/ostream_insert.h \
-  /usr/include/c++/7/bits/cxxabi_forced.h \
-  /usr/include/c++/7/bits/stl_function.h \
-  /usr/include/c++/7/backward/binders.h \
-  /usr/include/c++/7/bits/range_access.h \
-  /usr/include/c++/7/initializer_list \
-  /usr/include/c++/7/bits/basic_string.h \
   /usr/include/c++/7/ext/alloc_traits.h \
   /usr/include/c++/7/bits/alloc_traits.h \
   /usr/include/c++/7/ext/string_conversions.h \
-  /usr/include/c++/7/cstdlib \
   /usr/include/c++/7/cstdio \
   /usr/include/stdio.h \
   /usr/include/x86_64-linux-gnu/bits/libio.h \
@@ -4223,6 +4207,11 @@ oc_navigation/plan_env/CMakeFiles/plan_env.dir/src/sdf_map.cpp.o: /home/melodic/
   /usr/include/asm-generic/errno-base.h \
   /usr/include/c++/7/bits/functional_hash.h \
   /usr/include/c++/7/bits/basic_string.tcc \
+  /usr/include/c++/7/iostream \
+  /usr/include/c++/7/ostream \
+  /usr/include/c++/7/ios \
+  /usr/include/c++/7/bits/ios_base.h \
+  /usr/include/c++/7/bits/locale_classes.h \
   /usr/include/c++/7/bits/locale_classes.tcc \
   /usr/include/c++/7/system_error \
   /usr/include/x86_64-linux-gnu/c++/7/bits/error_constants.h \
@@ -4239,34 +4228,23 @@ oc_navigation/plan_env/CMakeFiles/plan_env.dir/src/sdf_map.cpp.o: /home/melodic/
   /usr/include/x86_64-linux-gnu/c++/7/bits/ctype_inline.h \
   /usr/include/c++/7/bits/locale_facets.tcc \
   /usr/include/c++/7/bits/basic_ios.tcc \
-  /usr/include/c++/7/ostream \
   /usr/include/c++/7/bits/ostream.tcc \
+  /usr/include/c++/7/istream \
   /usr/include/c++/7/bits/istream.tcc \
-  /usr/include/c++/7/bits/sstream.tcc \
-  /usr/include/eigen3/Eigen/src/Core/util/MKL_support.h \
-  /usr/lib/gcc/x86_64-linux-gnu/7/include/mmintrin.h \
-  /usr/lib/gcc/x86_64-linux-gnu/7/include/emmintrin.h \
-  /usr/lib/gcc/x86_64-linux-gnu/7/include/xmmintrin.h \
-  /usr/lib/gcc/x86_64-linux-gnu/7/include/mm_malloc.h \
-  /usr/include/c++/7/stdlib.h \
-  /usr/include/c++/7/cstddef \
-  /usr/include/c++/7/cassert \
-  /usr/include/assert.h \
-  /usr/include/c++/7/functional \
-  /usr/include/c++/7/tuple \
-  /usr/include/c++/7/utility \
-  /usr/include/c++/7/bits/stl_relops.h \
-  /usr/include/c++/7/array \
-  /usr/include/c++/7/bits/uses_allocator.h \
-  /usr/include/c++/7/bits/invoke.h \
-  /usr/include/c++/7/bits/std_function.h \
-  /usr/include/c++/7/bits/refwrap.h \
-  /usr/include/c++/7/cstring \
-  /usr/include/string.h \
-  /usr/include/strings.h \
-  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
-  /usr/include/c++/7/limits \
+  /usr/include/c++/7/cmath \
+  /usr/include/math.h \
+  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
+  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+  /usr/include/x86_64-linux-gnu/bits/mathinline.h \
+  /opt/ros/melodic/include/ros/exception.h \
+  /opt/ros/melodic/include/ros/duration.h \
+  /usr/include/c++/7/math.h \
   /usr/include/c++/7/climits \
   /usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/limits.h \
   /usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/syslimits.h \
@@ -4277,308 +4255,15 @@ oc_navigation/plan_env/CMakeFiles/plan_env.dir/src/sdf_map.cpp.o: /home/melodic/
   /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
   /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
   /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
-  /usr/include/c++/7/algorithm \
-  /usr/include/c++/7/bits/stl_algo.h \
-  /usr/include/c++/7/bits/algorithmfwd.h \
-  /usr/include/c++/7/bits/stl_heap.h \
-  /usr/include/c++/7/bits/stl_tempbuf.h \
-  /usr/include/c++/7/bits/stl_construct.h \
-  /usr/include/c++/7/bits/uniform_int_dist.h \
-  /usr/include/eigen3/Eigen/src/Core/util/Constants.h \
-  /usr/include/eigen3/Eigen/src/Core/util/Meta.h \
-  /usr/include/eigen3/Eigen/src/Core/util/ForwardDeclarations.h \
-  /usr/include/eigen3/Eigen/src/Core/util/StaticAssert.h \
-  /usr/include/eigen3/Eigen/src/Core/util/XprHelper.h \
-  /usr/include/eigen3/Eigen/src/Core/util/Memory.h \
-  /usr/include/eigen3/Eigen/src/Core/NumTraits.h \
-  /usr/include/eigen3/Eigen/src/Core/MathFunctions.h \
-  /usr/include/eigen3/Eigen/src/Core/GenericPacketMath.h \
-  /usr/include/eigen3/Eigen/src/Core/MathFunctionsImpl.h \
-  /usr/include/eigen3/Eigen/src/Core/arch/Default/ConjHelper.h \
-  /usr/include/eigen3/Eigen/src/Core/arch/SSE/PacketMath.h \
-  /usr/include/eigen3/Eigen/src/Core/arch/SSE/MathFunctions.h \
-  /usr/include/eigen3/Eigen/src/Core/arch/SSE/Complex.h \
-  /usr/include/eigen3/Eigen/src/Core/arch/SSE/TypeCasting.h \
-  /usr/include/eigen3/Eigen/src/Core/arch/CUDA/Half.h \
-  /usr/include/eigen3/Eigen/src/Core/arch/CUDA/PacketMathHalf.h \
-  /usr/include/eigen3/Eigen/src/Core/arch/CUDA/TypeCasting.h \
-  /usr/include/eigen3/Eigen/src/Core/arch/Default/Settings.h \
-  /usr/include/eigen3/Eigen/src/Core/functors/TernaryFunctors.h \
-  /usr/include/eigen3/Eigen/src/Core/functors/BinaryFunctors.h \
-  /usr/include/eigen3/Eigen/src/Core/functors/UnaryFunctors.h \
-  /usr/include/eigen3/Eigen/src/Core/functors/NullaryFunctors.h \
-  /usr/include/eigen3/Eigen/src/Core/functors/StlFunctors.h \
-  /usr/include/eigen3/Eigen/src/Core/functors/AssignmentFunctors.h \
-  /usr/include/eigen3/Eigen/src/Core/arch/CUDA/Complex.h \
-  /usr/include/eigen3/Eigen/src/Core/IO.h \
-  /usr/include/eigen3/Eigen/src/Core/DenseCoeffsBase.h \
-  /usr/include/eigen3/Eigen/src/Core/DenseBase.h \
-  /usr/include/eigen3/Eigen/src/plugins/BlockMethods.h \
-  /usr/include/eigen3/Eigen/src/Core/MatrixBase.h \
-  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h \
-  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseBinaryOps.h \
-  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h \
-  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h \
-  /usr/include/eigen3/Eigen/src/Core/EigenBase.h \
-  /usr/include/eigen3/Eigen/src/Core/Product.h \
-  /usr/include/eigen3/Eigen/src/Core/CoreEvaluators.h \
-  /usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h \
-  /usr/include/eigen3/Eigen/src/Core/Assign.h \
-  /usr/include/eigen3/Eigen/src/Core/ArrayBase.h \
-  /usr/include/eigen3/Eigen/src/plugins/ArrayCwiseUnaryOps.h \
-  /usr/include/eigen3/Eigen/src/plugins/ArrayCwiseBinaryOps.h \
-  /usr/include/eigen3/Eigen/src/Core/util/BlasUtil.h \
-  /usr/include/eigen3/Eigen/src/Core/DenseStorage.h \
-  /usr/include/eigen3/Eigen/src/Core/NestByValue.h \
-  /usr/include/eigen3/Eigen/src/Core/ReturnByValue.h \
-  /usr/include/eigen3/Eigen/src/Core/NoAlias.h \
-  /usr/include/eigen3/Eigen/src/Core/PlainObjectBase.h \
-  /usr/include/eigen3/Eigen/src/Core/Matrix.h \
-  /usr/include/eigen3/Eigen/src/Core/Array.h \
-  /usr/include/eigen3/Eigen/src/Core/CwiseTernaryOp.h \
-  /usr/include/eigen3/Eigen/src/Core/CwiseBinaryOp.h \
-  /usr/include/eigen3/Eigen/src/Core/CwiseUnaryOp.h \
-  /usr/include/eigen3/Eigen/src/Core/CwiseNullaryOp.h \
-  /usr/include/eigen3/Eigen/src/Core/CwiseUnaryView.h \
-  /usr/include/eigen3/Eigen/src/Core/SelfCwiseBinaryOp.h \
-  /usr/include/eigen3/Eigen/src/Core/Dot.h \
-  /usr/include/eigen3/Eigen/src/Core/StableNorm.h \
-  /usr/include/eigen3/Eigen/src/Core/Stride.h \
-  /usr/include/eigen3/Eigen/src/Core/MapBase.h \
-  /usr/include/eigen3/Eigen/src/Core/Map.h \
-  /usr/include/eigen3/Eigen/src/Core/Ref.h \
-  /usr/include/eigen3/Eigen/src/Core/Block.h \
-  /usr/include/eigen3/Eigen/src/Core/VectorBlock.h \
-  /usr/include/eigen3/Eigen/src/Core/Transpose.h \
-  /usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h \
-  /usr/include/eigen3/Eigen/src/Core/Diagonal.h \
-  /usr/include/eigen3/Eigen/src/Core/DiagonalProduct.h \
-  /usr/include/eigen3/Eigen/src/Core/Redux.h \
-  /usr/include/eigen3/Eigen/src/Core/Visitor.h \
-  /usr/include/eigen3/Eigen/src/Core/Fuzzy.h \
-  /usr/include/eigen3/Eigen/src/Core/Swap.h \
-  /usr/include/eigen3/Eigen/src/Core/CommaInitializer.h \
-  /usr/include/eigen3/Eigen/src/Core/GeneralProduct.h \
-  /usr/include/eigen3/Eigen/src/Core/Solve.h \
-  /usr/include/eigen3/Eigen/src/Core/Inverse.h \
-  /usr/include/eigen3/Eigen/src/Core/SolverBase.h \
-  /usr/include/eigen3/Eigen/src/Core/PermutationMatrix.h \
-  /usr/include/eigen3/Eigen/src/Core/Transpositions.h \
-  /usr/include/eigen3/Eigen/src/Core/TriangularMatrix.h \
-  /usr/include/eigen3/Eigen/src/Core/SelfAdjointView.h \
-  /usr/include/eigen3/Eigen/src/Core/products/GeneralBlockPanelKernel.h \
-  /usr/include/eigen3/Eigen/src/Core/products/Parallelizer.h \
-  /usr/include/eigen3/Eigen/src/Core/ProductEvaluators.h \
-  /usr/include/eigen3/Eigen/src/Core/products/GeneralMatrixVector.h \
-  /usr/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrix.h \
-  /usr/include/eigen3/Eigen/src/Core/SolveTriangular.h \
-  /usr/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h \
-  /usr/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixVector.h \
-  /usr/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixMatrix.h \
-  /usr/include/eigen3/Eigen/src/Core/products/SelfadjointProduct.h \
-  /usr/include/eigen3/Eigen/src/Core/products/SelfadjointRank2Update.h \
-  /usr/include/eigen3/Eigen/src/Core/products/TriangularMatrixVector.h \
-  /usr/include/eigen3/Eigen/src/Core/products/TriangularMatrixMatrix.h \
-  /usr/include/eigen3/Eigen/src/Core/products/TriangularSolverMatrix.h \
-  /usr/include/eigen3/Eigen/src/Core/products/TriangularSolverVector.h \
-  /usr/include/eigen3/Eigen/src/Core/BandMatrix.h \
-  /usr/include/eigen3/Eigen/src/Core/CoreIterators.h \
-  /usr/include/eigen3/Eigen/src/Core/ConditionEstimator.h \
-  /usr/include/eigen3/Eigen/src/Core/BooleanRedux.h \
-  /usr/include/eigen3/Eigen/src/Core/Select.h \
-  /usr/include/eigen3/Eigen/src/Core/VectorwiseOp.h \
-  /usr/include/eigen3/Eigen/src/Core/Random.h \
-  /usr/include/eigen3/Eigen/src/Core/Replicate.h \
-  /usr/include/eigen3/Eigen/src/Core/Reverse.h \
-  /usr/include/eigen3/Eigen/src/Core/ArrayWrapper.h \
-  /usr/include/eigen3/Eigen/src/Core/GlobalFunctions.h \
-  /usr/include/eigen3/Eigen/src/Core/util/ReenableStupidWarnings.h \
-  /usr/include/eigen3/Eigen/LU \
-  /usr/include/eigen3/Eigen/src/misc/Kernel.h \
-  /usr/include/eigen3/Eigen/src/misc/Image.h \
-  /usr/include/eigen3/Eigen/src/LU/FullPivLU.h \
-  /usr/include/eigen3/Eigen/src/LU/PartialPivLU.h \
-  /usr/include/eigen3/Eigen/src/LU/Determinant.h \
-  /usr/include/eigen3/Eigen/src/LU/InverseImpl.h \
-  /usr/include/eigen3/Eigen/src/LU/arch/Inverse_SSE.h \
-  /usr/include/eigen3/Eigen/Cholesky \
-  /usr/include/eigen3/Eigen/src/Cholesky/LLT.h \
-  /usr/include/eigen3/Eigen/src/Cholesky/LDLT.h \
-  /usr/include/eigen3/Eigen/QR \
-  /usr/include/eigen3/Eigen/Jacobi \
-  /usr/include/eigen3/Eigen/src/Jacobi/Jacobi.h \
-  /usr/include/eigen3/Eigen/Householder \
-  /usr/include/eigen3/Eigen/src/Householder/Householder.h \
-  /usr/include/eigen3/Eigen/src/Householder/HouseholderSequence.h \
-  /usr/include/eigen3/Eigen/src/Householder/BlockHouseholder.h \
-  /usr/include/eigen3/Eigen/src/QR/HouseholderQR.h \
-  /usr/include/eigen3/Eigen/src/QR/FullPivHouseholderQR.h \
-  /usr/include/eigen3/Eigen/src/QR/ColPivHouseholderQR.h \
-  /usr/include/eigen3/Eigen/src/QR/CompleteOrthogonalDecomposition.h \
-  /usr/include/eigen3/Eigen/SVD \
-  /usr/include/eigen3/Eigen/src/misc/RealSvd2x2.h \
-  /usr/include/eigen3/Eigen/src/SVD/UpperBidiagonalization.h \
-  /usr/include/eigen3/Eigen/src/SVD/SVDBase.h \
-  /usr/include/eigen3/Eigen/src/SVD/JacobiSVD.h \
-  /usr/include/eigen3/Eigen/src/SVD/BDCSVD.h \
-  /usr/include/eigen3/Eigen/Geometry \
-  /usr/include/eigen3/Eigen/src/Geometry/OrthoMethods.h \
-  /usr/include/eigen3/Eigen/src/Geometry/EulerAngles.h \
-  /usr/include/eigen3/Eigen/src/Geometry/Homogeneous.h \
-  /usr/include/eigen3/Eigen/src/Geometry/RotationBase.h \
-  /usr/include/eigen3/Eigen/src/Geometry/Rotation2D.h \
-  /usr/include/eigen3/Eigen/src/Geometry/Quaternion.h \
-  /usr/include/eigen3/Eigen/src/Geometry/AngleAxis.h \
-  /usr/include/eigen3/Eigen/src/Geometry/Transform.h \
-  /usr/include/eigen3/Eigen/src/Geometry/Translation.h \
-  /usr/include/eigen3/Eigen/src/Geometry/Scaling.h \
-  /usr/include/eigen3/Eigen/src/Geometry/Hyperplane.h \
-  /usr/include/eigen3/Eigen/src/Geometry/ParametrizedLine.h \
-  /usr/include/eigen3/Eigen/src/Geometry/AlignedBox.h \
-  /usr/include/eigen3/Eigen/src/Geometry/Umeyama.h \
-  /usr/include/eigen3/Eigen/src/Geometry/arch/Geometry_SSE.h \
-  /usr/include/eigen3/Eigen/Eigenvalues \
-  /usr/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h \
-  /usr/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h \
-  /usr/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
-  /usr/include/eigen3/Eigen/src/Eigenvalues/EigenSolver.h \
-  /usr/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h \
-  /usr/include/eigen3/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h \
-  /usr/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h \
-  /usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h \
-  /usr/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
-  /usr/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h \
-  /usr/include/eigen3/Eigen/src/Eigenvalues/ComplexEigenSolver.h \
-  /usr/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h \
-  /usr/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h \
-  /usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
-  /usr/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h \
-  /usr/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
-  /usr/include/eigen3/Eigen/Sparse \
-  /usr/include/eigen3/Eigen/SparseCore \
-  /usr/include/c++/7/vector \
-  /usr/include/c++/7/bits/stl_uninitialized.h \
-  /usr/include/c++/7/bits/stl_vector.h \
-  /usr/include/c++/7/bits/stl_bvector.h \
-  /usr/include/c++/7/bits/vector.tcc \
-  /usr/include/c++/7/map \
-  /usr/include/c++/7/bits/stl_tree.h \
-  /usr/include/c++/7/ext/aligned_buffer.h \
-  /usr/include/c++/7/bits/stl_map.h \
-  /usr/include/c++/7/bits/stl_multimap.h \
-  /usr/include/eigen3/Eigen/src/SparseCore/SparseUtil.h \
-  /usr/include/eigen3/Eigen/src/SparseCore/SparseMatrixBase.h \
-  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h \
-  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseBinaryOps.h \
-  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h \
-  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h \
-  /usr/include/eigen3/Eigen/src/plugins/BlockMethods.h \
-  /usr/include/eigen3/Eigen/src/SparseCore/SparseAssign.h \
-  /usr/include/eigen3/Eigen/src/SparseCore/CompressedStorage.h \
-  /usr/include/eigen3/Eigen/src/SparseCore/AmbiVector.h \
-  /usr/include/eigen3/Eigen/src/SparseCore/SparseCompressedBase.h \
-  /usr/include/eigen3/Eigen/src/SparseCore/SparseMatrix.h \
-  /usr/include/eigen3/Eigen/src/SparseCore/SparseMap.h \
-  /usr/include/eigen3/Eigen/src/SparseCore/MappedSparseMatrix.h \
-  /usr/include/eigen3/Eigen/src/SparseCore/SparseVector.h \
-  /usr/include/eigen3/Eigen/src/SparseCore/SparseRef.h \
-  /usr/include/eigen3/Eigen/src/SparseCore/SparseCwiseUnaryOp.h \
-  /usr/include/eigen3/Eigen/src/SparseCore/SparseCwiseBinaryOp.h \
-  /usr/include/eigen3/Eigen/src/SparseCore/SparseTranspose.h \
-  /usr/include/eigen3/Eigen/src/SparseCore/SparseBlock.h \
-  /usr/include/eigen3/Eigen/src/SparseCore/SparseDot.h \
-  /usr/include/eigen3/Eigen/src/SparseCore/SparseRedux.h \
-  /usr/include/eigen3/Eigen/src/SparseCore/SparseView.h \
-  /usr/include/eigen3/Eigen/src/SparseCore/SparseDiagonalProduct.h \
-  /usr/include/eigen3/Eigen/src/SparseCore/ConservativeSparseSparseProduct.h \
-  /usr/include/eigen3/Eigen/src/SparseCore/SparseSparseProductWithPruning.h \
-  /usr/include/eigen3/Eigen/src/SparseCore/SparseProduct.h \
-  /usr/include/eigen3/Eigen/src/SparseCore/SparseDenseProduct.h \
-  /usr/include/eigen3/Eigen/src/SparseCore/SparseSelfAdjointView.h \
-  /usr/include/eigen3/Eigen/src/SparseCore/SparseTriangularView.h \
-  /usr/include/eigen3/Eigen/src/SparseCore/TriangularSolver.h \
-  /usr/include/eigen3/Eigen/src/SparseCore/SparsePermutation.h \
-  /usr/include/eigen3/Eigen/src/SparseCore/SparseFuzzy.h \
-  /usr/include/eigen3/Eigen/src/SparseCore/SparseSolverBase.h \
-  /usr/include/eigen3/Eigen/OrderingMethods \
-  /usr/include/eigen3/Eigen/src/OrderingMethods/Amd.h \
-  /usr/include/eigen3/Eigen/src/Core/util/NonMPL2.h \
-  /usr/include/eigen3/Eigen/src/OrderingMethods/Ordering.h \
-  /usr/include/eigen3/Eigen/src/OrderingMethods/Eigen_Colamd.h \
-  /usr/include/eigen3/Eigen/SparseCholesky \
-  /usr/include/eigen3/Eigen/src/SparseCholesky/SimplicialCholesky.h \
-  /usr/include/eigen3/Eigen/src/SparseCholesky/SimplicialCholesky_impl.h \
-  /usr/include/eigen3/Eigen/src/Core/util/NonMPL2.h \
-  /usr/include/eigen3/Eigen/SparseLU \
-  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_gemm_kernel.h \
-  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_Structs.h \
-  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_SupernodalMatrix.h \
-  /usr/include/eigen3/Eigen/src/SparseLU/SparseLUImpl.h \
-  /usr/include/eigen3/Eigen/src/SparseCore/SparseColEtree.h \
-  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_Memory.h \
-  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_heap_relax_snode.h \
-  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_relax_snode.h \
-  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_pivotL.h \
-  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_panel_dfs.h \
-  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_kernel_bmod.h \
-  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_panel_bmod.h \
-  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_column_dfs.h \
-  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_column_bmod.h \
-  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_copy_to_ucol.h \
-  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_pruneL.h \
-  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_Utils.h \
-  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU.h \
-  /usr/include/eigen3/Eigen/SparseQR \
-  /usr/include/eigen3/Eigen/src/SparseQR/SparseQR.h \
-  /usr/include/eigen3/Eigen/IterativeLinearSolvers \
-  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/SolveWithGuess.h \
-  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IterativeSolverBase.h \
-  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/BasicPreconditioners.h \
-  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/ConjugateGradient.h \
-  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/LeastSquareConjugateGradient.h \
-  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/BiCGSTAB.h \
-  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IncompleteLUT.h \
-  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IncompleteCholesky.h \
-  /usr/include/c++/7/list \
-  /usr/include/c++/7/bits/stl_list.h \
-  /usr/include/c++/7/bits/allocated_ptr.h \
-  /usr/include/c++/7/bits/list.tcc \
-  /usr/include/c++/7/unordered_set \
-  /usr/include/c++/7/bits/hashtable.h \
-  /usr/include/c++/7/bits/hashtable_policy.h \
-  /usr/include/c++/7/bits/unordered_set.h \
-  /usr/include/eigen3/Eigen/StdVector \
-  /usr/include/eigen3/Eigen/src/StlSupport/StdVector.h \
-  /usr/include/eigen3/Eigen/src/StlSupport/details.h \
-  /opt/ros/melodic/include/cv_bridge/cv_bridge.h \
-  /opt/ros/melodic/include/sensor_msgs/Image.h \
-  /usr/include/c++/7/memory \
-  /usr/include/c++/7/bits/stl_raw_storage_iter.h \
-  /usr/include/c++/7/ext/concurrence.h \
-  /usr/include/c++/7/bits/unique_ptr.h \
-  /usr/include/c++/7/bits/shared_ptr.h \
-  /usr/include/c++/7/bits/shared_ptr_base.h \
-  /usr/include/c++/7/bits/shared_ptr_atomic.h \
-  /usr/include/c++/7/bits/atomic_base.h \
-  /usr/include/c++/7/bits/atomic_lockfree_defines.h \
-  /usr/include/c++/7/backward/auto_ptr.h \
-  /opt/ros/melodic/include/ros/types.h \
-  /opt/ros/melodic/include/ros/serialization.h \
-  /opt/ros/melodic/include/ros/roscpp_serialization_macros.h \
-  /opt/ros/melodic/include/ros/macros.h \
-  /opt/ros/melodic/include/ros/time.h \
-  /opt/ros/melodic/include/ros/platform.h \
-  /usr/include/c++/7/iostream \
-  /opt/ros/melodic/include/ros/exception.h \
-  /opt/ros/melodic/include/ros/duration.h \
-  /usr/include/c++/7/math.h \
   /opt/ros/melodic/include/ros/rostime_decl.h \
+  /opt/ros/melodic/include/ros/macros.h \
   /usr/include/boost/math/special_functions/round.hpp \
   /usr/include/boost/math/tools/config.hpp \
   /usr/include/boost/config.hpp \
   /usr/include/boost/config/user.hpp \
   /usr/include/boost/config/detail/select_compiler_config.hpp \
   /usr/include/boost/config/compiler/gcc.hpp \
+  /usr/include/c++/7/cstddef \
   /usr/include/boost/config/detail/select_stdlib_config.hpp \
   /usr/include/boost/config/stdlib/libstdcpp3.hpp \
   /usr/include/unistd.h \
@@ -4655,6 +4340,8 @@ oc_navigation/plan_env/CMakeFiles/plan_env.dir/src/sdf_map.cpp.o: /home/melodic/
   /usr/include/boost/predef/library/c.h \
   /usr/include/boost/predef/library/c/_prefix.h \
   /usr/include/boost/predef/detail/_cassert.h \
+  /usr/include/c++/7/cassert \
+  /usr/include/assert.h \
   /usr/include/boost/predef/library/c/gnu.h \
   /usr/include/boost/predef/library/c/uc.h \
   /usr/include/boost/predef/library/c/vms.h \
@@ -4722,6 +4409,16 @@ oc_navigation/plan_env/CMakeFiles/plan_env.dir/src/sdf_map.cpp.o: /home/melodic/
   /usr/include/boost/config/workaround.hpp \
   /usr/include/boost/type_traits/is_integral.hpp \
   /usr/include/boost/type_traits/integral_constant.hpp \
+  /usr/include/c++/7/algorithm \
+  /usr/include/c++/7/utility \
+  /usr/include/c++/7/bits/stl_relops.h \
+  /usr/include/c++/7/bits/stl_algo.h \
+  /usr/include/c++/7/bits/algorithmfwd.h \
+  /usr/include/c++/7/bits/stl_heap.h \
+  /usr/include/c++/7/bits/stl_tempbuf.h \
+  /usr/include/c++/7/bits/stl_construct.h \
+  /usr/include/c++/7/bits/uniform_int_dist.h \
+  /usr/include/c++/7/limits \
   /usr/include/boost/config/no_tr1/cmath.hpp \
   /usr/include/c++/7/cfloat \
   /usr/lib/gcc/x86_64-linux-gnu/7/include/float.h \
@@ -4741,7 +4438,19 @@ oc_navigation/plan_env/CMakeFiles/plan_env.dir/src/sdf_map.cpp.o: /home/melodic/
   /usr/include/c++/7/bits/allocator.h \
   /usr/include/c++/7/bits/codecvt.h \
   /usr/include/c++/7/bits/unique_ptr.h \
+  /usr/include/c++/7/tuple \
+  /usr/include/c++/7/array \
+  /usr/include/c++/7/bits/uses_allocator.h \
+  /usr/include/c++/7/bits/invoke.h \
+  /usr/include/c++/7/cstring \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
+  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
   /usr/include/boost/config/no_tr1/complex.hpp \
+  /usr/include/c++/7/complex \
+  /usr/include/c++/7/sstream \
+  /usr/include/c++/7/bits/sstream.tcc \
   /usr/include/boost/math/policies/policy.hpp \
   /usr/include/boost/mpl/list.hpp \
   /usr/include/boost/mpl/limits/list.hpp \
@@ -5050,6 +4759,11 @@ oc_navigation/plan_env/CMakeFiles/plan_env.dir/src/sdf_map.cpp.o: /home/melodic/
   /usr/include/boost/exception/exception.hpp \
   /usr/include/boost/current_function.hpp \
   /usr/include/boost/math/special_functions/math_fwd.hpp \
+  /usr/include/c++/7/vector \
+  /usr/include/c++/7/bits/stl_uninitialized.h \
+  /usr/include/c++/7/bits/stl_vector.h \
+  /usr/include/c++/7/bits/stl_bvector.h \
+  /usr/include/c++/7/bits/vector.tcc \
   /usr/include/boost/math/special_functions/detail/round_fwd.hpp \
   /usr/include/boost/math/tools/promotion.hpp \
   /usr/include/boost/type_traits/is_floating_point.hpp \
@@ -5080,13 +4794,52 @@ oc_navigation/plan_env/CMakeFiles/plan_env.dir/src/sdf_map.cpp.o: /home/melodic/
   /usr/include/boost/detail/endian.hpp \
   /usr/include/boost/predef/detail/endian_compat.h \
   /usr/include/x86_64-linux-gnu/sys/time.h \
-  /opt/ros/melodic/include/ros/serialized_message.h \
-  /usr/include/boost/shared_array.hpp \
-  /usr/include/boost/smart_ptr/shared_array.hpp \
-  /usr/include/boost/checked_delete.hpp \
-  /usr/include/boost/core/checked_delete.hpp \
+  /opt/ros/melodic/include/ros/rate.h \
+  /opt/ros/melodic/include/ros/console.h \
+  /opt/ros/melodic/include/ros/console_backend.h \
+  /usr/include/c++/7/cstdarg \
+  /usr/include/c++/7/map \
+  /usr/include/c++/7/bits/stl_tree.h \
+  /usr/include/c++/7/ext/aligned_buffer.h \
+  /usr/include/c++/7/bits/stl_map.h \
+  /usr/include/c++/7/bits/stl_multimap.h \
+  /usr/include/log4cxx/level.h \
+  /usr/include/log4cxx/logstring.h \
+  /usr/include/log4cxx/log4cxx.h \
+  /usr/include/log4cxx/helpers/transcoder.h \
+  /usr/include/log4cxx/helpers/objectimpl.h \
+  /usr/include/log4cxx/helpers/object.h \
+  /usr/include/log4cxx/helpers/class.h \
+  /usr/include/log4cxx/helpers/objectptr.h \
+  /usr/include/log4cxx/helpers/classregistration.h \
+  /opt/ros/melodic/include/rosconsole/macros_generated.h \
+  /opt/ros/melodic/include/ros/assert.h \
+  /opt/ros/melodic/include/ros/static_assert.h \
+  /opt/ros/melodic/include/ros/common.h \
+  /opt/ros/melodic/include/ros/forwards.h \
+  /usr/include/c++/7/set \
+  /usr/include/c++/7/bits/stl_set.h \
+  /usr/include/c++/7/bits/stl_multiset.h \
+  /usr/include/c++/7/list \
+  /usr/include/c++/7/bits/stl_list.h \
+  /usr/include/c++/7/bits/allocated_ptr.h \
+  /usr/include/c++/7/bits/list.tcc \
+  /usr/include/boost/shared_ptr.hpp \
   /usr/include/boost/smart_ptr/shared_ptr.hpp \
   /usr/include/boost/config/no_tr1/memory.hpp \
+  /usr/include/c++/7/memory \
+  /usr/include/c++/7/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/7/ext/concurrence.h \
+  /usr/include/c++/7/bits/unique_ptr.h \
+  /usr/include/c++/7/bits/shared_ptr.h \
+  /usr/include/c++/7/bits/shared_ptr_base.h \
+  /usr/include/c++/7/bits/refwrap.h \
+  /usr/include/c++/7/bits/shared_ptr_atomic.h \
+  /usr/include/c++/7/bits/atomic_base.h \
+  /usr/include/c++/7/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/7/backward/auto_ptr.h \
+  /usr/include/boost/checked_delete.hpp \
+  /usr/include/boost/core/checked_delete.hpp \
   /usr/include/boost/smart_ptr/detail/shared_count.hpp \
   /usr/include/boost/smart_ptr/bad_weak_ptr.hpp \
   /usr/include/boost/smart_ptr/detail/sp_counted_base.hpp \
@@ -5101,6 +4854,8 @@ oc_navigation/plan_env/CMakeFiles/plan_env.dir/src/sdf_map.cpp.o: /home/melodic/
   /usr/include/boost/smart_ptr/detail/sp_counted_impl.hpp \
   /usr/include/boost/core/addressof.hpp \
   /usr/include/boost/smart_ptr/detail/sp_disable_deprecated.hpp \
+  /usr/include/c++/7/functional \
+  /usr/include/c++/7/bits/std_function.h \
   /usr/include/boost/smart_ptr/detail/sp_convertible.hpp \
   /usr/include/boost/smart_ptr/detail/sp_nullptr_t.hpp \
   /usr/include/boost/smart_ptr/detail/sp_noexcept.hpp \
@@ -5111,101 +4866,6 @@ oc_navigation/plan_env/CMakeFiles/plan_env.dir/src/sdf_map.cpp.o: /home/melodic/
   /usr/include/boost/smart_ptr/detail/operator_bool.hpp \
   /usr/include/boost/smart_ptr/detail/local_sp_deleter.hpp \
   /usr/include/boost/smart_ptr/detail/local_counted_base.hpp \
-  /usr/include/boost/shared_ptr.hpp \
-  /opt/ros/melodic/include/ros/message_traits.h \
-  /opt/ros/melodic/include/ros/message_forward.h \
-  /usr/include/boost/type_traits/remove_const.hpp \
-  /usr/include/boost/type_traits/remove_reference.hpp \
-  /opt/ros/melodic/include/ros/builtin_message_traits.h \
-  /opt/ros/melodic/include/ros/message_traits.h \
-  /opt/ros/melodic/include/ros/datatypes.h \
-  /usr/include/c++/7/set \
-  /usr/include/c++/7/bits/stl_set.h \
-  /usr/include/c++/7/bits/stl_multiset.h \
-  /usr/include/boost/array.hpp \
-  /usr/include/boost/swap.hpp \
-  /usr/include/boost/core/swap.hpp \
-  /usr/include/boost/detail/iterator.hpp \
-  /usr/include/c++/7/iterator \
-  /usr/include/c++/7/bits/stream_iterator.h \
-  /usr/include/boost/call_traits.hpp \
-  /usr/include/boost/detail/call_traits.hpp \
-  /usr/include/boost/type_traits/is_enum.hpp \
-  /usr/include/boost/type_traits/is_pointer.hpp \
-  /opt/ros/melodic/include/ros/message_operations.h \
-  /opt/ros/melodic/include/std_msgs/Header.h \
-  /opt/ros/melodic/include/sensor_msgs/CompressedImage.h \
-  /opt/ros/melodic/include/sensor_msgs/image_encodings.h \
-  /opt/ros/melodic/include/ros/static_assert.h \
-  /usr/include/opencv2/core/core.hpp \
-  /usr/include/opencv2/core.hpp \
-  /usr/include/opencv2/core/cvdef.h \
-  /usr/include/opencv2/core/hal/interface.h \
-  /usr/include/opencv2/core/version.hpp \
-  /usr/include/opencv2/core/base.hpp \
-  /usr/include/opencv2/opencv_modules.hpp \
-  /usr/include/opencv2/core/cvstd.hpp \
-  /usr/include/opencv2/core/ptr.inl.hpp \
-  /usr/include/opencv2/core/neon_utils.hpp \
-  /usr/include/opencv2/core/traits.hpp \
-  /usr/include/opencv2/core/matx.hpp \
-  /usr/include/opencv2/core/saturate.hpp \
-  /usr/include/opencv2/core/fast_math.hpp \
-  /usr/include/opencv2/core/types.hpp \
-  /usr/include/opencv2/core/mat.hpp \
-  /usr/include/opencv2/core/bufferpool.hpp \
-  /usr/include/opencv2/core/mat.inl.hpp \
-  /usr/include/opencv2/core/persistence.hpp \
-  /usr/include/opencv2/core/operations.hpp \
-  /usr/include/opencv2/core/cvstd.inl.hpp \
-  /usr/include/opencv2/core/utility.hpp \
-  /usr/include/opencv2/core/core_c.h \
-  /usr/include/opencv2/core/types_c.h \
-  /usr/include/opencv2/core/optim.hpp \
-  /usr/include/opencv2/core/ovx.hpp \
-  /usr/include/opencv2/core/cvdef.h \
-  /usr/include/opencv2/imgproc/imgproc.hpp \
-  /usr/include/opencv2/imgproc.hpp \
-  /usr/include/opencv2/imgproc/imgproc_c.h \
-  /usr/include/opencv2/imgproc/types_c.h \
-  /opt/ros/melodic/include/geometry_msgs/PoseStamped.h \
-  /opt/ros/melodic/include/geometry_msgs/Pose.h \
-  /opt/ros/melodic/include/geometry_msgs/Point.h \
-  /opt/ros/melodic/include/geometry_msgs/Quaternion.h \
-  /usr/include/c++/7/random \
-  /usr/include/c++/7/bits/random.h \
-  /usr/include/x86_64-linux-gnu/c++/7/bits/opt_random.h \
-  /usr/include/c++/7/bits/random.tcc \
-  /usr/include/c++/7/numeric \
-  /usr/include/c++/7/bits/stl_numeric.h \
-  /opt/ros/melodic/include/nav_msgs/Odometry.h \
-  /opt/ros/melodic/include/geometry_msgs/PoseWithCovariance.h \
-  /opt/ros/melodic/include/geometry_msgs/TwistWithCovariance.h \
-  /opt/ros/melodic/include/geometry_msgs/Twist.h \
-  /opt/ros/melodic/include/geometry_msgs/Vector3.h \
-  /usr/include/c++/7/queue \
-  /usr/include/c++/7/deque \
-  /usr/include/c++/7/bits/stl_deque.h \
-  /usr/include/c++/7/bits/deque.tcc \
-  /usr/include/c++/7/bits/stl_queue.h \
-  /opt/ros/melodic/include/ros/ros.h \
-  /opt/ros/melodic/include/ros/rate.h \
-  /opt/ros/melodic/include/ros/console.h \
-  /opt/ros/melodic/include/ros/console_backend.h \
-  /usr/include/c++/7/cstdarg \
-  /usr/include/log4cxx/level.h \
-  /usr/include/log4cxx/logstring.h \
-  /usr/include/log4cxx/log4cxx.h \
-  /usr/include/log4cxx/helpers/transcoder.h \
-  /usr/include/log4cxx/helpers/objectimpl.h \
-  /usr/include/log4cxx/helpers/object.h \
-  /usr/include/log4cxx/helpers/class.h \
-  /usr/include/log4cxx/helpers/objectptr.h \
-  /usr/include/log4cxx/helpers/classregistration.h \
-  /opt/ros/melodic/include/rosconsole/macros_generated.h \
-  /opt/ros/melodic/include/ros/assert.h \
-  /opt/ros/melodic/include/ros/common.h \
-  /opt/ros/melodic/include/ros/forwards.h \
   /usr/include/boost/make_shared.hpp \
   /usr/include/boost/smart_ptr/make_shared.hpp \
   /usr/include/boost/smart_ptr/make_shared_object.hpp \
@@ -5221,6 +4881,8 @@ oc_navigation/plan_env/CMakeFiles/plan_env.dir/src/sdf_map.cpp.o: /home/melodic/
   /usr/include/boost/type_traits/alignment_of.hpp \
   /usr/include/boost/type_traits/is_pod.hpp \
   /usr/include/boost/type_traits/is_scalar.hpp \
+  /usr/include/boost/type_traits/is_enum.hpp \
+  /usr/include/boost/type_traits/is_pointer.hpp \
   /usr/include/boost/type_traits/is_member_pointer.hpp \
   /usr/include/boost/type_traits/is_member_function_pointer.hpp \
   /usr/include/boost/type_traits/detail/is_mem_fun_pointer_impl.hpp \
@@ -5250,6 +4912,7 @@ oc_navigation/plan_env/CMakeFiles/plan_env.dir/src/sdf_map.cpp.o: /home/melodic/
   /usr/include/boost/type_index.hpp \
   /usr/include/boost/type_index/stl_type_index.hpp \
   /usr/include/boost/type_index/type_index_facade.hpp \
+  /usr/include/boost/type_traits/remove_reference.hpp \
   /usr/include/boost/type_traits/has_trivial_copy.hpp \
   /usr/include/boost/type_traits/is_copy_constructible.hpp \
   /usr/include/boost/type_traits/is_constructible.hpp \
@@ -5277,10 +4940,30 @@ oc_navigation/plan_env/CMakeFiles/plan_env.dir/src/sdf_map.cpp.o: /home/melodic/
   /usr/include/boost/detail/no_exceptions_support.hpp \
   /usr/include/boost/core/no_exceptions_support.hpp \
   /opt/ros/melodic/include/ros/exceptions.h \
+  /opt/ros/melodic/include/ros/datatypes.h \
   /opt/ros/melodic/include/ros/serialized_message.h \
+  /opt/ros/melodic/include/ros/roscpp_serialization_macros.h \
+  /usr/include/boost/shared_array.hpp \
+  /usr/include/boost/smart_ptr/shared_array.hpp \
+  /opt/ros/melodic/include/ros/types.h \
   /opt/ros/melodic/include/ros/node_handle.h \
   /opt/ros/melodic/include/ros/publisher.h \
   /opt/ros/melodic/include/ros/message.h \
+  /usr/include/boost/array.hpp \
+  /usr/include/boost/swap.hpp \
+  /usr/include/boost/core/swap.hpp \
+  /usr/include/boost/detail/iterator.hpp \
+  /usr/include/c++/7/iterator \
+  /usr/include/c++/7/bits/stream_iterator.h \
+  /opt/ros/melodic/include/ros/serialization.h \
+  /opt/ros/melodic/include/ros/serialized_message.h \
+  /opt/ros/melodic/include/ros/message_traits.h \
+  /opt/ros/melodic/include/ros/message_forward.h \
+  /usr/include/boost/type_traits/remove_const.hpp \
+  /opt/ros/melodic/include/ros/builtin_message_traits.h \
+  /opt/ros/melodic/include/ros/message_traits.h \
+  /usr/include/boost/call_traits.hpp \
+  /usr/include/boost/detail/call_traits.hpp \
   /usr/include/boost/bind.hpp \
   /usr/include/boost/bind/bind.hpp \
   /usr/include/boost/type.hpp \
@@ -5469,6 +5152,329 @@ oc_navigation/plan_env/CMakeFiles/plan_env.dir/src/sdf_map.cpp.o: /home/melodic/
   /opt/ros/melodic/include/ros/param.h \
   /opt/ros/melodic/include/ros/topic.h \
   /opt/ros/melodic/include/ros/node_handle.h \
+  /opt/ros/melodic/include/std_msgs/Float64MultiArray.h \
+  /opt/ros/melodic/include/ros/message_operations.h \
+  /opt/ros/melodic/include/std_msgs/MultiArrayLayout.h \
+  /opt/ros/melodic/include/std_msgs/MultiArrayDimension.h \
+  /home/melodic/jetsonNX/Aerial-Walker/src/oc_navigation/plan_env/include/plan_env/sdf_map.h \
+  /usr/include/eigen3/Eigen/Eigen \
+  /usr/include/eigen3/Eigen/Dense \
+  /usr/include/eigen3/Eigen/Core \
+  /usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h \
+  /usr/include/eigen3/Eigen/src/Core/util/Macros.h \
+  /usr/include/eigen3/Eigen/src/Core/util/MKL_support.h \
+  /usr/lib/gcc/x86_64-linux-gnu/7/include/mmintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/7/include/emmintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/7/include/xmmintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/7/include/mm_malloc.h \
+  /usr/include/eigen3/Eigen/src/Core/util/Constants.h \
+  /usr/include/eigen3/Eigen/src/Core/util/Meta.h \
+  /usr/include/eigen3/Eigen/src/Core/util/ForwardDeclarations.h \
+  /usr/include/eigen3/Eigen/src/Core/util/StaticAssert.h \
+  /usr/include/eigen3/Eigen/src/Core/util/XprHelper.h \
+  /usr/include/eigen3/Eigen/src/Core/util/Memory.h \
+  /usr/include/eigen3/Eigen/src/Core/NumTraits.h \
+  /usr/include/eigen3/Eigen/src/Core/MathFunctions.h \
+  /usr/include/eigen3/Eigen/src/Core/GenericPacketMath.h \
+  /usr/include/eigen3/Eigen/src/Core/MathFunctionsImpl.h \
+  /usr/include/eigen3/Eigen/src/Core/arch/Default/ConjHelper.h \
+  /usr/include/eigen3/Eigen/src/Core/arch/SSE/PacketMath.h \
+  /usr/include/eigen3/Eigen/src/Core/arch/SSE/MathFunctions.h \
+  /usr/include/eigen3/Eigen/src/Core/arch/SSE/Complex.h \
+  /usr/include/eigen3/Eigen/src/Core/arch/SSE/TypeCasting.h \
+  /usr/include/eigen3/Eigen/src/Core/arch/CUDA/Half.h \
+  /usr/include/eigen3/Eigen/src/Core/arch/CUDA/PacketMathHalf.h \
+  /usr/include/eigen3/Eigen/src/Core/arch/CUDA/TypeCasting.h \
+  /usr/include/eigen3/Eigen/src/Core/arch/Default/Settings.h \
+  /usr/include/eigen3/Eigen/src/Core/functors/TernaryFunctors.h \
+  /usr/include/eigen3/Eigen/src/Core/functors/BinaryFunctors.h \
+  /usr/include/eigen3/Eigen/src/Core/functors/UnaryFunctors.h \
+  /usr/include/eigen3/Eigen/src/Core/functors/NullaryFunctors.h \
+  /usr/include/eigen3/Eigen/src/Core/functors/StlFunctors.h \
+  /usr/include/eigen3/Eigen/src/Core/functors/AssignmentFunctors.h \
+  /usr/include/eigen3/Eigen/src/Core/arch/CUDA/Complex.h \
+  /usr/include/eigen3/Eigen/src/Core/IO.h \
+  /usr/include/eigen3/Eigen/src/Core/DenseCoeffsBase.h \
+  /usr/include/eigen3/Eigen/src/Core/DenseBase.h \
+  /usr/include/eigen3/Eigen/src/plugins/BlockMethods.h \
+  /usr/include/eigen3/Eigen/src/Core/MatrixBase.h \
+  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h \
+  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseBinaryOps.h \
+  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h \
+  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h \
+  /usr/include/eigen3/Eigen/src/Core/EigenBase.h \
+  /usr/include/eigen3/Eigen/src/Core/Product.h \
+  /usr/include/eigen3/Eigen/src/Core/CoreEvaluators.h \
+  /usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h \
+  /usr/include/eigen3/Eigen/src/Core/Assign.h \
+  /usr/include/eigen3/Eigen/src/Core/ArrayBase.h \
+  /usr/include/eigen3/Eigen/src/plugins/ArrayCwiseUnaryOps.h \
+  /usr/include/eigen3/Eigen/src/plugins/ArrayCwiseBinaryOps.h \
+  /usr/include/eigen3/Eigen/src/Core/util/BlasUtil.h \
+  /usr/include/eigen3/Eigen/src/Core/DenseStorage.h \
+  /usr/include/eigen3/Eigen/src/Core/NestByValue.h \
+  /usr/include/eigen3/Eigen/src/Core/ReturnByValue.h \
+  /usr/include/eigen3/Eigen/src/Core/NoAlias.h \
+  /usr/include/eigen3/Eigen/src/Core/PlainObjectBase.h \
+  /usr/include/eigen3/Eigen/src/Core/Matrix.h \
+  /usr/include/eigen3/Eigen/src/Core/Array.h \
+  /usr/include/eigen3/Eigen/src/Core/CwiseTernaryOp.h \
+  /usr/include/eigen3/Eigen/src/Core/CwiseBinaryOp.h \
+  /usr/include/eigen3/Eigen/src/Core/CwiseUnaryOp.h \
+  /usr/include/eigen3/Eigen/src/Core/CwiseNullaryOp.h \
+  /usr/include/eigen3/Eigen/src/Core/CwiseUnaryView.h \
+  /usr/include/eigen3/Eigen/src/Core/SelfCwiseBinaryOp.h \
+  /usr/include/eigen3/Eigen/src/Core/Dot.h \
+  /usr/include/eigen3/Eigen/src/Core/StableNorm.h \
+  /usr/include/eigen3/Eigen/src/Core/Stride.h \
+  /usr/include/eigen3/Eigen/src/Core/MapBase.h \
+  /usr/include/eigen3/Eigen/src/Core/Map.h \
+  /usr/include/eigen3/Eigen/src/Core/Ref.h \
+  /usr/include/eigen3/Eigen/src/Core/Block.h \
+  /usr/include/eigen3/Eigen/src/Core/VectorBlock.h \
+  /usr/include/eigen3/Eigen/src/Core/Transpose.h \
+  /usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h \
+  /usr/include/eigen3/Eigen/src/Core/Diagonal.h \
+  /usr/include/eigen3/Eigen/src/Core/DiagonalProduct.h \
+  /usr/include/eigen3/Eigen/src/Core/Redux.h \
+  /usr/include/eigen3/Eigen/src/Core/Visitor.h \
+  /usr/include/eigen3/Eigen/src/Core/Fuzzy.h \
+  /usr/include/eigen3/Eigen/src/Core/Swap.h \
+  /usr/include/eigen3/Eigen/src/Core/CommaInitializer.h \
+  /usr/include/eigen3/Eigen/src/Core/GeneralProduct.h \
+  /usr/include/eigen3/Eigen/src/Core/Solve.h \
+  /usr/include/eigen3/Eigen/src/Core/Inverse.h \
+  /usr/include/eigen3/Eigen/src/Core/SolverBase.h \
+  /usr/include/eigen3/Eigen/src/Core/PermutationMatrix.h \
+  /usr/include/eigen3/Eigen/src/Core/Transpositions.h \
+  /usr/include/eigen3/Eigen/src/Core/TriangularMatrix.h \
+  /usr/include/eigen3/Eigen/src/Core/SelfAdjointView.h \
+  /usr/include/eigen3/Eigen/src/Core/products/GeneralBlockPanelKernel.h \
+  /usr/include/eigen3/Eigen/src/Core/products/Parallelizer.h \
+  /usr/include/eigen3/Eigen/src/Core/ProductEvaluators.h \
+  /usr/include/eigen3/Eigen/src/Core/products/GeneralMatrixVector.h \
+  /usr/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrix.h \
+  /usr/include/eigen3/Eigen/src/Core/SolveTriangular.h \
+  /usr/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h \
+  /usr/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixVector.h \
+  /usr/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixMatrix.h \
+  /usr/include/eigen3/Eigen/src/Core/products/SelfadjointProduct.h \
+  /usr/include/eigen3/Eigen/src/Core/products/SelfadjointRank2Update.h \
+  /usr/include/eigen3/Eigen/src/Core/products/TriangularMatrixVector.h \
+  /usr/include/eigen3/Eigen/src/Core/products/TriangularMatrixMatrix.h \
+  /usr/include/eigen3/Eigen/src/Core/products/TriangularSolverMatrix.h \
+  /usr/include/eigen3/Eigen/src/Core/products/TriangularSolverVector.h \
+  /usr/include/eigen3/Eigen/src/Core/BandMatrix.h \
+  /usr/include/eigen3/Eigen/src/Core/CoreIterators.h \
+  /usr/include/eigen3/Eigen/src/Core/ConditionEstimator.h \
+  /usr/include/eigen3/Eigen/src/Core/BooleanRedux.h \
+  /usr/include/eigen3/Eigen/src/Core/Select.h \
+  /usr/include/eigen3/Eigen/src/Core/VectorwiseOp.h \
+  /usr/include/eigen3/Eigen/src/Core/Random.h \
+  /usr/include/eigen3/Eigen/src/Core/Replicate.h \
+  /usr/include/eigen3/Eigen/src/Core/Reverse.h \
+  /usr/include/eigen3/Eigen/src/Core/ArrayWrapper.h \
+  /usr/include/eigen3/Eigen/src/Core/GlobalFunctions.h \
+  /usr/include/eigen3/Eigen/src/Core/util/ReenableStupidWarnings.h \
+  /usr/include/eigen3/Eigen/LU \
+  /usr/include/eigen3/Eigen/src/misc/Kernel.h \
+  /usr/include/eigen3/Eigen/src/misc/Image.h \
+  /usr/include/eigen3/Eigen/src/LU/FullPivLU.h \
+  /usr/include/eigen3/Eigen/src/LU/PartialPivLU.h \
+  /usr/include/eigen3/Eigen/src/LU/Determinant.h \
+  /usr/include/eigen3/Eigen/src/LU/InverseImpl.h \
+  /usr/include/eigen3/Eigen/src/LU/arch/Inverse_SSE.h \
+  /usr/include/eigen3/Eigen/Cholesky \
+  /usr/include/eigen3/Eigen/src/Cholesky/LLT.h \
+  /usr/include/eigen3/Eigen/src/Cholesky/LDLT.h \
+  /usr/include/eigen3/Eigen/QR \
+  /usr/include/eigen3/Eigen/Jacobi \
+  /usr/include/eigen3/Eigen/src/Jacobi/Jacobi.h \
+  /usr/include/eigen3/Eigen/Householder \
+  /usr/include/eigen3/Eigen/src/Householder/Householder.h \
+  /usr/include/eigen3/Eigen/src/Householder/HouseholderSequence.h \
+  /usr/include/eigen3/Eigen/src/Householder/BlockHouseholder.h \
+  /usr/include/eigen3/Eigen/src/QR/HouseholderQR.h \
+  /usr/include/eigen3/Eigen/src/QR/FullPivHouseholderQR.h \
+  /usr/include/eigen3/Eigen/src/QR/ColPivHouseholderQR.h \
+  /usr/include/eigen3/Eigen/src/QR/CompleteOrthogonalDecomposition.h \
+  /usr/include/eigen3/Eigen/SVD \
+  /usr/include/eigen3/Eigen/src/misc/RealSvd2x2.h \
+  /usr/include/eigen3/Eigen/src/SVD/UpperBidiagonalization.h \
+  /usr/include/eigen3/Eigen/src/SVD/SVDBase.h \
+  /usr/include/eigen3/Eigen/src/SVD/JacobiSVD.h \
+  /usr/include/eigen3/Eigen/src/SVD/BDCSVD.h \
+  /usr/include/eigen3/Eigen/Geometry \
+  /usr/include/eigen3/Eigen/src/Geometry/OrthoMethods.h \
+  /usr/include/eigen3/Eigen/src/Geometry/EulerAngles.h \
+  /usr/include/eigen3/Eigen/src/Geometry/Homogeneous.h \
+  /usr/include/eigen3/Eigen/src/Geometry/RotationBase.h \
+  /usr/include/eigen3/Eigen/src/Geometry/Rotation2D.h \
+  /usr/include/eigen3/Eigen/src/Geometry/Quaternion.h \
+  /usr/include/eigen3/Eigen/src/Geometry/AngleAxis.h \
+  /usr/include/eigen3/Eigen/src/Geometry/Transform.h \
+  /usr/include/eigen3/Eigen/src/Geometry/Translation.h \
+  /usr/include/eigen3/Eigen/src/Geometry/Scaling.h \
+  /usr/include/eigen3/Eigen/src/Geometry/Hyperplane.h \
+  /usr/include/eigen3/Eigen/src/Geometry/ParametrizedLine.h \
+  /usr/include/eigen3/Eigen/src/Geometry/AlignedBox.h \
+  /usr/include/eigen3/Eigen/src/Geometry/Umeyama.h \
+  /usr/include/eigen3/Eigen/src/Geometry/arch/Geometry_SSE.h \
+  /usr/include/eigen3/Eigen/Eigenvalues \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/EigenSolver.h \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/ComplexEigenSolver.h \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
+  /usr/include/eigen3/Eigen/Sparse \
+  /usr/include/eigen3/Eigen/SparseCore \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseUtil.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseMatrixBase.h \
+  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h \
+  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseBinaryOps.h \
+  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h \
+  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h \
+  /usr/include/eigen3/Eigen/src/plugins/BlockMethods.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseAssign.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/CompressedStorage.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/AmbiVector.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseCompressedBase.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseMatrix.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseMap.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/MappedSparseMatrix.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseVector.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseRef.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseCwiseUnaryOp.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseCwiseBinaryOp.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseTranspose.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseBlock.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseDot.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseRedux.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseView.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseDiagonalProduct.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/ConservativeSparseSparseProduct.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseSparseProductWithPruning.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseProduct.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseDenseProduct.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseSelfAdjointView.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseTriangularView.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/TriangularSolver.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparsePermutation.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseFuzzy.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseSolverBase.h \
+  /usr/include/eigen3/Eigen/OrderingMethods \
+  /usr/include/eigen3/Eigen/src/OrderingMethods/Amd.h \
+  /usr/include/eigen3/Eigen/src/Core/util/NonMPL2.h \
+  /usr/include/eigen3/Eigen/src/OrderingMethods/Ordering.h \
+  /usr/include/eigen3/Eigen/src/OrderingMethods/Eigen_Colamd.h \
+  /usr/include/eigen3/Eigen/SparseCholesky \
+  /usr/include/eigen3/Eigen/src/SparseCholesky/SimplicialCholesky.h \
+  /usr/include/eigen3/Eigen/src/SparseCholesky/SimplicialCholesky_impl.h \
+  /usr/include/eigen3/Eigen/src/Core/util/NonMPL2.h \
+  /usr/include/eigen3/Eigen/SparseLU \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_gemm_kernel.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_Structs.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_SupernodalMatrix.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLUImpl.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseColEtree.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_Memory.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_heap_relax_snode.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_relax_snode.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_pivotL.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_panel_dfs.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_kernel_bmod.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_panel_bmod.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_column_dfs.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_column_bmod.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_copy_to_ucol.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_pruneL.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_Utils.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU.h \
+  /usr/include/eigen3/Eigen/SparseQR \
+  /usr/include/eigen3/Eigen/src/SparseQR/SparseQR.h \
+  /usr/include/eigen3/Eigen/IterativeLinearSolvers \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/SolveWithGuess.h \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IterativeSolverBase.h \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/BasicPreconditioners.h \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/ConjugateGradient.h \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/LeastSquareConjugateGradient.h \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/BiCGSTAB.h \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IncompleteLUT.h \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IncompleteCholesky.h \
+  /usr/include/c++/7/unordered_set \
+  /usr/include/c++/7/bits/hashtable.h \
+  /usr/include/c++/7/bits/hashtable_policy.h \
+  /usr/include/c++/7/bits/unordered_set.h \
+  /usr/include/eigen3/Eigen/StdVector \
+  /usr/include/eigen3/Eigen/src/StlSupport/StdVector.h \
+  /usr/include/eigen3/Eigen/src/StlSupport/details.h \
+  /opt/ros/melodic/include/cv_bridge/cv_bridge.h \
+  /opt/ros/melodic/include/sensor_msgs/Image.h \
+  /opt/ros/melodic/include/std_msgs/Header.h \
+  /opt/ros/melodic/include/sensor_msgs/CompressedImage.h \
+  /opt/ros/melodic/include/sensor_msgs/image_encodings.h \
+  /usr/include/opencv2/core/core.hpp \
+  /usr/include/opencv2/core.hpp \
+  /usr/include/opencv2/core/cvdef.h \
+  /usr/include/opencv2/core/hal/interface.h \
+  /usr/include/opencv2/core/version.hpp \
+  /usr/include/opencv2/core/base.hpp \
+  /usr/include/opencv2/opencv_modules.hpp \
+  /usr/include/opencv2/core/cvstd.hpp \
+  /usr/include/opencv2/core/ptr.inl.hpp \
+  /usr/include/opencv2/core/neon_utils.hpp \
+  /usr/include/opencv2/core/traits.hpp \
+  /usr/include/opencv2/core/matx.hpp \
+  /usr/include/opencv2/core/saturate.hpp \
+  /usr/include/opencv2/core/fast_math.hpp \
+  /usr/include/opencv2/core/types.hpp \
+  /usr/include/opencv2/core/mat.hpp \
+  /usr/include/opencv2/core/bufferpool.hpp \
+  /usr/include/opencv2/core/mat.inl.hpp \
+  /usr/include/opencv2/core/persistence.hpp \
+  /usr/include/opencv2/core/operations.hpp \
+  /usr/include/opencv2/core/cvstd.inl.hpp \
+  /usr/include/opencv2/core/utility.hpp \
+  /usr/include/opencv2/core/core_c.h \
+  /usr/include/opencv2/core/types_c.h \
+  /usr/include/opencv2/core/optim.hpp \
+  /usr/include/opencv2/core/ovx.hpp \
+  /usr/include/opencv2/core/cvdef.h \
+  /usr/include/opencv2/imgproc/imgproc.hpp \
+  /usr/include/opencv2/imgproc.hpp \
+  /usr/include/opencv2/imgproc/imgproc_c.h \
+  /usr/include/opencv2/imgproc/types_c.h \
+  /opt/ros/melodic/include/geometry_msgs/PoseStamped.h \
+  /opt/ros/melodic/include/geometry_msgs/Pose.h \
+  /opt/ros/melodic/include/geometry_msgs/Point.h \
+  /opt/ros/melodic/include/geometry_msgs/Quaternion.h \
+  /usr/include/c++/7/random \
+  /usr/include/c++/7/bits/random.h \
+  /usr/include/x86_64-linux-gnu/c++/7/bits/opt_random.h \
+  /usr/include/c++/7/bits/random.tcc \
+  /usr/include/c++/7/numeric \
+  /usr/include/c++/7/bits/stl_numeric.h \
+  /opt/ros/melodic/include/nav_msgs/Odometry.h \
+  /opt/ros/melodic/include/geometry_msgs/PoseWithCovariance.h \
+  /opt/ros/melodic/include/geometry_msgs/TwistWithCovariance.h \
+  /opt/ros/melodic/include/geometry_msgs/Twist.h \
+  /opt/ros/melodic/include/geometry_msgs/Vector3.h \
+  /usr/include/c++/7/queue \
+  /usr/include/c++/7/deque \
+  /usr/include/c++/7/bits/stl_deque.h \
+  /usr/include/c++/7/bits/deque.tcc \
+  /usr/include/c++/7/bits/stl_queue.h \
   /opt/ros/melodic/include/visualization_msgs/Marker.h \
   /opt/ros/melodic/include/std_msgs/ColorRGBA.h \
   /usr/include/pcl-1.8/pcl/point_cloud.h \
@@ -6494,8 +6500,6 @@ oc_navigation/plan_env/CMakeFiles/plan_env.dir/src/sdf_map.cpp.o: /home/melodic/
 
 /usr/include/boost/signals2/slot_base.hpp:
 
-/usr/include/boost/signals2/detail/tracked_objects_visitor.hpp:
-
 /usr/include/boost/signals2/signal_base.hpp:
 
 /usr/include/boost/signals2/slot.hpp:
@@ -7096,6 +7100,10 @@ oc_navigation/plan_env/CMakeFiles/plan_env.dir/src/sdf_map.cpp.o: /home/melodic/
 
 /usr/include/pcl-1.8/pcl/for_each_type.h:
 
+/usr/include/pcl-1.8/pcl/PCLPointCloud2.h:
+
+/opt/ros/melodic/include/pcl_conversions/pcl_conversions.h:
+
 /usr/include/boost/mpl/aux_/config/lambda.hpp:
 
 /usr/include/boost/chrono/duration.hpp:
@@ -7538,10 +7546,6 @@ oc_navigation/plan_env/CMakeFiles/plan_env.dir/src/sdf_map.cpp.o: /home/melodic/
 
 /usr/include/eigen3/Eigen/OrderingMethods:
 
-/usr/include/boost/range/iterator_range_io.hpp:
-
-/usr/include/eigen3/Eigen/src/SparseCore/SparsePermutation.h:
-
 /usr/include/boost/signals2/signal.hpp:
 
 /usr/include/eigen3/Eigen/src/SparseCore/TriangularSolver.h:
@@ -7840,6 +7844,12 @@ oc_navigation/plan_env/CMakeFiles/plan_env.dir/src/sdf_map.cpp.o: /home/melodic/
 
 /usr/lib/gcc/x86_64-linux-gnu/7/include/emmintrin.h:
 
+/usr/include/boost/algorithm/string/predicate.hpp:
+
+/usr/include/pcl-1.8/pcl/conversions.h:
+
+/usr/include/eigen3/Eigen/src/Core/DiagonalProduct.h:
+
 /usr/include/boost/mpl/lambda_fwd.hpp:
 
 /usr/include/boost/predef/platform/windows_phone.h:
@@ -7935,12 +7945,6 @@ oc_navigation/plan_env/CMakeFiles/plan_env.dir/src/sdf_map.cpp.o: /home/melodic/
 /usr/include/boost/type_traits/is_convertible.hpp:
 
 /usr/include/sched.h:
-
-/usr/include/boost/algorithm/string/predicate.hpp:
-
-/usr/include/eigen3/Eigen/src/Core/DiagonalProduct.h:
-
-/usr/include/pcl-1.8/pcl/conversions.h:
 
 /usr/include/boost/type_traits/cv_traits.hpp:
 
@@ -10044,6 +10048,10 @@ oc_navigation/plan_env/CMakeFiles/plan_env.dir/src/sdf_map.cpp.o: /home/melodic/
 
 /usr/include/boost/iterator/iterator_concepts.hpp:
 
+/usr/include/boost/signals2/detail/tracked_objects_visitor.hpp:
+
+/opt/ros/melodic/include/std_msgs/Float64MultiArray.h:
+
 /usr/include/boost/preprocessor/enum_params.hpp:
 
 /usr/include/eigen3/Eigen/src/Core/TriangularMatrix.h:
@@ -10440,6 +10448,14 @@ oc_navigation/plan_env/CMakeFiles/plan_env.dir/src/sdf_map.cpp.o: /home/melodic/
 
 /usr/include/c++/7/bits/stl_deque.h:
 
+/usr/include/boost/range/iterator_range_io.hpp:
+
+/usr/include/eigen3/Eigen/src/SparseCore/SparsePermutation.h:
+
+/opt/ros/melodic/include/std_msgs/MultiArrayLayout.h:
+
+/opt/ros/melodic/include/std_msgs/MultiArrayDimension.h:
+
 /usr/include/eigen3/Eigen/src/Core/BandMatrix.h:
 
 /usr/include/pcl-1.8/pcl/PCLHeader.h:
@@ -10583,7 +10599,3 @@ oc_navigation/plan_env/CMakeFiles/plan_env.dir/src/sdf_map.cpp.o: /home/melodic/
 /usr/include/boost/type_traits/integral_promotion.hpp:
 
 /usr/include/boost/type_traits/promote.hpp:
-
-/opt/ros/melodic/include/pcl_conversions/pcl_conversions.h:
-
-/usr/include/pcl-1.8/pcl/PCLPointCloud2.h:

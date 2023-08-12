@@ -1287,6 +1287,9 @@ oc_navigation/bspline_opt/CMakeFiles/bspline_opt.dir/src/bspline_optimizer.cpp.o
  /opt/ros/melodic/include/geometry_msgs/Twist.h /usr/include/c++/7/queue \
  /usr/include/c++/7/deque /usr/include/c++/7/bits/stl_deque.h \
  /usr/include/c++/7/bits/deque.tcc /usr/include/c++/7/bits/stl_queue.h \
+ /opt/ros/melodic/include/std_msgs/Float64MultiArray.h \
+ /opt/ros/melodic/include/std_msgs/MultiArrayLayout.h \
+ /opt/ros/melodic/include/std_msgs/MultiArrayDimension.h \
  /usr/include/pcl-1.8/pcl/point_cloud.h \
  /usr/include/eigen3/Eigen/Geometry /usr/include/pcl-1.8/pcl/PCLHeader.h \
  /usr/include/pcl-1.8/pcl/pcl_macros.h \

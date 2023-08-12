@@ -1292,6 +1292,9 @@ oc_navigation/path_searching/CMakeFiles/path_searching.dir/src/kinodynamic_astar
  /opt/ros/melodic/include/geometry_msgs/PoseWithCovariance.h \
  /opt/ros/melodic/include/geometry_msgs/TwistWithCovariance.h \
  /opt/ros/melodic/include/geometry_msgs/Twist.h \
+ /opt/ros/melodic/include/std_msgs/Float64MultiArray.h \
+ /opt/ros/melodic/include/std_msgs/MultiArrayLayout.h \
+ /opt/ros/melodic/include/std_msgs/MultiArrayDimension.h \
  /usr/include/pcl-1.8/pcl/point_cloud.h \
  /usr/include/eigen3/Eigen/Geometry /usr/include/pcl-1.8/pcl/PCLHeader.h \
  /usr/include/pcl-1.8/pcl/pcl_macros.h \

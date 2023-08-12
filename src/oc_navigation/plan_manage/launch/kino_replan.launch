@@ -80,6 +80,11 @@
 
   <node name="rvizvisualisation" pkg="rviz" type="rviz" output="log" args="-d $(find plan_manage)/config/traj.rviz" />
 
+  <!-- pointcloud_listener -->
+  <!-- <node name="pointcloud_listener" pkg="plan_manage" type="pointcloud_listener.py" output="screen">
+    
+  </node> -->
+
   <!-- use simulator -->
   <include file="$(find plan_manage)/launch/simulator.xml">
     <arg name="map_size_x_" value="$(arg map_size_x)"/>
