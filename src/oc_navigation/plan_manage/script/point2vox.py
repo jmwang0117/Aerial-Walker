@@ -52,20 +52,21 @@ class PointCloudVoxelization:
         for file_name in os.listdir(self.input_folder):
             if file_name.endswith('.bin'):
                 input_path = os.path.join(self.input_folder, file_name)
-
+                
                 # Read point cloud
                 point_cloud = self._read_pointcloud_SemKITTI(input_path)
                 points_xyz = point_cloud[:, :3]
-
+                
                 # Update min_coords and max_coords
                 min_coords = np.minimum(min_coords, np.min(points_xyz, axis=0))
                 max_coords = np.maximum(max_coords, np.max(points_xyz, axis=0))
 
-        voxel_origin = min_coords
-        desired_size = max_coords - min_coords
+        #voxel_origin = min_coords
+        # desired_size = max_coords - min_coords
         # voxel_size = desired_size / np.asarray(self.grid_size)
-        voxel_size = 0.2
-
+        voxel_size = 0.1
+        voxel_origin = np.array([-10, -10, -0.1])
+        print(f"voxel_origin: {voxel_origin}") 
         return voxel_origin, voxel_size
 
 
@@ -81,12 +82,14 @@ class PointCloudVoxelization:
                 # Read point cloud
                 point_cloud = self._read_pointcloud_SemKITTI(input_path)
                 points_xyz = point_cloud[:, :3]
-
+                #print(f"points_xyz: {points_xyz}") 
                 # Voxelization
                 voxel_coords = ((points_xyz - voxel_origin) // voxel_size).astype(int)
                 valid_mask = np.all((voxel_coords >= 0) & (voxel_coords < self.grid_size), axis=1)
                 voxel_coords = voxel_coords[valid_mask]
-
+                print("Voxel Coordinates:")
+                for voxel_coord in voxel_coords:
+                    print(voxel_coord)
                 # Create an empty voxel grid
                 voxel_grid = np.zeros(np.prod(self.grid_size), dtype=np.uint8)
 
@@ -109,14 +112,14 @@ class PointCloudVoxelization:
                 occupied_voxels_count = np.count_nonzero(voxel_grid == 1)
 
                 # Print the file name and occupied voxels count
-                print(f"File: {file_name}, Occupied voxels: {occupied_voxels_count}")
+                # print(f"File: {file_name}, Occupied voxels: {occupied_voxels_count}")
                 
                 
 
-# if __name__ == '__main__':
-#     input_folder = '/home/melodic/jetsonNX/Aerial-Walker/src/oc_navigation/plan_manage/raw_data/velodyne'
-#     output_folder = '/home/melodic/jetsonNX/Aerial-Walker/src/oc_navigation/plan_manage/raw_data/voxels'
-#     grid_size = (256, 256, 32)  # Set the desired grid size (x, y, z)
+if __name__ == '__main__':
+    input_folder = '/home/melodic/jetsonNX/Aerial-Walker/src/oc_navigation/plan_manage/raw_data/velodyne'
+    output_folder = '/home/melodic/jetsonNX/Aerial-Walker/src/oc_navigation/plan_manage/raw_data/voxels'
+    grid_size = (256, 256, 32)  # Set the desired grid size (x, y, z)
 
-#     voxelizer = PointCloudVoxelization(input_folder, output_folder, grid_size)
-#     voxelizer.voxelization()
+    voxelizer = PointCloudVoxelization(input_folder, output_folder, grid_size)
+    voxelizer.voxelization()

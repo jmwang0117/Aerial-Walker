@@ -42,8 +42,9 @@ class PointCloudListener:
             x, y, z = point
             remission = np.sqrt(x**2 + y**2 + z**2)  # Calculate the distance from the origin
             remission = remission / 10
+            print(f"x: {x}, y: {y}, z: {z}, remission: {remission}")            
             point_cloud.append([x, y, z, remission])
-
+        
         point_cloud = np.array(point_cloud, dtype=np.float32)
         point_cloud_bytes = point_cloud.tobytes()
 

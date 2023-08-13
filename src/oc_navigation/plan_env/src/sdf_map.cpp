@@ -1,37 +1,17 @@
-/**
-* This file is part of Fast-Planner.
-*
-* Copyright 2019 Boyu Zhou, Aerial Robotics Group, Hong Kong University of Science and Technology, <uav.ust.hk>
-* Developed by Boyu Zhou <bzhouai at connect dot ust dot hk>, <uv dot boyuzhou at gmail dot com>
-* for more information see <https://github.com/HKUST-Aerial-Robotics/Fast-Planner>.
-* If you use this code, please cite the respective publications as
-* listed on the above website.
-*
-* Fast-Planner is free software: you can redistribute it and/or modify
-* it under the terms of the GNU Lesser General Public License as published by
-* the Free Software Foundation, either version 3 of the License, or
-* (at your option) any later version.
-*
-* Fast-Planner is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-* GNU General Public License for more details.
-*
-* You should have received a copy of the GNU Lesser General Public License
-* along with Fast-Planner. If not, see <http://www.gnu.org/licenses/>.
-*/
 
 #include <ros/ros.h>
+#include <plan_env/sdf_map.h>
 #include <std_msgs/Float64MultiArray.h>
-#include "plan_env/sdf_map.h"
+#include<functional>
+#include <std_msgs/Float64MultiArray.h>
+#include <Eigen/Eigen>
+#include <ros/ros.h>
 
-// #define current_img_ md_.depth_image_[image_cnt_ & 1]
-// #define last_img_ md_.depth_image_[!(image_cnt_ & 1)]
 
 void SDFMap::initMap(ros::NodeHandle& nh) {
   node_ = nh;
  
-  
+  ros::Subscriber world_coords_subscriber_;
   /* get parameter */
   double x_size, y_size, z_size;
   node_.param("sdf_map/resolution", mp_.resolution_, -1.0);
@@ -180,7 +160,7 @@ void SDFMap::initMap(ros::NodeHandle& nh) {
         node_.subscribe<nav_msgs::Odometry>("/sdf_map/odom", 10, &SDFMap::odomCallback, this);
     mp_.local_update_range_ << 100, 100, 100;
   }
-
+  world_coords_subscriber_ = node_.subscribe<std_msgs::Float64MultiArray>("/non_intersection_coordinates", 10, &SDFMap::OccRemappingCallback, this);
 
   occ_timer_ = node_.createTimer(ros::Duration(0.05), &SDFMap::updateOccupancyCallback, this);
   esdf_timer_ = node_.createTimer(ros::Duration(0.05), &SDFMap::updateESDFCallback, this);
@@ -196,7 +176,7 @@ void SDFMap::initMap(ros::NodeHandle& nh) {
   ground_pub_ = node_.advertise<sensor_msgs::PointCloud2>("/sdf_map/ground_cloud", 10);
   obstacle_pub_ = node_.advertise<sensor_msgs::PointCloud2>("/sdf_map/obstacle_cloud", 10);
 
-  non_intersection_subscriber_ = node_.subscribe<std_msgs::Float64MultiArray>("/non_intersection_coordinates", 10, &SDFMap::nonIntersectionCallback, this);
+
 
 
   md_.occ_need_update_ = false;
@@ -734,55 +714,58 @@ Eigen::Vector3d SDFMap::closetPointInMap(const Eigen::Vector3d& pt, const Eigen:
 }
 
 
+
+
+
+void SDFMap::OccRemappingCallback(const std_msgs::Float64MultiArray::ConstPtr &msg) {
+  std::cout << "Entering OccRemappingCallback" << std::endl;
+  // Clear previous subscribed addresses
+  subscribed_occupied_addresses.clear();
+  
+  for (size_t i = 0; i < msg->data.size(); i += 3) {
+    int x = static_cast<int>(msg->data[i]);
+    int y = static_cast<int>(msg->data[i + 1]);
+    int z = static_cast<int>(msg->data[i + 2]);
+    std::cout << "Occupancy set for Index Coordinates: (" << x << ", " << y << ", " << z << ")" << std::endl;
+    Eigen::Vector3i index(x, y, z);
+    int address = toAddress(index);
+    subscribed_occupied_addresses.insert(address);
+    
+    
+  }
+}
+
+void SDFMap::OCNetQuery(int x, int y, int z, bool is_occupied) {
+    Eigen::Vector3i index_coords(x, y, z);
+    int address = toAddress(index_coords);
+
+    if (is_occupied) 
+    {
+      md_.occupancy_buffer_inflate_[address] = 1;
+      std::cout << "Occupancy set for Index Coordinates: (" << x << ", " << y << ", " << z << ")" << std::endl;
+    } 
+    else if (subscribed_occupied_addresses.find(address) != subscribed_occupied_addresses.end()) 
+    {
+      md_.occupancy_buffer_inflate_[address] = 1;
+      std::cout << "Occupancy set for Free Coordinates: (" << x << ", " << y << ", " << z << ")" << std::endl;
+    }
+}
+
+
 // void SDFMap::OCNetQuery(int x, int y, int z) {
 //   int center_x = (this->md_.local_bound_max_(0) + this->md_.local_bound_min_(0)) / 2;
 //   int center_y = (this->md_.local_bound_max_(1) + this->md_.local_bound_min_(1)) / 2;
 //   int address = this->toAddress(x, y, z);
-//   std::cout << "x: " << x << ", y: " << y << ", z: " << z << std::endl;
+//   // std::cout << "x: " << x << ", y: " << y << ", z: " << z << std::endl;
+//   // std::cout << "address: " << address << std::endl;
+
+  
 //   if (x >= center_x - 3 && x <= center_x + 3 &&
 //       y >= center_y - 3 && y <= center_y + 3) {
 //     md_.occupancy_buffer_inflate_[address] = 1;
 //   }
 // }
 
-
-
-void SDFMap::nonIntersectionCallback(const std_msgs::Float64MultiArray::ConstPtr& msg) {
-  non_intersection_coordinates_.clear();
-  std::cout << "Received non_intersection_coordinates message" << std::endl; 
-  for (size_t i = 0; i < msg->data.size(); i += 3) {
-    non_intersection_coordinates_.push_back(static_cast<int>(msg->data[i]));
-    non_intersection_coordinates_.push_back(static_cast<int>(msg->data[i + 1]));
-    non_intersection_coordinates_.push_back(static_cast<int>(msg->data[i + 2]));
-  }
-}
-
-void SDFMap::OCNetQuery() {
-  int inf_step = ceil(mp_.obstacles_inflation_ / mp_.resolution_);  
-  vector<Eigen::Vector3i> inf_pts(pow(2 * inf_step + 1, 3));
-  Eigen::Vector3i inf_pt;
-
-  for (size_t i = 0; i < non_intersection_coordinates_.size(); i += 3) {
-    int x = non_intersection_coordinates_[i];
-    int y = non_intersection_coordinates_[i + 1];
-
-    std::cout << "x: " << x << ", y: " << y << std::endl;
-
-    // Inflate non_intersection point
-    inflatePoint(Eigen::Vector3i(x, y, md_.local_bound_min_(2)), inf_step, inf_pts);
-
-    for (int k = 0; k < (int)inf_pts.size(); ++k) {
-      inf_pt = inf_pts[k];
-      int idx_inf = toAddress(inf_pt);
-      if (idx_inf < 0 ||
-          idx_inf >= mp_.map_voxel_num_(0) * mp_.map_voxel_num_(1) * mp_.map_voxel_num_(2)) {
-        continue;
-      }
-      md_.occupancy_buffer_inflate_[idx_inf] = 1;
-      non_intersection_addresses_.insert(idx_inf);
-    }
-  }
-}
 
 void SDFMap::clearAndInflateLocalMap() {
   /*clear outside local*/
@@ -801,45 +784,46 @@ void SDFMap::clearAndInflateLocalMap() {
   vector<Eigen::Vector3i> inf_pts(pow(2 * inf_step + 1, 3));
   Eigen::Vector3i inf_pt;
 
-  std::cout << "x_min: " << md_.local_bound_min_(0) << ", x_max: " << md_.local_bound_max_(0) << std::endl;
-  std::cout << "y_min: " << md_.local_bound_min_(1) << ", y_max: " << md_.local_bound_max_(1) << std::endl;
-  std::cout << "z_min: " << md_.local_bound_min_(2) << ", z_max: " << md_.local_bound_max_(2) << std::endl;
-
   // clear outdated data
   for (int x = md_.local_bound_min_(0); x <= md_.local_bound_max_(0); ++x)
     for (int y = md_.local_bound_min_(1); y <= md_.local_bound_max_(1); ++y)
       for (int z = md_.local_bound_min_(2); z <= md_.local_bound_max_(2); ++z) {
         md_.occupancy_buffer_inflate_[toAddress(x, y, z)] = 0;
       }
-  //
+
   // inflate obstacles
   for (int x = md_.local_bound_min_(0); x <= md_.local_bound_max_(0); ++x)
     for (int y = md_.local_bound_min_(1); y <= md_.local_bound_max_(1); ++y)
-      for (int z = md_.local_bound_min_(2); z <= md_.local_bound_max_(2); ++z) {
-
-        if (md_.occupancy_buffer_[toAddress(x, y, z)] > mp_.min_occupancy_log_) {
-          inflatePoint(Eigen::Vector3i(x, y, z), inf_step, inf_pts);
-
-          for (int k = 0; k < (int)inf_pts.size(); ++k) {
-            inf_pt = inf_pts[k];
-            int idx_inf = toAddress(inf_pt);
-            if (idx_inf < 0 ||
-                idx_inf >= mp_.map_voxel_num_(0) * mp_.map_voxel_num_(1) * mp_.map_voxel_num_(2)) {
-              continue;
+      for (int z = md_.local_bound_min_(2); z <= md_.local_bound_max_(2); ++z) 
+      {
+          if (md_.occupancy_buffer_[toAddress(x, y, z)] > mp_.min_occupancy_log_) 
+          {
+            //std::cout << "OrinPoint x: " << x << ", y: " << y << ", z: " << z << std::endl;
+            inflatePoint(Eigen::Vector3i(x, y, z), inf_step, inf_pts);
+            for (int k = 0; k < (int)inf_pts.size(); ++k) 
+            {
+                inf_pt = inf_pts[k];
+                int idx_inf = toAddress(inf_pt);
+                if (idx_inf < 0 || idx_inf >= mp_.map_voxel_num_(0) * mp_.map_voxel_num_(1) * mp_.map_voxel_num_(2)) 
+                    {
+                        continue;
+                    }
+                md_.occupancy_buffer_inflate_[idx_inf] = 1;
+                occupied_centers.insert(idx_inf);
             }
-            md_.occupancy_buffer_inflate_[idx_inf] = 1;
-            occupied_centers.insert(idx_inf);
           }
+          
+          if (subscribed_occupied_addresses.find(toAddress(x, y, z)) != subscribed_occupied_addresses.end()) {
+          std::cout << "Occupancy set for Index Coordinates (from subscriber): (" << x << ", " << y << ", " << z << ")" << std::endl;
         }
-        //Call setCenterOccupied function
-        // int oc = toAddress(x, y, z);
-        // if (occupied_centers.find(oc) == occupied_centers.end()) {
-        //   OCNetQuery(x, y, z);
-        // }
-  }
+          // int oc = toAddress(x, y, z);
+          // if (occupied_centers.find(oc) == occupied_centers.end()) 
+          // {
+            
+          //   OCNetQuery(x, y, z);
+          // }
 
-  // Handle non-intersection coordinates after clearing and inflating the local map
-  OCNetQuery();
+      }
 
   // add virtual ceiling to limit flight height
   if (mp_.virtual_ceil_height_ > -0.5) {

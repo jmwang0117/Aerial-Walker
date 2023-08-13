@@ -12,7 +12,6 @@ import time
 repo_path, _ = os.path.split(os.path.realpath(__file__))
 repo_path, _ = os.path.split(repo_path)
 sys.path.append(repo_path)
-
 from OCNet.common.seed import seed_all
 from OCNet.common.config import CFG
 from OCNet.common.dataset import get_dataset
@@ -23,16 +22,20 @@ import OCNet.common.checkpoint as checkpoint
 import OCNet.data.io_data as SemanticKittiIO
 
 
+
 def publish_coordinates(coordinates, publisher):
+    
+    coordinates = coordinates[:, [0, 2, 1]]
     coordinates_msg = Float64MultiArray()
     
     for coordinate in coordinates:
+        print(f"coordinate : {coordinate}")
         coordinates_msg.data.extend(coordinate)
     
     publisher.publish(coordinates_msg)
-    
-    
-    
+  
+
+
 def test(model, dset, _cfg, logger, out_path_root, coordinates_publisher):
     device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
     dtype = torch.float32
@@ -44,7 +47,7 @@ def test(model, dset, _cfg, logger, out_path_root, coordinates_publisher):
 
     start_time = time.time()
     inference_time = []
-
+   
     with torch.no_grad():
         for t, (data, indices) in enumerate(dset):
             data = dict_to(data, device, dtype)
@@ -99,12 +102,12 @@ def test(model, dset, _cfg, logger, out_path_root, coordinates_publisher):
                 # Get the non-intersected occupied voxel coordinates
                 non_intersection_coordinates = np.column_stack(np.nonzero(non_intersection.reshape(256, 32, 256)))
 
-                print("Voxel occupancy occupied count:", voxel_occupied_count)
-                print("Score occupied count:", score_occupied_count)
-                print("Intersection occupied count:", intersection_count)
-                print("Non-intersection (voxel_occupancy not occupied but score occupied) count:", len(non_intersection_coordinates))
-                print("Non-intersection coordinates:")
-                print(non_intersection_coordinates.shape)
+                # print("Voxel occupancy occupied count:", voxel_occupied_count)
+                # print("Score occupied count:", score_occupied_count)
+                # print("Intersection occupied count:", intersection_count)
+                # print("Non-intersection (voxel_occupancy not occupied but score occupied) count:", len(non_intersection_coordinates))
+                # print("Non-intersection coordinates:")
+                # print(non_intersection_coordinates.shape)
                 
                 
                 publish_coordinates(non_intersection_coordinates, coordinates_publisher)

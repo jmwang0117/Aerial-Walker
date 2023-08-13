@@ -123,9 +123,9 @@ class SemanticKITTI_dataloader(Dataset):
 
     if modality == '3D_OCCUPANCY':
       OCCUPANCY = SemanticKittiIO._read_occupancy_SemKITTI(self.filepaths[modality][idx])
-      print(OCCUPANCY.reshape([self.grid_dimensions[0],
-                                                 self.grid_dimensions[2],
-                                                 self.grid_dimensions[1]]).shape)
+      # print(OCCUPANCY.reshape([self.grid_dimensions[0],
+      #                                            self.grid_dimensions[2],
+      #                                            self.grid_dimensions[1]]).shape)
       
       OCCUPANCY = np.moveaxis(OCCUPANCY.reshape([self.grid_dimensions[0],
                                                  self.grid_dimensions[2],
