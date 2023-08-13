@@ -735,26 +735,47 @@ void SDFMap::OccRemappingCallback(const std_msgs::Float64MultiArray::ConstPtr &m
     int x = static_cast<int>(msg->data[i]);
     int y = static_cast<int>(msg->data[i + 1]);
     int z = static_cast<int>(msg->data[i + 2]);
-    std::cout << "Occupancy set for Index Coordinates: (" << x << ", " << y << ", " << z << ")" << std::endl;
+    int address = toAddress(x, y, z); // 转换(x,y,z)索引坐标为线性地址
+    subscribed_occupied_addresses.insert(address); // 插入地址到集合
+    OCNetQuery(x, y, z, true); // Call OCNetQuery with is_occupied = true
     
   }
 }
 
+// void SDFMap::OCNetQuery(int x, int y, int z, bool is_occupied) {
+//     Eigen::Vector3i index_coords(x, y, z);
+//     int address = toAddress(index_coords);
+//     if (is_occupied) 
+//     {
+//       md_.occupancy_buffer_inflate_[address] = 1;
+//       std::cout << "Occupancy set for Index Coordinates: (" << x << ", " << y << ", " << z << ")" << std::endl;
+//     } 
+//     else if (subscribed_occupied_addresses.find(address) != subscribed_occupied_addresses.end()) 
+//     {
+//       md_.occupancy_buffer_inflate_[address] = 1;
+//       std::cout << "Occupancy set for Free Coordinates: (" << x << ", " << y << ", " << z << ")" << std::endl;
+//     }
+// }
+
 void SDFMap::OCNetQuery(int x, int y, int z, bool is_occupied) {
-    Eigen::Vector3i index_coords(x, y, z);
-    int address = toAddress(index_coords);
-    if (is_occupied) 
-    {
-      md_.occupancy_buffer_inflate_[address] = 1;
-      std::cout << "Occupancy set for Index Coordinates: (" << x << ", " << y << ", " << z << ")" << std::endl;
-    } 
-    else if (subscribed_occupied_addresses.find(address) != subscribed_occupied_addresses.end()) 
-    {
-      md_.occupancy_buffer_inflate_[address] = 1;
-      std::cout << "Occupancy set for Free Coordinates: (" << x << ", " << y << ", " << z << ")" << std::endl;
+    if (is_occupied) {
+        for (int z_coord = md_.local_bound_min_(2); z_coord <= md_.local_bound_max_(2); ++z_coord) {
+            Eigen::Vector3i index_coords(x, y, z_coord);
+            int address = toAddress(index_coords);
+            md_.occupancy_buffer_inflate_[address] = 1;
+            std::cout << "Occupancy set for Index Coordinates: (" << x << ", " << y << ", " << z_coord << ")" << std::endl;
+        }
+    } else {
+        for (int z_coord = md_.local_bound_min_(2); z_coord <= md_.local_bound_max_(2); ++z_coord) {
+            Eigen::Vector3i index_coords(x, y, z_coord);
+            int address = toAddress(index_coords);
+            if (subscribed_occupied_addresses.find(address) != subscribed_occupied_addresses.end()) {
+                md_.occupancy_buffer_inflate_[address] = 1;
+                std::cout << "Occupancy set for Free Coordinates: (" << x << ", " << y << ", " << z_coord << ")" << std::endl;
+            }
+        }
     }
 }
-
 
 
 void SDFMap::clearAndInflateLocalMap() {
@@ -788,7 +809,7 @@ void SDFMap::clearAndInflateLocalMap() {
       {
           if (md_.occupancy_buffer_[toAddress(x, y, z)] > mp_.min_occupancy_log_) 
           {
-            //std::cout << "OrinPoint x: " << x << ", y: " << y << ", z: " << z << std::endl;
+            std::cout << "OrinPoint x: " << x << ", y: " << y << ", z: " << z << std::endl;
             inflatePoint(Eigen::Vector3i(x, y, z), inf_step, inf_pts);
             for (int k = 0; k < (int)inf_pts.size(); ++k) 
             {
@@ -807,7 +828,7 @@ void SDFMap::clearAndInflateLocalMap() {
           if (occupied_centers.find(oc) == occupied_centers.end()) 
           {
             
-            OCNetQuery(x, y, z);
+            OCNetQuery(x, y, z, false); // Call OCNetQuery with is_occupied = false
           }
 
       }
