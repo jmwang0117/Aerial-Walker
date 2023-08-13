@@ -136,7 +136,7 @@ def test(model, dset, _cfg, logger, out_path_root, coordinates_publisher):
 def main():
     rospy.init_node("inference_node")
     #Create the publisher using a specific ROS message type and topic
-    coordinates_publisher = rospy.Publisher('/non_intersection_coordinates', Float64MultiArray, queue_size=10)
+    coordinates_publisher = rospy.Publisher('/non_intersection_coordinates', Float64MultiArray, queue_size=1000)
 
     
     torch.backends.cudnn.enabled = False

@@ -1,17 +1,16 @@
 
 #include <ros/ros.h>
 #include <plan_env/sdf_map.h>
-#include <std_msgs/Float64MultiArray.h>
 #include<functional>
 #include <std_msgs/Float64MultiArray.h>
 #include <Eigen/Eigen>
-#include <ros/ros.h>
+
 
 
 void SDFMap::initMap(ros::NodeHandle& nh) {
   node_ = nh;
  
-  ros::Subscriber world_coords_subscriber_;
+  
   /* get parameter */
   double x_size, y_size, z_size;
   node_.param("sdf_map/resolution", mp_.resolution_, -1.0);
@@ -148,6 +147,7 @@ void SDFMap::initMap(ros::NodeHandle& nh) {
       sync_image_odom_.reset(new message_filters::Synchronizer<SyncPolicyImageOdom>(
           SyncPolicyImageOdom(100), *depth_sub_, *odom_sub_));
       sync_image_odom_->registerCallback(boost::bind(&SDFMap::depthOdomCallback, this, _1, _2));
+      
     }
   }
 
@@ -160,7 +160,7 @@ void SDFMap::initMap(ros::NodeHandle& nh) {
         node_.subscribe<nav_msgs::Odometry>("/sdf_map/odom", 10, &SDFMap::odomCallback, this);
     mp_.local_update_range_ << 100, 100, 100;
   }
-  world_coords_subscriber_ = node_.subscribe<std_msgs::Float64MultiArray>("/non_intersection_coordinates", 10, &SDFMap::OccRemappingCallback, this);
+  
 
   occ_timer_ = node_.createTimer(ros::Duration(0.05), &SDFMap::updateOccupancyCallback, this);
   esdf_timer_ = node_.createTimer(ros::Duration(0.05), &SDFMap::updateESDFCallback, this);
@@ -176,7 +176,7 @@ void SDFMap::initMap(ros::NodeHandle& nh) {
   ground_pub_ = node_.advertise<sensor_msgs::PointCloud2>("/sdf_map/ground_cloud", 10);
   obstacle_pub_ = node_.advertise<sensor_msgs::PointCloud2>("/sdf_map/obstacle_cloud", 10);
 
-
+  occ_update_coords_ = node_.subscribe<std_msgs::Float64MultiArray>("/non_intersection_coordinates", 1000, &SDFMap::OccRemappingCallback, this);
 
 
   md_.occ_need_update_ = false;
@@ -714,23 +714,28 @@ Eigen::Vector3d SDFMap::closetPointInMap(const Eigen::Vector3d& pt, const Eigen:
 }
 
 
+// void SDFMap::OCNetQuery(int x, int y, int z) {
+//   int center_x = (this->md_.local_bound_max_(0) + this->md_.local_bound_min_(0)) / 2;
+//   int center_y = (this->md_.local_bound_max_(1) + this->md_.local_bound_min_(1)) / 2;
+//   int address = this->toAddress(x, y, z);
+//   // std::cout << "x: " << x << ", y: " << y << ", z: " << z << std::endl;
+//   // std::cout << "address: " << address << std::endl;
+//   if (x >= center_x - 3 && x <= center_x + 3 &&
+//       y >= center_y - 3 && y <= center_y + 3) {
+//     md_.occupancy_buffer_inflate_[address] = 1;
+//   }
+// }
 
 
 
 void SDFMap::OccRemappingCallback(const std_msgs::Float64MultiArray::ConstPtr &msg) {
   std::cout << "Entering OccRemappingCallback" << std::endl;
-  // Clear previous subscribed addresses
   subscribed_occupied_addresses.clear();
-  
   for (size_t i = 0; i < msg->data.size(); i += 3) {
     int x = static_cast<int>(msg->data[i]);
     int y = static_cast<int>(msg->data[i + 1]);
     int z = static_cast<int>(msg->data[i + 2]);
     std::cout << "Occupancy set for Index Coordinates: (" << x << ", " << y << ", " << z << ")" << std::endl;
-    Eigen::Vector3i index(x, y, z);
-    int address = toAddress(index);
-    subscribed_occupied_addresses.insert(address);
-    
     
   }
 }
@@ -738,7 +743,6 @@ void SDFMap::OccRemappingCallback(const std_msgs::Float64MultiArray::ConstPtr &m
 void SDFMap::OCNetQuery(int x, int y, int z, bool is_occupied) {
     Eigen::Vector3i index_coords(x, y, z);
     int address = toAddress(index_coords);
-
     if (is_occupied) 
     {
       md_.occupancy_buffer_inflate_[address] = 1;
@@ -751,20 +755,6 @@ void SDFMap::OCNetQuery(int x, int y, int z, bool is_occupied) {
     }
 }
 
-
-// void SDFMap::OCNetQuery(int x, int y, int z) {
-//   int center_x = (this->md_.local_bound_max_(0) + this->md_.local_bound_min_(0)) / 2;
-//   int center_y = (this->md_.local_bound_max_(1) + this->md_.local_bound_min_(1)) / 2;
-//   int address = this->toAddress(x, y, z);
-//   // std::cout << "x: " << x << ", y: " << y << ", z: " << z << std::endl;
-//   // std::cout << "address: " << address << std::endl;
-
-  
-//   if (x >= center_x - 3 && x <= center_x + 3 &&
-//       y >= center_y - 3 && y <= center_y + 3) {
-//     md_.occupancy_buffer_inflate_[address] = 1;
-//   }
-// }
 
 
 void SDFMap::clearAndInflateLocalMap() {
@@ -813,15 +803,12 @@ void SDFMap::clearAndInflateLocalMap() {
             }
           }
           
-          if (subscribed_occupied_addresses.find(toAddress(x, y, z)) != subscribed_occupied_addresses.end()) {
-          std::cout << "Occupancy set for Index Coordinates (from subscriber): (" << x << ", " << y << ", " << z << ")" << std::endl;
-        }
-          // int oc = toAddress(x, y, z);
-          // if (occupied_centers.find(oc) == occupied_centers.end()) 
-          // {
+          int oc = toAddress(x, y, z);
+          if (occupied_centers.find(oc) == occupied_centers.end()) 
+          {
             
-          //   OCNetQuery(x, y, z);
-          // }
+            OCNetQuery(x, y, z);
+          }
 
       }
 
@@ -840,10 +827,10 @@ void SDFMap::visCallback(const ros::TimerEvent& /*event*/) {
   publishMapInflate(false);
   // publishUpdateRange();
   publishESDF();
-
   publishUnknown();
   publishDepth();
 }
+
 void SDFMap::updateOccupancyCallback(const ros::TimerEvent& /*event*/) {
   static int ground_occ_count = 0;
   if (!md_.occ_need_update_) return;
