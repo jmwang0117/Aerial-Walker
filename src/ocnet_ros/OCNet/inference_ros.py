@@ -157,10 +157,25 @@ def main():
     logger = get_logger(out_path_root, 'logs_test.log')
     logger.info('============ Test weights: "%s" ============\n' % weights_f)
     
+    wait_time = 2  # Seconds to wait before checking the dataset folder again
+    train_batch_size = 6  # Set your desired batch_size here
    
     while not rospy.is_shutdown():
         
-        dataset = get_dataset(_cfg)['test']
+        dataset = None
+        while dataset is None:
+            # Check if the dataset folder has sufficient data (files) for the batch size
+            dataset_files = os.listdir(dataset_f)
+            if len(dataset_files) >= train_batch_size:
+                dataset = get_dataset(_cfg)['test']
+            else:
+                rospy.loginfo("Waiting for dataset folder to accumulate sufficient files.")
+                rospy.sleep(wait_time)
+                
+                
+        #dataset = get_dataset(_cfg)['test']
+        
+        
         logger.info('=> Loading network architecture...')
         model = get_model(_cfg, dataset.dataset)
         if torch.cuda.device_count() > 1:
