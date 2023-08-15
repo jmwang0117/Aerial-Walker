@@ -121,7 +121,7 @@ def test(model, dset, _cfg, logger, out_path_root, coordinates_publisher):
                 out_filename = os.path.join(out_path_root, 'predictions', filename + '.label')
                 _create_directory(os.path.dirname(out_filename))
                 score.tofile(out_filename)
-                shutil.copy(input_filename, ori_voxels_path)
+                # shutil.copy(input_filename, ori_voxels_path)
                 os.remove(input_filename)
                 #logger.info('=> Sequence {} - File {} saved'.format(sequence, os.path.basename(out_filename)))
                 curr_index += 1
