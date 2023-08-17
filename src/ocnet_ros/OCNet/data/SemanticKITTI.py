@@ -69,7 +69,7 @@ class SemanticKITTI_dataloader(Dataset):
       if modality == '3D_OCCUPANCY':
           self.filepaths['3D_OCCUPANCY'] = []  # Clear the file paths before each iteration
           
-          dataset_dir = '/home/melodic/jetsonNX/Aerial-Walker/src/oc_navigation/plan_manage/raw_data/voxels'
+          dataset_dir = '/home/melodic/Aerial-Walker/src/oc_navigation/plan_manage/raw_data/voxels'
           file_pattern = '*.bin'
 
           # Get all file paths in the directory and sort them

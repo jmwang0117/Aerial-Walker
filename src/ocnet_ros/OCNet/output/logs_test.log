@@ -19397,3 +19397,523 @@ http.client.BadStatusLine: <head>
 2023-08-15 12:52:20,978 -- Average Inference FPS: 0.62
 2023-08-15 12:52:20,981 -- => ============ Network Test Done ============
 2023-08-15 12:52:20,984 -- signal_shutdown [atexit]
+2023-08-17 07:00:31,609 -- ============ Test weights: "/home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-17 07:11:55,043 -- ============ Test weights: "/home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-17 07:11:55,071 -- signal_shutdown [atexit]
+2023-08-17 07:11:55,072 -- atexit
+2023-08-17 07:12:02,858 -- ============ Test weights: "/home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-17 07:12:02,895 -- signal_shutdown [atexit]
+2023-08-17 07:12:02,897 -- atexit
+2023-08-17 07:13:44,502 -- ============ Test weights: "/home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-17 07:13:44,534 -- signal_shutdown [atexit]
+2023-08-17 07:13:44,534 -- atexit
+2023-08-17 07:17:10,377 -- ============ Test weights: "/home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-17 07:17:10,407 -- signal_shutdown [atexit]
+2023-08-17 07:17:10,408 -- atexit
+2023-08-17 07:22:05,367 -- ============ Test weights: "/home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-17 07:22:05,401 -- signal_shutdown [atexit]
+2023-08-17 07:22:05,402 -- atexit
+2023-08-17 07:23:48,188 -- ============ Test weights: "/home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-17 07:23:48,401 -- topic[/rosout] adding connection to [/rosout], count 0
+2023-08-17 07:25:31,846 -- signal_shutdown [atexit]
+2023-08-17 07:25:31,849 -- topic[/rosout] removing connection to /rosout
+2023-08-17 07:25:31,850 -- atexit
+2023-08-17 07:25:38,687 -- ============ Test weights: "/home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-17 07:25:38,898 -- topic[/rosout] adding connection to [/rosout], count 0
+2023-08-17 07:25:41,141 -- signal_shutdown [atexit]
+2023-08-17 07:25:41,142 -- topic[/rosout] removing connection to /rosout
+2023-08-17 07:25:41,142 -- atexit
+2023-08-17 07:29:32,792 -- ============ Test weights: "/home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-17 07:29:32,821 -- signal_shutdown [atexit]
+2023-08-17 07:29:32,822 -- atexit
+2023-08-17 07:29:41,065 -- ============ Test weights: "/home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-17 07:29:41,093 -- signal_shutdown [atexit]
+2023-08-17 07:29:41,094 -- atexit
+2023-08-17 07:30:45,652 -- ============ Test weights: "/home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-17 07:30:45,681 -- signal_shutdown [atexit]
+2023-08-17 07:30:45,682 -- atexit
+2023-08-17 07:36:53,574 -- ============ Test weights: "/home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-17 07:36:53,605 -- signal_shutdown [atexit]
+2023-08-17 07:36:53,606 -- atexit
+2023-08-17 07:39:05,145 -- ============ Test weights: "/home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-17 07:39:05,357 -- topic[/rosout] adding connection to [/rosout], count 0
+2023-08-17 07:39:07,559 -- => Loading network architecture...
+2023-08-17 07:39:07,618 -- => Loading network weights...
+2023-08-17 07:39:07,623 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 07:39:08,507 -- => Passing the network on the test set...
+2023-08-17 07:39:10,748 -- Average Inference FPS: 0.77
+2023-08-17 07:39:10,751 -- => ============ Network Test Done ============
+2023-08-17 07:39:12,536 -- signal_shutdown [atexit]
+2023-08-17 07:39:12,539 -- topic[/rosout] removing connection to /rosout
+2023-08-17 07:39:12,539 -- atexit
+2023-08-17 07:47:02,209 -- ============ Test weights: "/home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-17 07:47:02,247 -- => Loading network architecture...
+2023-08-17 07:47:02,294 -- => Loading network weights...
+2023-08-17 07:47:02,299 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 07:47:02,410 -- topic[/rosout] adding connection to [/rosout], count 0
+2023-08-17 07:47:03,158 -- => Passing the network on the test set...
+2023-08-17 07:47:05,387 -- => ============ Network Test Done ============
+2023-08-17 07:47:05,387 -- signal_shutdown [atexit]
+2023-08-17 07:47:05,388 -- topic[/rosout] removing connection to /rosout
+2023-08-17 07:47:05,388 -- atexit
+2023-08-17 07:47:44,057 -- ============ Test weights: "/home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-17 07:47:44,095 -- => Loading network architecture...
+2023-08-17 07:47:44,161 -- => Loading network weights...
+2023-08-17 07:47:44,168 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 07:47:44,263 -- topic[/rosout] adding connection to [/rosout], count 0
+2023-08-17 07:47:45,032 -- => Passing the network on the test set...
+2023-08-17 07:47:47,270 -- => ============ Network Test Done ============
+2023-08-17 07:47:47,270 -- Inference time per frame is 0.2118 seconds
+
+2023-08-17 07:47:47,303 -- => Loading network architecture...
+2023-08-17 07:47:47,307 -- => Loading network weights...
+2023-08-17 07:47:47,311 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 07:47:47,313 -- => Passing the network on the test set...
+2023-08-17 07:47:49,237 -- => ============ Network Test Done ============
+2023-08-17 07:47:49,237 -- Inference time per frame is 0.1566 seconds
+
+2023-08-17 07:47:49,270 -- => Loading network architecture...
+2023-08-17 07:47:49,274 -- => Loading network weights...
+2023-08-17 07:47:49,279 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 07:47:49,281 -- => Passing the network on the test set...
+2023-08-17 07:47:51,233 -- => ============ Network Test Done ============
+2023-08-17 07:47:51,234 -- Inference time per frame is 0.1563 seconds
+
+2023-08-17 07:47:51,278 -- => Loading network architecture...
+2023-08-17 07:47:51,282 -- => Loading network weights...
+2023-08-17 07:47:51,286 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 07:47:51,288 -- => Passing the network on the test set...
+2023-08-17 07:47:53,236 -- => ============ Network Test Done ============
+2023-08-17 07:47:53,236 -- Inference time per frame is 0.1567 seconds
+
+2023-08-17 07:47:53,269 -- => Loading network architecture...
+2023-08-17 07:47:53,274 -- => Loading network weights...
+2023-08-17 07:47:53,278 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 07:47:53,280 -- => Passing the network on the test set...
+2023-08-17 07:47:55,253 -- => ============ Network Test Done ============
+2023-08-17 07:47:55,254 -- Inference time per frame is 0.1563 seconds
+
+2023-08-17 07:47:55,286 -- => Loading network architecture...
+2023-08-17 07:47:55,291 -- => Loading network weights...
+2023-08-17 07:47:55,295 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 07:47:55,297 -- => Passing the network on the test set...
+2023-08-17 07:47:55,895 -- signal_shutdown [signal-2]
+2023-08-17 07:47:55,895 -- signal_shutdown [signal-2]
+2023-08-17 07:47:55,895 -- signal_shutdown [signal-2]
+2023-08-17 07:47:55,895 -- signal_shutdown [signal-2]
+2023-08-17 07:47:55,897 -- unclean shutdown
+Traceback (most recent call last):
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rospy/impl/registration.py", line 375, in cleanup
+    multi()
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 879, in __call__
+    return MultiCallIterator(self.__server.system.multicall(marshalled_list))
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1109, in __call__
+    return self.__send(self.__name, args)
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rospy/core.py", line 669, in _ServerProxy__request
+    return xmlrpcclient.ServerProxy._ServerProxy__request(
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1450, in __request
+    response = self.__transport.request(
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1153, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1169, in single_request
+    return self.parse_response(resp)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1341, in parse_response
+    return u.close()
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 655, in close
+    raise Fault(**self._stack[0])
+xmlrpc.client.Fault: <Fault 1: "<class 'xml.parsers.expat.ExpatError'>:syntax error: line 1, column 0">
+
+2023-08-17 07:47:55,898 -- topic[/rosout] removing connection to /rosout
+2023-08-17 07:47:55,898 -- signal-2
+2023-08-17 07:47:55,898 -- topic[/rosout] removing connection to /rosout
+2023-08-17 07:47:55,898 -- signal-2
+2023-08-17 07:47:55,898 -- topic[/rosout] removing connection to /rosout
+2023-08-17 07:47:55,898 -- signal-2
+2023-08-17 07:47:55,898 -- topic[/rosout] removing connection to /rosout
+2023-08-17 07:47:55,899 -- signal-2
+2023-08-17 07:47:55,951 -- topic[/rosout] removing connection to /rosout
+2023-08-17 07:47:56,362 -- signal_shutdown [signal-2]
+2023-08-17 07:47:56,364 -- signal-2
+2023-08-17 07:47:57,972 -- => ============ Network Test Done ============
+2023-08-17 07:47:57,972 -- Inference time per frame is 0.2576 seconds
+
+2023-08-17 07:47:57,973 -- signal_shutdown [atexit]
+2023-08-17 08:18:16,805 -- ============ Test weights: "/home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-17 08:18:16,841 -- => Loading network architecture...
+2023-08-17 08:18:16,852 -- signal_shutdown [atexit]
+2023-08-17 08:18:16,853 -- atexit
+2023-08-17 08:32:09,279 -- ============ Test weights: "/home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-17 08:32:09,313 -- => Loading network architecture...
+2023-08-17 08:32:09,325 -- signal_shutdown [atexit]
+2023-08-17 08:32:09,326 -- atexit
+2023-08-17 08:32:55,943 -- ============ Test weights: "/home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-17 08:32:55,977 -- => Loading network architecture...
+2023-08-17 08:32:55,998 -- signal_shutdown [atexit]
+2023-08-17 08:32:55,999 -- atexit
+2023-08-17 08:53:29,261 -- ============ Test weights: "/home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-17 08:53:29,261 -- Waiting for dataset folder to accumulate sufficient files.
+2023-08-17 08:53:29,467 -- topic[/non_intersection_coordinates] adding connection to [/fast_planner_node], count 0
+2023-08-17 08:53:29,468 -- topic[/rosout] adding connection to [/rosout], count 0
+2023-08-17 08:53:31,265 -- Waiting for dataset folder to accumulate sufficient files.
+2023-08-17 08:53:33,268 -- Waiting for dataset folder to accumulate sufficient files.
+2023-08-17 08:53:35,273 -- Waiting for dataset folder to accumulate sufficient files.
+2023-08-17 08:53:37,277 -- Waiting for dataset folder to accumulate sufficient files.
+2023-08-17 08:53:39,281 -- Waiting for dataset folder to accumulate sufficient files.
+2023-08-17 08:53:41,293 -- Waiting for dataset folder to accumulate sufficient files.
+2023-08-17 08:53:43,298 -- Waiting for dataset folder to accumulate sufficient files.
+2023-08-17 08:53:45,301 -- Waiting for dataset folder to accumulate sufficient files.
+2023-08-17 08:53:47,347 -- => Loading network architecture...
+2023-08-17 08:54:44,031 -- signal_shutdown [atexit]
+2023-08-17 08:54:44,033 -- topic[/rosout] removing connection to /rosout
+2023-08-17 08:54:44,033 -- topic[/non_intersection_coordinates] removing connection to /fast_planner_node
+2023-08-17 08:54:44,033 -- atexit
+2023-08-17 08:54:47,411 -- ============ Test weights: "/home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth" ============
+
+2023-08-17 08:54:47,443 -- => Loading network architecture...
+2023-08-17 08:54:47,487 -- => Loading network weights...
+2023-08-17 08:54:47,496 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:54:47,619 -- topic[/rosout] adding connection to [/rosout], count 0
+2023-08-17 08:54:47,619 -- topic[/non_intersection_coordinates] adding connection to [/fast_planner_node], count 0
+2023-08-17 08:54:48,398 -- => Passing the network on the test set...
+2023-08-17 08:54:50,711 -- => ============ Network Test Done ============
+2023-08-17 08:54:50,711 -- Inference time per frame is 0.2527 seconds
+
+2023-08-17 08:54:50,742 -- => Loading network architecture...
+2023-08-17 08:54:50,747 -- => Loading network weights...
+2023-08-17 08:54:50,755 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:54:50,758 -- => Passing the network on the test set...
+2023-08-17 08:54:52,675 -- => ============ Network Test Done ============
+2023-08-17 08:54:52,676 -- Inference time per frame is 0.1845 seconds
+
+2023-08-17 08:54:52,706 -- => Loading network architecture...
+2023-08-17 08:54:52,711 -- => Loading network weights...
+2023-08-17 08:54:52,754 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:54:52,756 -- => Passing the network on the test set...
+2023-08-17 08:54:54,853 -- => ============ Network Test Done ============
+2023-08-17 08:54:54,853 -- Inference time per frame is 0.1845 seconds
+
+2023-08-17 08:54:54,895 -- => Loading network architecture...
+2023-08-17 08:54:54,900 -- => Loading network weights...
+2023-08-17 08:54:54,943 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:54:54,947 -- => Passing the network on the test set...
+2023-08-17 08:54:57,080 -- => ============ Network Test Done ============
+2023-08-17 08:54:57,080 -- Inference time per frame is 0.1823 seconds
+
+2023-08-17 08:54:57,110 -- => Loading network architecture...
+2023-08-17 08:54:57,115 -- => Loading network weights...
+2023-08-17 08:54:57,141 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:54:57,143 -- => Passing the network on the test set...
+2023-08-17 08:54:59,254 -- => ============ Network Test Done ============
+2023-08-17 08:54:59,254 -- Inference time per frame is 0.1930 seconds
+
+2023-08-17 08:54:59,283 -- => Loading network architecture...
+2023-08-17 08:54:59,288 -- => Loading network weights...
+2023-08-17 08:54:59,311 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:54:59,314 -- => Passing the network on the test set...
+2023-08-17 08:55:01,461 -- => ============ Network Test Done ============
+2023-08-17 08:55:01,461 -- Inference time per frame is 0.1940 seconds
+
+2023-08-17 08:55:01,490 -- => Loading network architecture...
+2023-08-17 08:55:01,495 -- => Loading network weights...
+2023-08-17 08:55:01,541 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:55:01,544 -- => Passing the network on the test set...
+2023-08-17 08:55:03,679 -- => ============ Network Test Done ============
+2023-08-17 08:55:03,679 -- Inference time per frame is 0.1909 seconds
+
+2023-08-17 08:55:03,709 -- => Loading network architecture...
+2023-08-17 08:55:03,714 -- => Loading network weights...
+2023-08-17 08:55:03,719 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:55:03,723 -- => Passing the network on the test set...
+2023-08-17 08:55:05,847 -- => ============ Network Test Done ============
+2023-08-17 08:55:05,847 -- Inference time per frame is 0.1912 seconds
+
+2023-08-17 08:55:05,881 -- => Loading network architecture...
+2023-08-17 08:55:05,886 -- => Loading network weights...
+2023-08-17 08:55:05,927 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:55:05,931 -- => Passing the network on the test set...
+2023-08-17 08:55:08,073 -- => ============ Network Test Done ============
+2023-08-17 08:55:08,074 -- Inference time per frame is 0.1880 seconds
+
+2023-08-17 08:55:08,104 -- => Loading network architecture...
+2023-08-17 08:55:08,109 -- => Loading network weights...
+2023-08-17 08:55:08,115 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:55:08,119 -- => Passing the network on the test set...
+2023-08-17 08:55:10,300 -- => ============ Network Test Done ============
+2023-08-17 08:55:10,300 -- Inference time per frame is 0.1892 seconds
+
+2023-08-17 08:55:10,332 -- => Loading network architecture...
+2023-08-17 08:55:10,337 -- => Loading network weights...
+2023-08-17 08:55:10,342 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:55:10,346 -- => Passing the network on the test set...
+2023-08-17 08:55:12,566 -- => ============ Network Test Done ============
+2023-08-17 08:55:12,566 -- Inference time per frame is 0.1872 seconds
+
+2023-08-17 08:55:12,595 -- => Loading network architecture...
+2023-08-17 08:55:12,600 -- => Loading network weights...
+2023-08-17 08:55:12,610 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:55:12,615 -- => Passing the network on the test set...
+2023-08-17 08:55:14,907 -- => ============ Network Test Done ============
+2023-08-17 08:55:14,908 -- Inference time per frame is 0.1916 seconds
+
+2023-08-17 08:55:14,951 -- => Loading network architecture...
+2023-08-17 08:55:14,955 -- => Loading network weights...
+2023-08-17 08:55:14,963 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:55:14,965 -- => Passing the network on the test set...
+2023-08-17 08:55:17,165 -- => ============ Network Test Done ============
+2023-08-17 08:55:17,165 -- Inference time per frame is 0.1914 seconds
+
+2023-08-17 08:55:17,195 -- => Loading network architecture...
+2023-08-17 08:55:17,200 -- => Loading network weights...
+2023-08-17 08:55:17,207 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:55:17,209 -- => Passing the network on the test set...
+2023-08-17 08:55:19,479 -- => ============ Network Test Done ============
+2023-08-17 08:55:19,480 -- Inference time per frame is 0.1934 seconds
+
+2023-08-17 08:55:19,514 -- => Loading network architecture...
+2023-08-17 08:55:19,519 -- => Loading network weights...
+2023-08-17 08:55:19,530 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:55:19,532 -- => Passing the network on the test set...
+2023-08-17 08:55:21,821 -- => ============ Network Test Done ============
+2023-08-17 08:55:21,822 -- Inference time per frame is 0.1912 seconds
+
+2023-08-17 08:55:21,853 -- => Loading network architecture...
+2023-08-17 08:55:21,858 -- => Loading network weights...
+2023-08-17 08:55:21,863 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:55:21,865 -- => Passing the network on the test set...
+2023-08-17 08:55:24,139 -- => ============ Network Test Done ============
+2023-08-17 08:55:24,139 -- Inference time per frame is 0.1942 seconds
+
+2023-08-17 08:55:24,174 -- => Loading network architecture...
+2023-08-17 08:55:24,180 -- => Loading network weights...
+2023-08-17 08:55:24,199 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:55:24,202 -- => Passing the network on the test set...
+2023-08-17 08:55:26,482 -- => ============ Network Test Done ============
+2023-08-17 08:55:26,482 -- Inference time per frame is 0.1957 seconds
+
+2023-08-17 08:55:26,517 -- => Loading network architecture...
+2023-08-17 08:55:26,522 -- => Loading network weights...
+2023-08-17 08:55:26,532 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:55:26,536 -- => Passing the network on the test set...
+2023-08-17 08:55:28,866 -- => ============ Network Test Done ============
+2023-08-17 08:55:28,866 -- Inference time per frame is 0.1945 seconds
+
+2023-08-17 08:55:28,897 -- => Loading network architecture...
+2023-08-17 08:55:28,902 -- => Loading network weights...
+2023-08-17 08:55:28,908 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:55:28,911 -- => Passing the network on the test set...
+2023-08-17 08:55:31,163 -- => ============ Network Test Done ============
+2023-08-17 08:55:31,164 -- Inference time per frame is 0.1941 seconds
+
+2023-08-17 08:55:31,207 -- => Loading network architecture...
+2023-08-17 08:55:31,212 -- => Loading network weights...
+2023-08-17 08:55:31,222 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:55:31,224 -- => Passing the network on the test set...
+2023-08-17 08:55:33,471 -- => ============ Network Test Done ============
+2023-08-17 08:55:33,471 -- Inference time per frame is 0.1918 seconds
+
+2023-08-17 08:55:33,504 -- => Loading network architecture...
+2023-08-17 08:55:33,509 -- => Loading network weights...
+2023-08-17 08:55:33,518 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:55:33,521 -- => Passing the network on the test set...
+2023-08-17 08:55:35,752 -- => ============ Network Test Done ============
+2023-08-17 08:55:35,752 -- Inference time per frame is 0.1906 seconds
+
+2023-08-17 08:55:35,797 -- => Loading network architecture...
+2023-08-17 08:55:35,803 -- => Loading network weights...
+2023-08-17 08:55:35,807 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:55:35,813 -- => Passing the network on the test set...
+2023-08-17 08:55:38,048 -- => ============ Network Test Done ============
+2023-08-17 08:55:38,048 -- Inference time per frame is 0.1893 seconds
+
+2023-08-17 08:55:38,081 -- => Loading network architecture...
+2023-08-17 08:55:38,086 -- => Loading network weights...
+2023-08-17 08:55:38,101 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:55:38,104 -- => Passing the network on the test set...
+2023-08-17 08:55:40,298 -- => ============ Network Test Done ============
+2023-08-17 08:55:40,299 -- Inference time per frame is 0.1903 seconds
+
+2023-08-17 08:55:40,332 -- => Loading network architecture...
+2023-08-17 08:55:40,337 -- => Loading network weights...
+2023-08-17 08:55:40,347 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:55:40,350 -- => Passing the network on the test set...
+2023-08-17 08:55:42,576 -- => ============ Network Test Done ============
+2023-08-17 08:55:42,576 -- Inference time per frame is 0.1908 seconds
+
+2023-08-17 08:55:42,609 -- => Loading network architecture...
+2023-08-17 08:55:42,614 -- => Loading network weights...
+2023-08-17 08:55:42,635 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:55:42,638 -- => Passing the network on the test set...
+2023-08-17 08:55:44,846 -- => ============ Network Test Done ============
+2023-08-17 08:55:44,846 -- Inference time per frame is 0.1897 seconds
+
+2023-08-17 08:55:44,877 -- => Loading network architecture...
+2023-08-17 08:55:44,882 -- => Loading network weights...
+2023-08-17 08:55:44,917 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:55:44,920 -- => Passing the network on the test set...
+2023-08-17 08:55:47,131 -- => ============ Network Test Done ============
+2023-08-17 08:55:47,131 -- Inference time per frame is 0.1906 seconds
+
+2023-08-17 08:55:47,165 -- => Loading network architecture...
+2023-08-17 08:55:47,170 -- => Loading network weights...
+2023-08-17 08:55:47,176 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:55:47,180 -- => Passing the network on the test set...
+2023-08-17 08:55:49,403 -- => ============ Network Test Done ============
+2023-08-17 08:55:49,403 -- Inference time per frame is 0.1906 seconds
+
+2023-08-17 08:55:49,449 -- => Loading network architecture...
+2023-08-17 08:55:49,454 -- => Loading network weights...
+2023-08-17 08:55:49,460 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:55:49,462 -- => Passing the network on the test set...
+2023-08-17 08:55:51,713 -- => ============ Network Test Done ============
+2023-08-17 08:55:51,714 -- Inference time per frame is 0.1932 seconds
+
+2023-08-17 08:55:51,748 -- => Loading network architecture...
+2023-08-17 08:55:51,754 -- => Loading network weights...
+2023-08-17 08:55:51,782 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:55:51,785 -- => Passing the network on the test set...
+2023-08-17 08:55:54,114 -- => ============ Network Test Done ============
+2023-08-17 08:55:54,115 -- Inference time per frame is 0.1953 seconds
+
+2023-08-17 08:55:54,148 -- => Loading network architecture...
+2023-08-17 08:55:54,164 -- => Loading network weights...
+2023-08-17 08:55:54,169 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:55:54,171 -- => Passing the network on the test set...
+2023-08-17 08:55:56,447 -- => ============ Network Test Done ============
+2023-08-17 08:55:56,447 -- Inference time per frame is 0.1920 seconds
+
+2023-08-17 08:55:56,481 -- => Loading network architecture...
+2023-08-17 08:55:56,486 -- => Loading network weights...
+2023-08-17 08:55:56,490 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:55:56,493 -- => Passing the network on the test set...
+2023-08-17 08:55:58,764 -- => ============ Network Test Done ============
+2023-08-17 08:55:58,764 -- Inference time per frame is 0.1904 seconds
+
+2023-08-17 08:55:58,800 -- => Loading network architecture...
+2023-08-17 08:55:58,806 -- => Loading network weights...
+2023-08-17 08:55:58,816 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:55:58,820 -- => Passing the network on the test set...
+2023-08-17 08:56:01,074 -- => ============ Network Test Done ============
+2023-08-17 08:56:01,074 -- Inference time per frame is 0.1919 seconds
+
+2023-08-17 08:56:01,108 -- => Loading network architecture...
+2023-08-17 08:56:01,115 -- => Loading network weights...
+2023-08-17 08:56:01,157 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:56:01,160 -- => Passing the network on the test set...
+2023-08-17 08:56:03,441 -- => ============ Network Test Done ============
+2023-08-17 08:56:03,441 -- Inference time per frame is 0.1911 seconds
+
+2023-08-17 08:56:03,475 -- => Loading network architecture...
+2023-08-17 08:56:03,480 -- => Loading network weights...
+2023-08-17 08:56:03,488 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:56:03,493 -- => Passing the network on the test set...
+2023-08-17 08:56:05,805 -- => ============ Network Test Done ============
+2023-08-17 08:56:05,805 -- Inference time per frame is 0.1944 seconds
+
+2023-08-17 08:56:05,837 -- => Loading network architecture...
+2023-08-17 08:56:05,842 -- => Loading network weights...
+2023-08-17 08:56:05,868 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:56:05,871 -- => Passing the network on the test set...
+2023-08-17 08:56:08,190 -- => ============ Network Test Done ============
+2023-08-17 08:56:08,190 -- Inference time per frame is 0.1948 seconds
+
+2023-08-17 08:56:08,224 -- => Loading network architecture...
+2023-08-17 08:56:08,229 -- => Loading network weights...
+2023-08-17 08:56:08,236 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:56:08,238 -- => Passing the network on the test set...
+2023-08-17 08:56:10,487 -- => ============ Network Test Done ============
+2023-08-17 08:56:10,487 -- Inference time per frame is 0.1908 seconds
+
+2023-08-17 08:56:10,523 -- => Loading network architecture...
+2023-08-17 08:56:10,529 -- => Loading network weights...
+2023-08-17 08:56:10,534 -- => Model loaded at /home/melodic/Aerial-Walker/src/ocnet_ros/OCNet/weight/LMSCNet.pth
+2023-08-17 08:56:10,538 -- => Passing the network on the test set...
+2023-08-17 08:56:12,178 -- signal_shutdown [signal-2]
+2023-08-17 08:56:12,178 -- signal_shutdown [signal-2]
+2023-08-17 08:56:12,178 -- signal_shutdown [signal-2]
+2023-08-17 08:56:12,178 -- signal_shutdown [signal-2]
+2023-08-17 08:56:12,178 -- signal_shutdown [signal-2]
+2023-08-17 08:56:12,179 -- unclean shutdown
+Traceback (most recent call last):
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rospy/impl/registration.py", line 375, in cleanup
+    multi()
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 879, in __call__
+    return MultiCallIterator(self.__server.system.multicall(marshalled_list))
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1109, in __call__
+    return self.__send(self.__name, args)
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rospy/core.py", line 669, in _ServerProxy__request
+    return xmlrpcclient.ServerProxy._ServerProxy__request(
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1450, in __request
+    response = self.__transport.request(
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1153, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1166, in single_request
+    resp = http_conn.getresponse()
+  File "/usr/lib/python3.8/http/client.py", line 1326, in getresponse
+    response.begin()
+  File "/usr/lib/python3.8/http/client.py", line 312, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.8/http/client.py", line 294, in _read_status
+    raise BadStatusLine(line)
+http.client.BadStatusLine: <head>
+
+
+2023-08-17 08:56:12,179 -- unclean shutdown
+Traceback (most recent call last):
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rospy/impl/registration.py", line 375, in cleanup
+    multi()
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 879, in __call__
+    return MultiCallIterator(self.__server.system.multicall(marshalled_list))
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1109, in __call__
+    return self.__send(self.__name, args)
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rospy/core.py", line 669, in _ServerProxy__request
+    return xmlrpcclient.ServerProxy._ServerProxy__request(
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1450, in __request
+    response = self.__transport.request(
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1153, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1169, in single_request
+    return self.parse_response(resp)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1341, in parse_response
+    return u.close()
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 655, in close
+    raise Fault(**self._stack[0])
+xmlrpc.client.Fault: <Fault 1: "<class 'xml.parsers.expat.ExpatError'>:syntax error: line 1, column 0">
+
+2023-08-17 08:56:12,179 -- topic[/rosout] removing connection to /rosout
+2023-08-17 08:56:12,179 -- topic[/rosout] removing connection to /rosout
+2023-08-17 08:56:12,180 -- topic[/non_intersection_coordinates] removing connection to /fast_planner_node
+2023-08-17 08:56:12,180 -- topic[/non_intersection_coordinates] removing connection to /fast_planner_node
+2023-08-17 08:56:12,180 -- signal-2
+2023-08-17 08:56:12,180 -- signal-2
+2023-08-17 08:56:12,180 -- topic[/rosout] removing connection to /rosout
+2023-08-17 08:56:12,180 -- topic[/non_intersection_coordinates] removing connection to /fast_planner_node
+2023-08-17 08:56:12,180 -- signal-2
+2023-08-17 08:56:12,180 -- topic[/rosout] removing connection to /rosout
+2023-08-17 08:56:12,181 -- topic[/non_intersection_coordinates] removing connection to /fast_planner_node
+2023-08-17 08:56:12,181 -- signal-2
+2023-08-17 08:56:12,181 -- topic[/rosout] removing connection to /rosout
+2023-08-17 08:56:12,181 -- topic[/non_intersection_coordinates] removing connection to /fast_planner_node
+2023-08-17 08:56:12,181 -- signal-2
+2023-08-17 08:56:13,619 -- => ============ Network Test Done ============
+2023-08-17 08:56:13,620 -- Inference time per frame is 0.1916 seconds
+
+2023-08-17 08:56:13,620 -- signal_shutdown [atexit]

@@ -11,7 +11,7 @@ scan_count = 0
 
 class PointCloud2Voxelization:
     def __init__(self):
-        self.output_folder = '/home/melodic/jetsonNX/Aerial-Walker/src/oc_navigation/plan_manage/raw_data/voxels'
+        self.output_folder = '/home/melodic/Aerial-Walker/src/oc_navigation/plan_manage/raw_data/voxels'
         self.grid_size = (256, 256, 32)
         self.publish_interval = rospy.Duration(20)  # Set the desired interval in seconds
         self.last_publish_time = rospy.Time(0)

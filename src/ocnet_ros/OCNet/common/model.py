@@ -11,6 +11,7 @@ def get_model(_cfg, dataset):
   class_frequencies = dataset.class_frequencies
 
   selected_model = _cfg._dict['MODEL']['TYPE']
+ 
 
   # LMSCNet ----------------------------------------------------------------------------------------------------------
   if selected_model == 'LMSCNet':
