@@ -25,7 +25,9 @@ Please follow the instructions [here](https://pytorch.org/get-started/locally/) 
 ```
  bash create_container.sh
 ```
+
  **Pay attention to switch docker image**
+
 4. Next enter the container and use git clone our project
 ```
  docker exec -it robot bash
