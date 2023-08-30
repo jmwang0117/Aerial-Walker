@@ -2,7 +2,7 @@
 
 <div align="center">   
   
-# Aerial-Walker
+# SCNav: A 3D Scene Completion-Enhanced Planning Framework for Air-Ground Robots
 </div>
 
 
