@@ -4,7 +4,7 @@
   
 # AGRNav: Efficient and Energy-Saving Autonomous Navigation for Air-Ground Robots in Occlusion-Prone Environments
 </div>
-
+> **VoxFormer: Sparse Voxel Transformer for Camera-based 3D Semantic Scene Completion**, CVPR 2023.
 ## News
 - [2023/09]: The code continues to be updated and improved. You can find the [SCONet](https://github.com/jmwang0117/OCNet)  code in another repository.
 - [2023/08]: 🔥 We released the code of AGRNav in the simulation environment.
