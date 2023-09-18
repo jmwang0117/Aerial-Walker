@@ -2,7 +2,7 @@
 
 <div align="center">   
   
-# SCNav: A 3D Scene Completion-Enhanced Planning Framework for Air-Ground Robots
+# AGRNav: Efficient and Energy-Saving Autonomous Navigation for Air-Ground Robots in Occlusion-Prone Environments
 </div>
 
 
