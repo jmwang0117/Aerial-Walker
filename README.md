@@ -5,7 +5,11 @@
 # AGRNav: Efficient and Energy-Saving Autonomous Navigation for Air-Ground Robots in Occlusion-Prone Environments
 </div>
 
+## News
+- [2023/09]: The code continues to be updated and improved. You can find the [SCONet](https://github.com/jmwang0117/OCNet)  code in another repository.
+- [2023/08]: 🔥 We released the code of AGRNav in the simulation environment.
 
+</br>
 
 ## Installation
 The code was tested with `python=3.6.9`, as well as `pytorch=1.10.0+cu111` and `torchvision=0.11.2+cu111`. 
