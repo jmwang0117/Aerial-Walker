@@ -51,7 +51,7 @@ RUN apt install -y python3-pip
 RUN pip3 install --upgrade pip
 RUN pip3 install torch==1.10.1+cu111 torchvision==0.11.2+cu111 torchaudio==0.10.1 -f https://download.pytorch.org/whl/cu111/torch_stable.html
 # Install tmux, vim and git
-RUN apt-get install -y tmux vim git
+RUN apt-get install -y tmux vim git libsdl-image1.2-dev libsdl-dev
 
 # Clean up
 RUN apt-get clean && \
