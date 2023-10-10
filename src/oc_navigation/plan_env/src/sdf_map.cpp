@@ -809,7 +809,7 @@ void SDFMap::clearAndInflateLocalMap() {
       {
           if (md_.occupancy_buffer_[toAddress(x, y, z)] > mp_.min_occupancy_log_) 
           {
-            std::cout << "OrinPoint x: " << x << ", y: " << y << ", z: " << z << std::endl;
+            // std::cout << "OrinPoint x: " << x << ", y: " << y << ", z: " << z << std::endl;
             inflatePoint(Eigen::Vector3i(x, y, z), inf_step, inf_pts);
             for (int k = 0; k < (int)inf_pts.size(); ++k) 
             {
