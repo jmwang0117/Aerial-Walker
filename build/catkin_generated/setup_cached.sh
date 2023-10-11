@@ -7,10 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/root/Aerial-Walker/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/root/Aerial-Walker/devel/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="/root/Aerial-Walker/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
+export LD_LIBRARY_PATH='/opt/ros/melodic/lib:/usr/lib/x86_64-linux-gnu:/usr/lib/i386-linux-gnu:/usr/local/nvidia/lib:/usr/local/nvidia/lib64:/usr/local/nvidia/lib:/usr/local/nvidia/lib64'
+export PKG_CONFIG_PATH='/opt/ros/melodic/lib/pkgconfig'
 export PWD='/root/Aerial-Walker/build'
-export PYTHONPATH="/root/Aerial-Walker/devel/lib/python2.7/dist-packages:$PYTHONPATH"
-export ROSLISP_PACKAGE_DIRECTORIES='/root/Aerial-Walker/devel/share/common-lisp'
-export ROS_PACKAGE_PATH="/root/Aerial-Walker/src:$ROS_PACKAGE_PATH"
+export PYTHONPATH='/opt/ros/melodic/lib/python2.7/dist-packages'

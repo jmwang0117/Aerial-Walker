@@ -9,7 +9,7 @@
 
 void SDFMap::initMap(ros::NodeHandle& nh) {
   node_ = nh;
-  robot_radius_ = 0.5;
+  robot_radius_ = 0.8;
   
   /* get parameter */
   double x_size, y_size, z_size;

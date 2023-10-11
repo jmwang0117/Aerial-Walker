@@ -13,10 +13,6 @@ import numpy as np
 import tf
 import math
 
-
-
-
-
 def airpub():
     pub_pose = rospy.Publisher("/2dgazebo/camera_pose",PoseStamped,queue_size=1)
     rospy.init_node('pub_campose',anonymous=True)
@@ -27,7 +23,7 @@ def airpub():
     while not rospy.is_shutdown():
          nowtime = rospy.Time.now()
          try:
-            (trans,rot) = listener.lookupTransform('world', 'camera_depth_optical_frame', rospy.Time(0))
+            (trans,rot) = listener.lookupTransform('odom_combined', 'camera_depth_optical_frame', rospy.Time(0))
             #(trans,rot) = listener.lookupTransform('camera_link', 'camera_color_optical_frame', rospy.Time(0))
          except (tf.LookupException, tf.ConnectivityException, tf.ExtrapolationException):
              continue

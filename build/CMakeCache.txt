@@ -1089,9 +1089,6 @@ pubcmd_BINARY_DIR:STATIC=/root/Aerial-Walker/build/pubcmd
 //Value Computed by CMake
 pubcmd_SOURCE_DIR:STATIC=/root/Aerial-Walker/src/pubcmd
 
-//The directory containing a CMake configuration file for px4_command.
-px4_command_DIR:PATH=px4_command_DIR-NOTFOUND
-
 //Value Computed by CMake
 quadrotor_msgs_BINARY_DIR:STATIC=/root/Aerial-Walker/build/uav_simulator/Utils/quadrotor_msgs
 

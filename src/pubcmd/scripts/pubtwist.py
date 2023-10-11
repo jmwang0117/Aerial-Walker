@@ -68,27 +68,30 @@ class CMD:
                   dy = self.target_y - self.current_y
                   dx = self.target_x - self.current_x
                   dL = math.sqrt(dx * dx + dy * dy)
-                  dyaw = math.atan2(dy, dx) - self.current_yaw
-
-                  if dyaw > 1.5 * math.pi:
-                     dyaw = dyaw - 2 * math.pi
-                  if dyaw < -1.5 * math.pi:
-                     dyaw = dyaw + 2 * math.pi
-
                   cmd_command = Twist()
                   #cmd_command.linear.x = 0.5 * dL
                   cmd_command.linear.x = 0.5 * dx
                   cmd_command.linear.y = 0.5 * dy
-                  cmd_command.angular.z = 0.95 * dyaw
+                  if dL > 0.1:
+                     dyaw = math.atan2(dy, dx) - self.current_yaw
 
+                     if dyaw > 1.5 * math.pi:
+                        dyaw = dyaw - 2 * math.pi
+                     elif dyaw < -1.5 * math.pi:
+                        dyaw = dyaw + 2 * math.pi
+
+                     
+                     cmd_command.angular.z = 0
+                  else:
+                     cmd_command.angular.z = 0
                   if dL < 0.08:
                      cmd_command.linear.x = 0.0
                      cmd_command.linear.y = 0.0
 
-                  if cmd_command.linear.x > 0.75:
-                     cmd_command.linear.x = 0.4
-                  if cmd_command.linear.x < -0.75:
-                     cmd_command.linear.x = -0.4
+                  # if cmd_command.linear.x > 0.75:
+                  #    cmd_command.linear.x = 0.9
+                  # if cmd_command.linear.x < -0.75:
+                  #    cmd_command.linear.x = -0.9
 
                   self.pub_cmd.publish(cmd_command)  # 发布控制指令到/cmd_vel话题
                   rospy.loginfo("cmd_linear_x: %f", cmd_command.linear.x)  # 打印线速度值
