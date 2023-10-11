@@ -86,9 +86,9 @@ class CMD:
                      cmd_command.linear.y = 0.0
 
                   if cmd_command.linear.x > 0.75:
-                     cmd_command.linear.x = 0.75
+                     cmd_command.linear.x = 0.4
                   if cmd_command.linear.x < -0.75:
-                     cmd_command.linear.x = -0.75
+                     cmd_command.linear.x = -0.4
 
                   self.pub_cmd.publish(cmd_command)  # 发布控制指令到/cmd_vel话题
                   rospy.loginfo("cmd_linear_x: %f", cmd_command.linear.x)  # 打印线速度值

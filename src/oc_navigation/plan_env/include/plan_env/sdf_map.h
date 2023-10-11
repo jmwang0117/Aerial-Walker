@@ -173,6 +173,9 @@ struct MappingData {
 
 class SDFMap {
 public:
+  double robot_radius_;
+  Eigen::Vector3d robot_pose_;
+
   SDFMap() {}
   ~SDFMap() {}
 

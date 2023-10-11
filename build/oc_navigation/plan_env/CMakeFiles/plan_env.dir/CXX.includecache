@@ -1491,6 +1491,8 @@ std_msgs/Float64MultiArray.h
 -
 Eigen/Eigen
 -
+cmath
+-
 
 /usr/include/eigen3/Eigen/Cholesky
 Core

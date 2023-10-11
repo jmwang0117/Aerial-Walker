@@ -4,12 +4,12 @@
 #include<functional>
 #include <std_msgs/Float64MultiArray.h>
 #include <Eigen/Eigen>
-
+#include <cmath>
 
 
 void SDFMap::initMap(ros::NodeHandle& nh) {
   node_ = nh;
- 
+  robot_radius_ = 0.5;
   
   /* get parameter */
   double x_size, y_size, z_size;
@@ -763,7 +763,7 @@ void SDFMap::OCNetQuery(int x, int y, int z, bool is_occupied) {
             Eigen::Vector3i index_coords(x, y, z_coord);
             int address = toAddress(index_coords);
             md_.occupancy_buffer_inflate_[address] = 1;
-            std::cout << "Occupancy set for Index Coordinates: (" << x << ", " << y << ", " << z_coord << ")" << std::endl;
+            //std::cout << "Occupancy set for Index Coordinates: (" << x << ", " << y << ", " << z_coord << ")" << std::endl;
         }
     } else {
         for (int z_coord = md_.local_bound_min_(2); z_coord <= md_.local_bound_max_(2); ++z_coord) {
@@ -771,7 +771,7 @@ void SDFMap::OCNetQuery(int x, int y, int z, bool is_occupied) {
             int address = toAddress(index_coords);
             if (subscribed_occupied_addresses.find(address) != subscribed_occupied_addresses.end()) {
                 md_.occupancy_buffer_inflate_[address] = 1;
-                std::cout << "Occupancy set for Free Coordinates: (" << x << ", " << y << ", " << z_coord << ")" << std::endl;
+                //std::cout << "Occupancy set for Free Coordinates: (" << x << ", " << y << ", " << z_coord << ")" << std::endl;
             }
         }
     }
@@ -807,29 +807,43 @@ void SDFMap::clearAndInflateLocalMap() {
     for (int y = md_.local_bound_min_(1); y <= md_.local_bound_max_(1); ++y)
       for (int z = md_.local_bound_min_(2); z <= md_.local_bound_max_(2); ++z) 
       {
-          if (md_.occupancy_buffer_[toAddress(x, y, z)] > mp_.min_occupancy_log_) 
+          Eigen::Vector3d pt(x * mp_.resolution_ + mp_.map_origin_(0),
+                    y * mp_.resolution_ + mp_.map_origin_(1),
+                    z * mp_.resolution_ + mp_. map_origin_(2));
+          double distance_sq =
+              pow(pt(0) - md_.camera_pos_(0), 2) +
+              pow(pt(1) - md_.camera_pos_(1), 2) +
+              pow(pt(2) - md_.camera_pos_(2), 2);
+
+          if(distance_sq >pow(robot_radius_,2))
           {
-            // std::cout << "OrinPoint x: " << x << ", y: " << y << ", z: " << z << std::endl;
-            inflatePoint(Eigen::Vector3i(x, y, z), inf_step, inf_pts);
-            for (int k = 0; k < (int)inf_pts.size(); ++k) 
+              if (md_.occupancy_buffer_[toAddress(x, y, z)] > mp_.min_occupancy_log_) 
             {
-                inf_pt = inf_pts[k];
-                int idx_inf = toAddress(inf_pt);
-                if (idx_inf < 0 || idx_inf >= mp_.map_voxel_num_(0) * mp_.map_voxel_num_(1) * mp_.map_voxel_num_(2)) 
-                    {
-                        continue;
-                    }
-                md_.occupancy_buffer_inflate_[idx_inf] = 1;
-                occupied_centers.insert(idx_inf);
+              // std::cout << "OrinPoint x: " << x << ", y: " << y << ", z: " << z << std::endl;
+              inflatePoint(Eigen::Vector3i(x, y, z), inf_step, inf_pts);
+              for (int k = 0; k < (int)inf_pts.size(); ++k) 
+              {
+                  inf_pt = inf_pts[k];
+                  int idx_inf = toAddress(inf_pt);
+                  if (idx_inf < 0 || idx_inf >= mp_.map_voxel_num_(0) * mp_.map_voxel_num_(1) * mp_.map_voxel_num_(2)) 
+                      {
+                          continue;
+                      }
+                  md_.occupancy_buffer_inflate_[idx_inf] = 1;
+                  occupied_centers.insert(idx_inf);
+              }
             }
-          }
-          
-          int oc = toAddress(x, y, z);
-          if (occupied_centers.find(oc) == occupied_centers.end()) 
-          {
             
-            OCNetQuery(x, y, z, false); // Call OCNetQuery with is_occupied = false
+            int oc = toAddress(x, y, z);
+            if (occupied_centers.find(oc) == occupied_centers.end()) 
+            {
+              
+              OCNetQuery(x, y, z, false); // Call OCNetQuery with is_occupied = false
+            }
+
           }
+
+         
 
       }
 
@@ -1103,7 +1117,15 @@ void SDFMap::publishMapInflate(bool all_info) {
         pt.x = pos(0);
         pt.y = pos(1);
         pt.z = pos(2);
-        cloud.push_back(pt);
+        double distance_sq =
+            pow(pt.x - md_.camera_pos_(0), 2) +
+            pow(pt.y - md_.camera_pos_(1), 2) +
+            pow(pt.z - md_.camera_pos_(2), 2);
+
+          if (distance_sq > pow(robot_radius_, 2)) { 
+            cloud.push_back(pt);
+        }
+        
       }
 
   cloud.width = cloud.points.size();
@@ -1141,7 +1163,15 @@ void SDFMap::publishUnknown() {
           pt.x = pos(0);
           pt.y = pos(1);
           pt.z = pos(2);
-          cloud.push_back(pt);
+          double distance_sq =
+            pow(pt.x - md_.camera_pos_(0), 2) +
+            pow(pt.y - md_.camera_pos_(1), 2) +
+            pow(pt.z - md_.camera_pos_(2), 2);
+
+          if (distance_sq > pow(robot_radius_, 2)) { 
+            cloud.push_back(pt);
+        }
+          
         }
       }
 
