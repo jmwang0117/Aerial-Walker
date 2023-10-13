@@ -44,7 +44,7 @@ int KinodynamicAstar::search(Eigen::Vector3d start_pt, Eigen::Vector3d start_v, 
   start_vel_ = start_v;
   start_acc_ = start_a;
   ROS_WARN("kino_search begins");
-  PathNodePtr cur_node = path_node_pool_[0];
+  PathNodePtr cur_node = path_node_pool_[0]; //智能指针
   cur_node->parent = NULL;
   cur_node->state.head(3) = start_pt;
   cur_node->state.tail(3) = start_v;

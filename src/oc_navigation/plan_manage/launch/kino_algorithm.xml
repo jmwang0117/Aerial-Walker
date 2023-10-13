@@ -64,7 +64,7 @@
     <param name="sdf_map/local_update_range_x"  value="8.5" /> 
     <param name="sdf_map/local_update_range_y"  value="8.5" /> 
     <param name="sdf_map/local_update_range_z"  value="4.5" /> 
-    <param name="sdf_map/obstacles_inflation"     value="0.0001" /> 
+    <param name="sdf_map/obstacles_inflation"     value="0.02" /> 
     <param name="sdf_map/local_bound_inflate"    value="0.0"/>
     <param name="sdf_map/local_map_margin" value="50"/>
     <param name="sdf_map/ground_height"        value="-0.1"/>
@@ -77,7 +77,7 @@
     <!-- depth filter -->
     <param name="sdf_map/use_depth_filter" value="true"/>
     <param name="sdf_map/depth_filter_tolerance" value="0.2"/>
-    <param name="sdf_map/depth_filter_maxdist"   value="8.0"/>
+    <param name="sdf_map/depth_filter_maxdist"   value="6.0"/>
     <param name="sdf_map/depth_filter_mindist"   value="0.2"/>
     <param name="sdf_map/depth_filter_margin"    value="20"/>
     <param name="sdf_map/k_depth_scaling_factor" value="1000.0"/>
