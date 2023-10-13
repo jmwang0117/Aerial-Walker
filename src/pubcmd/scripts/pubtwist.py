@@ -21,10 +21,11 @@ class CMD:
       self.current_x = 0.0
       self.current_y = 0.0
       self.current_yaw = 0.0
-      self.rate = rospy.Rate(20)  # 控制循环的频率为10Hz
+      self.rate = rospy.Rate(30)  # 控制循环的频率为10Hz
         
       self.integral_error = 0.0
       self.previous_error = 0.0
+      self.previous_time = rospy.get_time()
 
       self.velocity = None
       self.acceleration = None
@@ -32,6 +33,7 @@ class CMD:
       while not rospy.is_shutdown():
           self.run()
           self.rate.sleep()
+          
    def pid_controller(self, error, dt):
       Kp = 0.75  # 比例增益
       Ki = 0.1   # 积分增益
@@ -79,41 +81,42 @@ class CMD:
    def run(self):
       if self.velocity is not None and self.acceleration is not None:
          if not self.is_velocity_zero(self.velocity) or not self.is_acceleration_zero(self.acceleration):
-            dy = self.target_y - self.current_y
-            dx = self.target_x - self.current_x
-            dL = math.sqrt(dx * dx + dy * dy)
-            cmd_command = Twist()
-            #cmd_command.linear.x = 0.5 * dL
-            cmd_command.linear.x = 0.5 * dx
-            cmd_command.linear.y = 0.5 * dy
-            if dL > 0.1:
-               dyaw = math.atan2(dy, dx) - self.current_yaw
+               dx = self.target_x - self.current_x
+               dy = self.target_y - self.current_y               
+               dL = math.sqrt(dx * dx + dy * dy)
+               cmd_command = Twist()
+               cmd_command.linear.x = 0.5 * dx
+               cmd_command.linear.y = 0.5 * dy
 
-               if dyaw > 1.5 * math.pi:
-                  dyaw = dyaw - 2 * math.pi
-               elif dyaw < -1.5 * math.pi:
-                  dyaw = dyaw + 2 * math.pi
+               if dL > 0.1:
+                  dyaw = math.atan2(dy, dx) - self.current_yaw
 
-               
-               cmd_command.angular.z = 0.75 * dyaw
-            else:
-               cmd_command.angular.z = 0
-            if dL < 0.08:
-               cmd_command.linear.x = 0.0
-               cmd_command.linear.y = 0.0
+                  if dyaw > 1.5 * math.pi:
+                     dyaw = dyaw - 2 * math.pi
+                  elif dyaw < -1.5 * math.pi:
+                     dyaw = dyaw + 2 * math.pi
 
-            # if cmd_command.linear.x > 0.75:
-            #    cmd_command.linear.x = 0.9
-            # if cmd_command.linear.x < -0.75:
-            #    cmd_command.linear.x = -0.9
+                  current_time = rospy.get_time()
+                  dt = current_time - self.previous_time
+                  self.previous_time = current_time
+                  
+                  cmd_command.angular.z = self.pid_controller(dyaw, dt)
+               else:
+                  cmd_command.angular.z = 0
 
-            self.pub_cmd.publish(cmd_command)  # 发布控制指令到/cmd_vel话题
-            rospy.loginfo("cmd_linear_x: %f", cmd_command.linear.x)  # 打印线速度值
-            rospy.loginfo("cmd_linear_y: %f", cmd_command.linear.y)  # 打印线速度值
-            rospy.loginfo("cmd_angular_z: %f", cmd_command.angular.z)  # 打印角速度值
+               if dL < 0.02:
+                  cmd_command.linear.x = 0.0
+                  cmd_command.linear.y = 0.0
+                  cmd_command.angular.z = 0.0
+
+               self.pub_cmd.publish(cmd_command)  # 发布控制指令到/cmd_vel话题
+               rospy.loginfo("cmd_linear_x: %f", cmd_command.linear.x)  # 打印线速度值
+               rospy.loginfo("cmd_linear_y: %f", cmd_command.linear.y)  # 打印线速度值
+               rospy.loginfo("cmd_angular_z: %f", cmd_command.angular.z)  # 打印角速度值
          else:
-            cmd_command = Twist()
-            self.pub_cmd.publish(cmd_command)  # 发布零速度和零角速度到/cmd_vel话题
+               cmd_command = Twist()
+               self.pub_cmd.publish(cmd_command)  # 发布零速度和零角速度到/cmd_vel话题
+
         
    def is_velocity_zero(self, velocity):
       return (
