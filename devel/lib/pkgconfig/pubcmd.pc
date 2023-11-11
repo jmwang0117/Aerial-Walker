@@ -1,8 +1,0 @@
-prefix=/root/Aerial-Walker/devel
-
-Name: pubcmd
-Description: Description of pubcmd
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
