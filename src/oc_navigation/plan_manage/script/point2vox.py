@@ -117,8 +117,8 @@ class PointCloudVoxelization:
                 
 
 if __name__ == '__main__':
-    input_folder = '/home/melodic/jetsonNX/Aerial-Walker/src/oc_navigation/plan_manage/raw_data/velodyne'
-    output_folder = '/home/melodic/jetsonNX/Aerial-Walker/src/oc_navigation/plan_manage/raw_data/voxels'
+    input_folder = '/root/Aerial-Walker/src/oc_navigation/plan_manage/raw_data/velodyne'
+    output_folder = '/root/Aerial-Walker/src/oc_navigation/plan_manage/raw_data/voxels'
     grid_size = (256, 256, 32)  # Set the desired grid size (x, y, z)
 
     voxelizer = PointCloudVoxelization(input_folder, output_folder, grid_size)

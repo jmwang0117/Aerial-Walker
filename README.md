@@ -45,7 +45,11 @@ Please follow the instructions [here](https://pytorch.org/get-started/locally/) 
  sh src/run.sh
 ```
 ## ToDo
-
+```
+pip install pyyaml
+pip install rospkg
+pip install imageio
+```
 
 You've begun this project successfully; **enjoy yourself!**
 

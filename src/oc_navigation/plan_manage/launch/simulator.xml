@@ -68,8 +68,5 @@
         <remap from="~global_map" to="/map_generator/global_cloud"/>
         <remap from="~odometry"   to="$(arg odometry_topic)"/>
   </node>
-<!-- 
-  <node name="occupancy_publisher" pkg="plan_manage" type="update_occ.py" output="screen"/> -->
-
 
 </launch>
