@@ -40,15 +40,16 @@ Please follow the instructions [here](https://pytorch.org/get-started/locally/) 
 5. Then catkin_make compiles this project
 ```
  apt update && sudo apt-get install libarmadillo-dev ros-melodic-nlopt
- catkin_make
- source devel/setup.bash
- sh src/run.sh
+
 ```
-## ToDo
+## Run the following commands 
 ```
 pip install pyyaml
 pip install rospkg
 pip install imageio
+catkin_make
+source devel/setup.bash
+sh src/run.sh
 ```
 
 You've begun this project successfully; **enjoy yourself!**
